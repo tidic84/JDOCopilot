@@ -9,9 +9,11 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@expo/webpack-config": "^0.16.19",
+    "@expo/webpack-config": "^0.17.0",
     "expo": "~46.0.16",
     "expo-status-bar": "~1.4.0",
+    "pronote-api-again": "^2.3.5",
+    "pronote-api-maintained": "^2.4.1",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.6",
