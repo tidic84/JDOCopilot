@@ -1,24 +1,21 @@
-const CryptoJS = require("react-native-crypto-js"); // Importe les composants de CryptoJS
+const CryptoJS = require("react-native-crypto-js");
 const ENCRYPT_KEY = "42553JDO-Copilot";
-
-// Fonction qui permet d'encrypter une donnée
 function encrypt(data) {
-    let encryptedData;
+    let encryptedPassword;
     let encryptIsValid = false;
-    while (encryptIsValid != true) { // On refuse le charactère "+" car il est utilisé pour séparer les données dans l'URL
-        encryptedData = CryptoJS.AES.encrypt(data, ENCRYPT_KEY).toString(); // On encrypte la donnée
-        if (!encryptedData.includes("+")) {
+    while (encryptIsValid != true) {
+        encryptedPassword = CryptoJS.AES.encrypt(data, ENCRYPT_KEY).toString();
+        if (!encryptedPassword.includes("+")) {
             encryptIsValid = true
         }
     }
-    return encryptedData;
+    return encryptedPassword;
 }
 
-// Fonction qui permet de décrypter une donnée
 function decrypt(data) {
-    const decryptedDataBytes = CryptoJS.AES.decrypt(data, ENCRYPT_KEY); // On décrypte la donnée
-    const decryptedData = decryptedDataBytes.toString(CryptoJS.enc.Utf8); // On la convertit en UTF-8
-    return decryptedData;
+    const decryptedPasswordBytes = CryptoJS.AES.decrypt(data, ENCRYPT_KEY);
+    const decryptedPassword = decryptedPasswordBytes.toString(CryptoJS.enc.Utf8);
+    return decryptedPassword;
 }
 
 export { encrypt, decrypt }
