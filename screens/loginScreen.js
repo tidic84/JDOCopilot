@@ -1,7 +1,7 @@
-import React from "react"
-import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from "react-native"
-import { Ionicons } from '@expo/vector-icons'
-//import pronote from 'pronoteapi-atriumfix';
+import React from "react";
+import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import { encrypt, decrypt } from "../util/crypto";
 
 export default class loginScreen extends React.Component {
   
@@ -16,10 +16,14 @@ export default class loginScreen extends React.Component {
     name: ""
   }
   
-  continue = () => {
+  continue = async () => {
     if ( this.state.name == "" || this.state.pwd == "") { return this.errorMessage("Identifiant ou Mot de passe vide !") } 
+    const username = await encrypt(this.state.name);
+    const password = await encrypt(this.state.pwd);
     try {
-      //this.pronoteConnect()
+      const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`);
+      const pronoteSession = await response.json();
+      console.log(pronoteSession.params.periods);
     } catch {
       return this.errorMessage("Identifiant ou Mot de passe incorrect !")
     }
