@@ -1,31 +1,36 @@
-import React from "react";
-import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
-import { encrypt, decrypt } from "../util/crypto";
+import React from "react"; // importe React
+import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Platform } from "react-native"; // Importe les composants de React Native
+import { Ionicons } from '@expo/vector-icons'; // Importe les icones Ionicons depuis le package @expo/vector-icons
+import { encrypt, decrypt } from "../util/crypto"; // Importe la fonction encrypt et decrypt du fichier crypto.js
 
+// Définition de la classe LoginScreen
 export default class loginScreen extends React.Component {
   
+  // Définition de la fonction errorMessage qui renvoie un message d'erreur sur android ou sur iOS
   errorMessage = (err) => {
-    if (Platform.OS === 'android') {
-      ToastAndroid.show(err, ToastAndroid.SHORT)
+    if (Platform.OS === 'android') { // Si l'OS est android
+      ToastAndroid.show(err, ToastAndroid.SHORT) // Affiche un message d'erreur sur android
+    } else if (Platform.OS === "ios") { // Sinon si l'OS est iOS
+      AlertIOS.alert(err); // Affiche une alerte sur iOS
     } else {
-      AlertIOS.alert(err);
+      alert(err); // Sinon affiche une alerte
     }
   }
   state = {
     name: ""
   }
   
+  // Définition de la fonction continue qui permet de passer à la page suivante, de récupérer les données de pronote
   continue = async () => {
     if ( this.state.name == "" || this.state.pwd == "") { return this.errorMessage("Identifiant ou Mot de passe vide !") } 
-    const username = await encrypt(this.state.name);
-    const password = await encrypt(this.state.pwd);
+    const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
+    const password = await encrypt(this.state.pwd); // On encrypte le mot de passe
     try {
-      const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`);
-      const pronoteSession = await response.json();
-      console.log(pronoteSession.params.periods);
+      const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
+      const franck = await response.json(); // On récupère les données de pronote
+      console.log(franck.params.periods);  
     } catch {
-      return this.errorMessage("Identifiant ou Mot de passe incorrect !")
+      return this.errorMessage("Identifiant ou Mot de passe incorrect !") // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
     }
     
     //this.props.navigation.navigate("Chat", { name: this.state.name })
