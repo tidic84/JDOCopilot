@@ -20,7 +20,7 @@ export default class loginScreen extends React.Component {
     name: ""
   }
   
-  // Définition de la fonction continue qui permet de passer à la page suivante, de récupérer les données de pronote
+  // Définition de la fonction continue qui permet de de récupérer les données de pronote et de passer à la page principale.
   continue = async () => {
     if ( this.state.name == "" || this.state.pwd == "") { return this.errorMessage("Identifiant ou Mot de passe vide !") } 
     const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
