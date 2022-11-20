@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons'; // Importe les icones Ionicons de
 import { encrypt, decrypt } from "../util/crypto"; // Importe la fonction encrypt et decrypt du fichier crypto.js
 
 // Définition de la classe LoginScreen
-export default class loginScreen extends React.Component {
+export default class LoginScreen extends React.Component {
   
   // Définition de la fonction errorMessage qui renvoie un message d'erreur sur android ou sur iOS
   errorMessage = (err) => {
