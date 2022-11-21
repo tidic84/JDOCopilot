@@ -2,13 +2,13 @@ import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 
 import loginScreen from "./screens/loginScreen";
-import mainScreen from "./screens/mainScreen";
+import mainScreen from "./screens/homeScreen";
 //import chatScreen from "./screens/chatScreen";
 
 const AppNavigator = createStackNavigator(
   {
-    Main: mainScreen,
-    //Login: loginScreen,
+    //Main: mainScreen,
+    Login: loginScreen,
   },
 
   {
