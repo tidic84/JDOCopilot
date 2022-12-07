@@ -2,6 +2,7 @@ import React, { useEffect } from "react"; // importe React
 import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Platform } from "react-native";
 import { Button } from "react-native-web";
 import { colors } from "../util/colors";
+import { timeDifference } from "../util/relativeDays";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
@@ -18,6 +19,8 @@ export default class loginScreen extends React.Component {
     const franck = Object(JSON.parse(await AsyncStorage.getItem("franck")))
     this.setState({ franck: franck.timetable})
     //console.log(this.state.franck)
+    //console.log(this.state.franck[0].from)
+    //console.log(Date.now())
   }
 
   render() {
@@ -25,9 +28,9 @@ export default class loginScreen extends React.Component {
     if (this.state.franck != "") {
       return(
         <View style={styles.container}>
-          <Text>Cours : {JSON.stringify(this.state.franck[0].subject)}</Text>
-          <Text>Classe : {JSON.stringify(this.state.franck[0].room)}</Text>
-          <Text>Room : {JSON.stringify(Date.parse(this.state.franck[0].from + Date.now()))}</Text>
+          <Text style={styles.text}>Cours: {this.state.franck[0].subject}</Text>
+          <Text style={styles.text}>Classe: {this.state.franck[0].room}</Text>
+          <Text style={styles.text}>{timeDifference(Date.now() + 3600000, Date.parse(this.state.franck[0].from))}</Text>
         </View>
       );
     }
@@ -44,8 +47,13 @@ export default class loginScreen extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: colors.bg,
+      paddingTop: 30,
+      flex: 1,
+      backgroundColor: colors.bg,
+    },
+    text: {
+      marginLeft: 20,
+      marginTop: 25,
     },
 
 });
