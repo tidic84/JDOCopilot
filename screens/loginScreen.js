@@ -2,20 +2,8 @@ import React from "react"; // importe React
 import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Platform } from "react-native"; // Importe les composants de React Native
 import { Ionicons } from '@expo/vector-icons'; // Importe les icones Ionicons depuis le package @expo/vector-icons
 import { encrypt, decrypt } from "../util/crypto"; // Importe la fonction encrypt et decrypt du fichier crypto.js
-import { Cache } from "react-native-cache";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const cache = new Cache({
-  namespace: "JDO-Copilot",
-  policy: {
-    maxEntries: 50000, // if unspecified, it can have unlimited entries
-    stdTTL: 0 // the standard ttl as number in seconds, default: 0 (unlimited)
-  },
-  backend: AsyncStorage
-});
-
-//cache.set("KeptId", "aaa")
-console.log(cache.get("zzz"))
 // Définition de la classe LoginScreen
 export default class loginScreen extends React.Component {
   // Définition de la fonction errorMessage qui renvoie un message d'erreur sur android ou sur iOS
@@ -34,21 +22,24 @@ export default class loginScreen extends React.Component {
   
   // Définition de la fonction continue qui permet de de récupérer les données de pronote et de passer à la page principale.
   continue = async () => {
+    //if ( this.state.name == "" || this.state.pwd == "") { return this.errorMessage("Identifiant ou Mot de passe vide !") } 
     console.log("Connecté !!")
-    if ( this.state.name == "" || this.state.pwd == "") { return this.errorMessage("Identifiant ou Mot de passe vide !") } 
-    cache.set("KeptId", [ this.state.name, this.state.pwd ])
 
-    /*const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
-    const password = await encrypt(this.state.pwd); // On encrypte le mot de passe
-    try {
-      const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
-      const franck = await response.json(); // On récupère les données de pronote
-      console.log(franck.params.periods);  
-    } catch {
-      return this.errorMessage("Identifiant ou Mot de passe incorrect !") // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
-    }*/
+    //const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
+    //const password = await encrypt(this.state.pwd); // On encrypte le mot de passe
     
-    //this.props.navigation.navigate("Chat", { name: this.state.name })
+    const username = await encrypt("cedric.sephanh");
+    const password = await encrypt("Nmis%1384#OSU");
+    // try {
+      /*const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
+      const franck = await response.json(); // On récupère les données de pronote
+      await AsyncStorage.setItem("franck", JSON.stringify(franck));
+      console.log(await AsyncStorage.getItem("franck")); */
+      this.props.navigation.navigate("Main"); // On navigue vers la page principale
+      console.log("Switch page");
+    // } catch {
+    //   return this.errorMessage("Identifiant ou Mot de passe incorrect !"); // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
+    // }
   }
 
   render() {

@@ -7,8 +7,8 @@ import mainScreen from "./screens/homeScreen";
 
 const AppNavigator = createStackNavigator(
   {
-    //Main: mainScreen,
     Login: loginScreen,
+    Main: mainScreen,
   },
 
   {
