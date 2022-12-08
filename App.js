@@ -8,13 +8,14 @@ import * as NavigationBar from 'expo-navigation-bar';
 import Login from "./screens/login.js"
 import BottomNav from "./screens/navigator/navbar.js"
 import mainScreen from "./screens/homeScreen";
+import mainScreen2 from "./screens/navbarPages/home.js";
 // import Test from "./screens/testmodal.js";
 
 const AppNavigator = createStackNavigator(
   {
     // Test: Test,
     Login: Login,
-    Main: mainScreen,
+    Main: mainScreen2,
     Navigator: BottomNav,
   },
   {

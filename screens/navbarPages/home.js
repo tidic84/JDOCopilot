@@ -3,9 +3,11 @@ import { createStackNavigator } from "react-navigation-stack";
 import * as React from 'react';
 import { NavigationContainer } from "@react-navigation/native"
 import { Ionicons } from '@expo/vector-icons'
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import * as NavigationBar from 'expo-navigation-bar';
 import stylesA from "../../stylesheets/Home/purple.js"
+import { timeDifference } from "../../util/relativeDays";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import Edt from "../homepages/edt.js"
 import As from "../homepages/as.js"
@@ -19,12 +21,17 @@ const TopBar = createMaterialTopTabNavigator();
 
 export default class TopNav extends React.Component {
 
-    state = {
-      name: ""
-    }
-  
+  state = {
+    franck: ""
+  }
+  getFranck = async () => {
+    const franck = Object(JSON.parse(await AsyncStorage.getItem("franck")))
+    this.setState({ franck: franck.timetable})
+  }
     
-    render() {
+  render() {
+    this.getFranck()
+    if (this.state.franck != "") {
       return(
     <View style={{ flex: 1, backgroundColor: '#8F5FC7' }}>
       <NavigationContainer independent={true}>
@@ -66,8 +73,23 @@ export default class TopNav extends React.Component {
           <TopBar.Screen name="PLAN" component={Map} options={{headerShown: false, }} />
         </TopBar.Navigator>
       </NavigationContainer>
+
+      <View style={stylesA.container}>
+        <Text style={stylesA.text}>Cours: {this.state.franck[0].subject}</Text>
+        <Text style={stylesA.text}>Classe: {this.state.franck[0].room}</Text>
+        <Text style={stylesA.text}>{timeDifference(Date.now() + 3600000, Date.parse(this.state.franck[0].from))}</Text>
+      </View>
+      
     </View>
     
       )
     }
+    if (this.state.franck == "") {
+      return(
+        <View style={stylesA.container}>
+          <Text>Wait...</Text>
+        </View>
+      );
+    }
+  }
 }
