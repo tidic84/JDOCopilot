@@ -12,6 +12,10 @@ const colors = {
 
 export default //styles
 stylesA = StyleSheet.create({ //purpleLogin
+  wait: {
+    flex: 1,
+    backgroundColor: "#8F5FC7",
+  },
   container: {
     flex: 1,
     backgroundColor: colors.primary,
@@ -122,6 +126,7 @@ stylesA = StyleSheet.create({ //purpleLogin
     borderRadius: 38,
     marginTop: 8,
     alignSelf: "center"
-  }
+  },
+  
 
 });

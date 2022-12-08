@@ -15,6 +15,11 @@ stylesA = StyleSheet.create({ //purpleLogin
   container: {
     flex: 1,
     backgroundColor: colors.primary,
+    alignItems: "center",
+    marginBottom: 200,
+  },
+  text: {
+    marginTop: 25,
   },
 
 });
