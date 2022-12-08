@@ -48,7 +48,7 @@ export function timeDifference(current, previous) {
        }
    
        else if (timeleft < msPerDay ) {
-            return 'In ' + timeleft_h + ' hours, ' + (timeleft_m-timeleft_h*60) + ' minutes, ' + ((timeleft_s - timeleft_m*60)) + ' seconds';   
+            return 'In ' + timeleft_h + ' hours, ' + (timeleft_m-timeleft_h*60) + ' minutes, ' + ((timeleft_s - timeleft_m*60)) + ' seconds ' + ((timeleft - timeleft_s*1000)) + ' ms';   
        }
    
        else if (timeleft < msPerMonth) {

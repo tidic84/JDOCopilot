@@ -42,6 +42,7 @@ export default class Login extends React.Component {
   state = {
     keptName: "",
     keptPassword: "",
+    disabledButton: false,
   }
 
   continue = async () => {
@@ -52,6 +53,8 @@ export default class Login extends React.Component {
       }
       else return this.errorMessage("Identifiant ou Mot de passe vide !") 
     } 
+    
+    this.setState({ disabledButton: true})
     console.log("Connecté !! " + this.state.name)
 
     const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
@@ -70,6 +73,7 @@ export default class Login extends React.Component {
       this.props.navigation.navigate("Main"); // On navigue vers la page principale
       console.log("Switch page");
     } catch {
+      this.setState({ disabledButton: false })
       return this.errorMessage("Identifiant ou Mot de passe incorrect !"); // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
     }
   }
@@ -205,7 +209,7 @@ export default class Login extends React.Component {
 
 
               <View style={{ alignItems: "flex-end", marginTop: 64 }}>
-                <TouchableOpacity style={stylesA.continue} onPress={this.continue}>
+                <TouchableOpacity disabled={this.state.disabledButton} activeOpacity={0.6} style={stylesA.continue} onPress={this.continue}>
                   <Ionicons name="arrow-forward-outline" size={24} color='#FFF' />
                 </TouchableOpacity>
               </View>
