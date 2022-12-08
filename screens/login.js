@@ -42,9 +42,12 @@ export default class Login extends React.Component {
   state = {
     keptName: "",
     keptPassword: "",
+    disabledButton: false,
   }
 
   continue = async () => {
+    this.setState({ disabledButton: true})
+
     if ( this.state.name == "" || this.state.pwd == "" || this.state.name == undefined || this.state.pwd == undefined) { 
       if (await AsyncStorage.getItem("username") != "" || await AsyncStorage.getItem("username") != undefined || await AsyncStorage.getItem("password") != "" || await AsyncStorage.getItem("password")!= undefined) {
         this.state.name = decrypt(await AsyncStorage.getItem("username"));
@@ -70,6 +73,7 @@ export default class Login extends React.Component {
       this.props.navigation.navigate("Main"); // On navigue vers la page principale
       console.log("Switch page");
     } catch {
+      this.setState({ disabledButton: false })
       return this.errorMessage("Identifiant ou Mot de passe incorrect !"); // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
     }
   }
@@ -205,7 +209,7 @@ export default class Login extends React.Component {
 
 
               <View style={{ alignItems: "flex-end", marginTop: 64 }}>
-                <TouchableOpacity style={stylesA.continue} onPress={this.continue}>
+                <TouchableOpacity disabled={this.state.disabledButton} activeOpacity={0.6} style={stylesA.continue} onPress={this.continue}>
                   <Ionicons name="arrow-forward-outline" size={24} color='#FFF' />
                 </TouchableOpacity>
               </View>

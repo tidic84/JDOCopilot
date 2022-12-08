@@ -64,7 +64,6 @@ export default class loginScreen extends React.Component {
         dataReady = true;
 
       } catch {
-        console.log("ERROR !?!?!? --> JSP BRO")
         const keptName = "";
         const keptPassword = "";
         console.log( "Name does not exist: "+keptName)
