@@ -55,9 +55,24 @@ export default class loginScreen extends React.Component {
 
   getID = async () => {
     if ( dataReady == false ){
-      this.setState({ keptName: await decrypt(await AsyncStorage.getItem("username")) });
-      this.setState({ keptPassword: await decrypt(await AsyncStorage.getItem("password")) });
-      dataReady = true;
+      try {
+        const keptName = await decrypt(await AsyncStorage.getItem("username"));
+        const keptPassword = await decrypt(await AsyncStorage.getItem("password"));
+        console.log( "Name exist: "+keptName)
+        this.setState({ keptName: keptName });
+        this.setState({ keptPassword: keptPassword });
+        dataReady = true;
+
+      } catch {
+        console.log("ERROR !?!?!? --> JSP BRO")
+        const keptName = "";
+        const keptPassword = "";
+        console.log( "Name does not exist: "+keptName)
+        this.setState({ keptName: keptName });
+        this.setState({ keptPassword: keptPassword });
+        dataReady = true;
+      }
+      
     }
   }
   render() {
@@ -75,13 +90,13 @@ export default class loginScreen extends React.Component {
               <View style={{
                 width: 255, height: 18, backgroundColor: '#ABEDD8', borderRadius: 38, marginTop: 8, alignSelf: "center"
               }} />
-                <TextInput defaultValue={this.state.keptName} style={styles.inputName}  placeholder="Identifiant" 
+                <TextInput defaultValue={this.state.keptName} autoComplete="username" style={styles.inputName}  placeholder="Identifiant" 
                           onChangeText={name => {
                             this.setState({ name })
                           }}
                           value={this.state.name}
                 />
-                <TextInput defaultValue={this.state.keptPassword} secureTextEntry={true} style={styles.inputPwd} placeholder="Mot de passe" 
+                <TextInput defaultValue={this.state.keptPassword} autoComplete="password" secureTextEntry={true} style={styles.inputPwd} placeholder="Mot de passe" 
                           onChangeText={pwd => {
                             this.setState({ pwd })
                           }}
