@@ -46,8 +46,6 @@ export default class Login extends React.Component {
   }
 
   continue = async () => {
-    this.setState({ disabledButton: true})
-
     if ( this.state.name == "" || this.state.pwd == "" || this.state.name == undefined || this.state.pwd == undefined) { 
       if (await AsyncStorage.getItem("username") != "" || await AsyncStorage.getItem("username") != undefined || await AsyncStorage.getItem("password") != "" || await AsyncStorage.getItem("password")!= undefined) {
         this.state.name = decrypt(await AsyncStorage.getItem("username"));
@@ -55,6 +53,8 @@ export default class Login extends React.Component {
       }
       else return this.errorMessage("Identifiant ou Mot de passe vide !") 
     } 
+    
+    this.setState({ disabledButton: true})
     console.log("Connecté !! " + this.state.name)
 
     const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
