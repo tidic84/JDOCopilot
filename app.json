@@ -4,10 +4,10 @@
     "slug": "JDO-Copilot",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon/logo.png",
+    "icon": "./.app/public/assets/expo/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/icon/splash.png",
+      "image": "./.app/public/assets/expo/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -23,12 +23,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./.app/public/assets/expo/adaptive-icon.png",
         "backgroundColor": "#000000"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./.app/public/assets/expo/favicon.png"
     }
   }
   
