@@ -19,6 +19,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   text: {
     marginTop: 25,
+    color: "white",
   },
 
 });
