@@ -61,7 +61,17 @@ export default class Login extends React.Component {
     const password = await encrypt(this.state.pwd); // On encrypte le mot de passe
     await AsyncStorage.setItem("username", username);
     await AsyncStorage.setItem("password", password);
-
+    
+   /* try {
+      const franck =  Object(JSON.parse(await AsyncStorage.getItem("franck")))
+      const sessionDate = franck.session
+      console.log(sessionDate.getDay())
+    } catch {
+      console.log("Erreur session ")
+    }
+    */
+   
+    
     try {
       const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
       const franck = await response.json(); // On récupère les données de pronote

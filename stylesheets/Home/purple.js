@@ -20,6 +20,7 @@ stylesA = StyleSheet.create({ //purpleLogin
   },
   text: {
     marginTop: 25,
+    color: "white",
   },
 
 });
