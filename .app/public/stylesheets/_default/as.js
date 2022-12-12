@@ -15,7 +15,6 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     flex: 1,
     backgroundColor: colors.primary,
     alignItems: "center",
-    marginBottom: 200,
   },
   text: {
     marginTop: 25,

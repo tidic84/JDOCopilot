@@ -5,18 +5,13 @@ import * as React from 'react';
 
 import * as NavigationBar from 'expo-navigation-bar';
 
-import Login from "./screens/login.js"
-import BottomNav from "./screens/navigator/navbar.js"
-import mainScreen from "./screens/homeScreen";
-import mainScreen2 from "./screens/navbarPages/home.js";
-// import Test from "./screens/testmodal.js";
-
+import Login from "./.app/public/auth/login.js"
+import BottomNav from "./.app/public/navigator/navbar.js"
 const AppNavigator = createStackNavigator(
   {
     // Test: Test,
     Login: Login,
-    Main: mainScreen2,
-    Navigator: BottomNav,
+    Main: BottomNav,
   },
   {
     headerMode: "none"

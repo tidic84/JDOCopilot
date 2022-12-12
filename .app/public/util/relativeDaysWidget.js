@@ -48,7 +48,7 @@ export function timeDifference(current, previous) {
         }
 
         else if (timeleft < msPerDay) {
-        return 'Dans ' + timeleft_h + 'heures et ' + (timeleft_m - timeleft_h * 60) + 'minutes';
+        return 'Dans ' + timeleft_h + 'h \net ' + (timeleft_m - timeleft_h * 60) + 'min';
         }
 
         else if (timeleft < msPerMonth) {
@@ -64,7 +64,7 @@ export function timeDifference(current, previous) {
         }
     }
     else {
-        return "trop tard"
+        return "MAINTENANT"
     }
 
 }

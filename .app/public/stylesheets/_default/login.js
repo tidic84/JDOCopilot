@@ -27,20 +27,30 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     marginTop: 32,
     alignSelf: "center",
   },
+  underHeader:{
+    fontWeight: "400",
+    fontSize: 15,
+    color: "#FFFFFF",
+    marginTop: 5,
+    alignSelf: "center",
+  },
   textInput: {
     marginTop: 32,
     height: 50,
     backgroundColor: DEFAULT.textfields,
-    borderRadius: 13,
+    borderRadius: 16,
     paddingHorizontal: 16,
     color: DEFAULT.text,
     fontWeight: "600",
+  },
+  textInputContainer:{
+    marginTop: 50,
   },
   basicText: {
     color: "rgba(255,255,255,0.5)",
   },
   checkboxBase: {
-    top: 5,
+    top: 10,
     left: 15,
     width: 20,
     height: 20,
@@ -65,7 +75,7 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
   },
   checkboxLabel: {
     left: 40,
-    top: -14,
+    top: -10,
     color: 'rgb(255, 255, 255)'
   },
 
@@ -78,6 +88,17 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     justifyContent: "center",
     left: 2,
     top: -12
+  },
+  continueDisabled: {
+    width: 70,
+    height: 70,
+    borderRadius: 70 / 2,
+    backgroundColor: DEFAULT.links,
+    alignItems: "center",
+    justifyContent: "center",
+    left: 2,
+    top: -12,
+    opacity: 0.3,
   },
 
   bottomContainer: {
@@ -95,18 +116,8 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     paddingVertical: 5,
   },
 
-  themeSelector: {
-    position: 'absolute',
-    top: 35,
-    right: 20,
-    width: 40,
-    height: 40,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
   isolateTextInput: {
-    marginTop: 15,
+    marginTop: 32,
     height: 50,
     backgroundColor: "red",
     borderRadius: 13,
@@ -115,13 +126,6 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     fontWeight: "600",
     left: -10
   },
-  separator: {
-    width: 255,
-    height: 18,
-    backgroundColor: DEFAULT.primary,
-    borderRadius: 38,
-    marginTop: 8,
-    alignSelf: "center"
-  }
+  
 
 });
