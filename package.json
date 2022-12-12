@@ -9,7 +9,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "i": "npm install --legacy-peer-deps",
-    "gitpodi": "npm install --legacy-peer-deps && sudo apt-get update && sudo apt-get install android-sdk -y && npm start --tunnel"
+    "gitpodi": "npm install --legacy-peer-deps && sudo apt-get update && sudo apt-get install android-sdk -y && npx expo start --tunnel"
   },
   "dependencies": {
     "@expo/ngrok": "^4.1.0",
