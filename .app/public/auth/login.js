@@ -162,7 +162,7 @@ export default class Login extends React.Component {
               <TextInput defaultValue={this.state.keptName}
                          autoComplete="username"
                          style={defaultCSS.textInput}
-                         placeholder="Nom d'utilisateur"
+                         placeholder="Nom d'utilisateur atrium"
                          placeholderTextColor={'#80786a'}
                 onChangeText={name => {
                   this.setState({ name })
@@ -175,7 +175,7 @@ export default class Login extends React.Component {
                          autoComplete="password"
                          secureTextEntry={true}
                          style={defaultCSS.textInput}
-                         placeholder="Mot de passe"
+                         placeholder="Mot de passe atrium"
                          placeholderTextColor={'#80786a'}
                 onChangeText={pwd => {
                   this.setState({ pwd })
