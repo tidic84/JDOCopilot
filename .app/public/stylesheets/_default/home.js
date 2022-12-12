@@ -96,90 +96,52 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     color: "white",
     fontSize: 13,
   },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   bodySubject: {
-    position: "absolute",
-    left: 0,
-    top: 5,
     color: "white",
     fontSize: 17,
+    padding: 10
   },
   bodyRoom: {
-    position: "absolute",
-    left: 90,
-    top: 5,
-    color: DEFAULT.accent,
-    fontSize: 17,
+    
   },
   bodyTime: {
-    position: "absolute",
-    right: -300,
     color: DEFAULT.accent,
     fontSize: 13,
+    marginLeft: 225,
+    textAlign: "right",
   },
-  bodyCours1: {
-    position: "absolute",
-    left: 20,
-    marginTop: 50,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-  bodyCours2: {
-    position: "absolute",
-    left: 20,
-    marginTop: 100,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-  bodyCours3: {
-    position: "absolute",
-    left: 20,
-    marginTop: 150,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-  bodyCours4: {
-    position: "absolute",
-    left: 20,
-    marginTop: 200,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-  bodyCours5: {
-    position: "absolute",
-    left: 20,
-    marginTop: 250,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-  bodyCours6: {
-    position: "absolute",
-    left: 20,
-    marginTop: 300,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-  bodyCours7: {
-    position: "absolute",
-    left: 20,
-    marginTop: 350,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-  bodyCours8: {
-    position: "absolute",
-    left: 20,
-    marginTop: 400,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   wait: {
     position: "absolute",
     alignSelf: "center",

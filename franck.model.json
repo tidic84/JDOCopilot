@@ -1,0 +1,329 @@
+{
+    "session": "2022-12-12T17:24:49.684Z",
+    "timetable": [
+        {
+            "id": "508a93d9cca1e5d1",
+            "from": "2022-12-13T08:00:00.000Z",
+            "to": "2022-12-13T10:00:00.000Z",
+            "isDetention": false,
+            "remoteLesson": false,
+            "hasDuplicate": false,
+            "isAway": false,
+            "isCancelled": false,
+            "color": "#7CB927",
+            "subject": "ED.PHYSIQUE & SPORT.",
+            "teacher": "OZIMEK E.",
+            "room": "SALLE EPS"
+        },
+        {
+            "id": "a8d06dfb7bd14fcd",
+            "from": "2022-12-13T10:05:00.000Z",
+            "to": "2022-12-13T12:05:00.000Z",
+            "isDetention": false,
+            "remoteLesson": false,
+            "hasDuplicate": false,
+            "isAway": false,
+            "isCancelled": false,
+            "color": "#FFED00",
+            "subject": "PHYSIQUE-CHIMIE",
+            "teacher": "LAVEIL L.",
+            "room": "TP PC1"
+        },
+        {
+            "id": "e6400651683d9f75",
+            "from": "2022-12-13T13:10:00.000Z",
+            "to": "2022-12-13T15:10:00.000Z",
+            "isDetention": false,
+            "remoteLesson": false,
+            "hasDuplicate": false,
+            "isAway": false,
+            "isCancelled": false,
+            "color": "#910EF1",
+            "subject": "MATHEMATIQUES",
+            "teacher": "BANGIL N.",
+            "room": "N162"
+        },
+        {
+            "id": "c6a681dd4bb8721d",
+            "from": "2022-12-13T15:15:00.000Z",
+            "to": "2022-12-13T17:15:00.000Z",
+            "isDetention": false,
+            "remoteLesson": false,
+            "hasDuplicate": false,
+            "isAway": false,
+            "isCancelled": false,
+            "color": "#0E3611",
+            "subject": "HISTOIRE-GEOGRAPHIE",
+            "teacher": "ROSELLO L.",
+            "room": "S102"
+        }
+    ],
+    "marks": {
+        "subjects": [
+            {
+                "name": "PHYSIQUE-CHIMIE",
+                "averages": {
+                    "student": 13.5,
+                    "studentClass": 10.73,
+                    "max": 18.5,
+                    "min": 3
+                },
+                "color": "#FFED00",
+                "marks": [
+                    {
+                        "id": "2c3e499d7fe273c3",
+                        "title": "",
+                        "isAway": false,
+                        "value": 13.5,
+                        "min": 3,
+                        "max": 18.5,
+                        "average": 10.73,
+                        "scale": 20,
+                        "coefficient": 3,
+                        "date": "2022-11-17T00:00:00.000Z"
+                    }
+                ]
+            },
+            {
+                "name": "NUMERIQUE SC.INFORM.",
+                "averages": {
+                    "student": 14,
+                    "studentClass": 14.36,
+                    "max": 19,
+                    "min": 4
+                },
+                "color": "#AFDEF9",
+                "marks": [
+                    {
+                        "id": "2e472bf91447d275",
+                        "title": "documenter le code algo tri Python",
+                        "isAway": false,
+                        "value": 7,
+                        "min": 2,
+                        "max": 9.5,
+                        "average": 7.18,
+                        "scale": 10,
+                        "coefficient": 1,
+                        "date": "2022-12-02T00:00:00.000Z"
+                    }
+                ]
+            },
+            {
+                "name": "ANGLAIS LV1",
+                "averages": {
+                    "student": 15,
+                    "studentClass": 14.23,
+                    "max": 17,
+                    "min": 10
+                },
+                "color": "#212853",
+                "marks": [
+                    {
+                        "id": "11785cf3539e52de",
+                        "title": "Canvassing debate",
+                        "isAway": false,
+                        "value": 15,
+                        "min": 15,
+                        "max": 17,
+                        "average": 15.57,
+                        "scale": 20,
+                        "coefficient": 1,
+                        "date": "2022-12-02T00:00:00.000Z"
+                    }
+                ]
+            },
+            {
+                "name": "FRANCAIS",
+                "averages": {
+                    "student": 18.25,
+                    "studentClass": 14.54,
+                    "max": 20,
+                    "min": 10
+                },
+                "color": "#FE031D",
+                "marks": [
+                    {
+                        "id": "abaa52cf600d477",
+                        "title": "cercle 1 seq2",
+                        "isAway": false,
+                        "value": 10,
+                        "min": 5,
+                        "max": 10,
+                        "average": 7.56,
+                        "scale": 10,
+                        "coefficient": 0.5,
+                        "date": "2022-12-03T00:00:00.000Z"
+                    },
+                    {
+                        "id": "c55cc0d2f3396e55",
+                        "title": "Cercle GDT 2",
+                        "isAway": false,
+                        "value": 10,
+                        "min": 6,
+                        "max": 10,
+                        "average": 7.63,
+                        "scale": 10,
+                        "coefficient": 0.5,
+                        "date": "2022-12-03T00:00:00.000Z"
+                    },
+                    {
+                        "id": "ce959699a6113ab",
+                        "title": "GDT 3 ",
+                        "isAway": false,
+                        "value": 8.5,
+                        "min": 5,
+                        "max": 8.5,
+                        "average": 6.9,
+                        "scale": 10,
+                        "coefficient": 0.5,
+                        "date": "2022-12-03T00:00:00.000Z"
+                    },
+                    {
+                        "id": "9da7f07cc8ab397e",
+                        "title": "cercle LC",
+                        "isAway": false,
+                        "value": 8,
+                        "min": 3,
+                        "max": 8,
+                        "average": 6.68,
+                        "scale": 10,
+                        "coefficient": 0.5,
+                        "date": "2022-12-03T00:00:00.000Z"
+                    }
+                ]
+            },
+            {
+                "name": "ENSEIGNEMENT SCIENTIFIQUE",
+                "averages": {
+                    "student": 16,
+                    "studentClass": 11.4,
+                    "max": 20,
+                    "min": 2
+                },
+                "color": "#FFED00",
+                "marks": [
+                    {
+                        "id": "fba0b25920bca08",
+                        "title": "",
+                        "isAway": false,
+                        "value": 4,
+                        "min": 0.5,
+                        "max": 5,
+                        "average": 2.84,
+                        "scale": 5,
+                        "coefficient": 0.5,
+                        "date": "2022-12-04T00:00:00.000Z"
+                    }
+                ]
+            },
+            {
+                "name": "MATHEMATIQUES",
+                "averages": {
+                    "student": 14,
+                    "studentClass": 10.55,
+                    "max": 19.6,
+                    "min": 2.8
+                },
+                "color": "#910EF1",
+                "marks": [
+                    {
+                        "id": "101153c7fc38833",
+                        "title": "",
+                        "isAway": false,
+                        "value": 17.5,
+                        "min": 3.5,
+                        "max": 24.5,
+                        "average": 13.19,
+                        "scale": 25,
+                        "coefficient": 1,
+                        "date": "2022-12-06T00:00:00.000Z"
+                    }
+                ]
+            }
+        ],
+        "averages": {
+            "student": 14.64,
+            "studentClass": 12.89
+        }
+    },
+    "menu": [
+        {
+            "date": "2022-12-13T00:00:00.000Z",
+            "meals": [
+                [
+                    [
+                        {
+                            "name": "Croissant au fromage, chou fromage blanc, salade composée",
+                            "labels": []
+                        }
+                    ],
+                    [
+                        {
+                            "name": "Sauté de bœuf citronnelle et coriandre / Hoki aux crevettes aigres douce / Nouille chinoise    Wok a",
+                            "labels": []
+                        }
+                    ],
+                    [
+                        {
+                            "name": "Coupe fromage blanc crème de marron ou ile flottante ",
+                            "labels": []
+                        }
+                    ],
+                    [
+                        {
+                            "name": "COTE SNACk",
+                            "labels": []
+                        }
+                    ],
+                    [
+                        {
+                            "name": "Salade de feta et oignon frits / Bagnat niçois / Yaourt à boire ",
+                            "labels": []
+                        }
+                    ]
+                ]
+            ]
+        }
+    ],
+    "homeworks": [
+        {
+            "id": "ea6aa2b94209ebd0",
+            "description": "Le contrôle est prévu le 13 décembre 2022. Je vous joins le lexique 1 ( quelques mots à apprendre), le lexique 2 et le cours à lire et à retenir les idées essentielles ( les parties et problématiques sont à connaître).",
+            "htmlDescription": "<div>Le contrôle est prévu le 13 décembre 2022. Je vous joins le lexique 1 ( quelques mots à apprendre), le lexique 2 et le cours à lire et à retenir les idées essentielles ( les parties et problématiques sont à connaître).</div>",
+            "subject": "HISTOIRE-GEOGRAPHIE",
+            "givenAt": "2022-12-06T00:00:00.000Z",
+            "for": "2022-12-13T00:00:00.000Z",
+            "done": false,
+            "color": "#0E3611",
+            "files": [
+                {
+                    "id": "e21ac54089f36a3f",
+                    "name": "Cours pour élèves.pdf",
+                    "url": "https://0134252b.index-education.net/pronote/FichiersExternes/c437fba9852a445595a38166911b12f001d2373d04cd5f64df65c143f95aa51d/Cours%2520pour%2520%25C3%25A9l%25C3%25A8ves.pdf?Session=3053443"
+                },
+                {
+                    "id": "3b3ff27493310339",
+                    "name": "Lexique 2 (2).pdf",
+                    "url": "https://0134252b.index-education.net/pronote/FichiersExternes/37934016ae28d56a819211325a8060eb0b4cf8a0e8cdac76e4dff6d95f00460d/Lexique%25202%2520(2).pdf?Session=3053443"
+                },
+                {
+                    "id": "6f3914d930772a18",
+                    "name": "Vocabulaire 1.pdf",
+                    "url": "https://0134252b.index-education.net/pronote/FichiersExternes/a41fffa613ba2beabece12f37eaf84e4eda0353dae142dfbb473ce50586cb139/Vocabulaire%25201.pdf?Session=3053443"
+                }
+            ]
+        },
+        {
+            "id": "ea6aa2b94209ebd1",
+            "description": "Interro sur les activités 10, 11, 12 (20 min) sauf la définition d'isomères. Donner la formule de Lewis de n'importe qu'elle molécules est à savoir.",
+            "htmlDescription": "<div>Interro sur les activités 10, 11, 12 (20 min) sauf la définition d&#039;isomères. Donner la formule de Lewis de n&#039;importe qu&#039;elle molécules est à savoir.</div>",
+            "subject": "PHYSIQUE-CHIMIE",
+            "givenAt": "2022-12-09T00:00:00.000Z",
+            "for": "2022-12-13T00:00:00.000Z",
+            "done": false,
+            "color": "#FFED00",
+            "files": []
+        }
+    ],
+    "contents": []
+}
