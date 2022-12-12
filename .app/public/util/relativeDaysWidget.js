@@ -44,7 +44,7 @@ export function timeDifference(current, previous) {
         }
 
         else if (timeleft < msPerHour) {
-        return 'Dans ' + timeleft_m + ' minutes et ' + ((timeleft_s - timeleft_m * 60)) + ' secondes ';
+        return 'Dans ' + timeleft_m + 'min \net ' + ((timeleft_s - timeleft_m * 60)) + 's ';
         }
 
         else if (timeleft < msPerDay) {

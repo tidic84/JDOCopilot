@@ -69,7 +69,7 @@ render() {
       } else if (cours == "LLC ANGL.MOND.CONT.") {
         cours = "A.M.C."
       } else if (cours == "HIST.GEO.GEOPOL.S.P") {
-        cours = "H.G.S.P."
+        cours = "H.G.G.S.P."
       }
 
       // if (daySesh1 == "NUMERIQUE SC.INFORM.") {

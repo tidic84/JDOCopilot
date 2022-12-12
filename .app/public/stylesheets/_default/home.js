@@ -52,7 +52,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   headerRoom: {
     position: "absolute",
-    left: 95,
+    left: 120,
     top: 37,
     fontSize: 13,
     color: DEFAULT.accent,
@@ -101,14 +101,14 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     left: 0,
     top: 5,
     color: "white",
-    fontSize: 13,
+    fontSize: 17,
   },
   bodyRoom: {
     position: "absolute",
-    left: 40,
+    left: 90,
     top: 5,
     color: DEFAULT.accent,
-    fontSize: 13,
+    fontSize: 17,
   },
   bodyTime: {
     position: "absolute",
