@@ -10,7 +10,10 @@ import { cours } from "../../components/cours"
 import Refresh from '../../components/refresh.js';
 import { DEFAULT } from '../../themes/variables.js';
 import { Button } from 'react-native-web';
-import { FlatList } from 'react-native-gesture-handler';
+import { FlashList } from "@shopify/flash-list";
+import switchNames from '../../../private/subject.room.js'
+
+
 export default class Edt extends React.Component {
   //on vide le sac de franck
   state = {
@@ -26,67 +29,22 @@ export default class Edt extends React.Component {
 render() {
     this.getFranck()
     if (this.state.franck != "") {
-
-      
-      //on braque franck
-      const Item = ({ subject, room, to, from }) => (
-        <View style={defaultCSS.item}>
-          <Text style={defaultCSS.bodySubject}>{subject}</Text>
-          <Text style={defaultCSS.bodyRoom}>{room}</Text>
-          <Text style={defaultCSS.bodyTime}>Wait</Text>
-        </View>
-      );
-
-      //on verif le nb de cours
-      
-
-
-      //on remplace les noms des cours pour l'esthetique
-      if (Item.subject == "NUMERIQUE SC.INFORM.") {
-        Item.subject = "N.S.I. "
-      } else if (Item.subject == "MATHS") {
-        Item.subject = "Maths"
-      } else if (Item.subject == "PHYSIQUE-CHIMIE") {
-        Item.subject = "Physique-Chimie"
-      } else if (Item.subject == "HISTOIRE-GEOGRAPHIE") {
-        Item.subject = "Histoire-Géographie"
-      } else if (Item.subject == "ED.PHYSIQUE & SPORT.") {
-        Item.subject = "E.P.S."
-      } else if (Item.subject == "ITALIEN LV2") {
-        Item.subject = "Italien"
-      } else if (Item.subject == "ANGLAIS LV1") {
-        Item.subject = "Anglais"
-      } else if (Item.subject == "ESPAGNOL LV2") {
-        Item.subject = "Espagnol"
-      } else if (Item.subject == "ALLEMAND LV2") {
-        Item.subject = "Allemand"
-      } else if (Item.subject == "ENSEIGNEMENT SCIENTIFIQUE") {
-        Item.subject = "E.S."
-      } else if (Item.subject == "AP FRANCAIS") {
-        Item.subject = "Français"
-      } else if (Item.subject == "ARTS-PLASTIQUES OPTION") {
-        Item.subject = "Arts-Plastiques (O)"
-      } else if (Item.subject == "ENS. MORAL & CIVIQUE") {
-        Item.subject = "E.M.C."
-      } else if (Item.subject == "ARTS PLASTIQUES") {
-        Item.subject = "Arts-Plastiques (s)"
-      } else if (Item.subject == "LITT. ANGLAIS") {
-        Item.subject = "L.L.C.E."
-      } else if (Item.subject == "LLC ANGL.MOND.CONT.") {
-        Item.subject = "A.M.C."
-      } else if (Item.subject == "HIST.GEO.GEOPOL.S.P") {
-        Item.subject = "H.G.G.S.P."
-      }
-
-      
-
-      if (Item.room == "S103 INFORMATIQUE") {
-        Item.room = "S103"
-      } else if (Item.room == "SALLE EPS") {
-        Item.room = "Gymnase"
-      }
-
-
+      //recuperation du nombre de cours
+      const franck = this.state.franck;
+      const nbCours = franck.length;
+      //console.log(nbCours, 'cours');
+      //recuperation et remplacement des noms des cours
+      var p = 0;
+      //console.log('test 1')
+      var coursName = [];
+      //console.log('test 2')
+      do {
+        switchNames(franck[p].subject, coursName);
+        p++;
+      } while (p < nbCours);
+      //on verif ce qu'on a recup
+      //console.log("Anciens noms", franck);
+      //console.log("Nouveaux noms", coursName);
 
       return (
         <>
@@ -96,12 +54,22 @@ render() {
               {/* recatangle orange sur la gauche */}
               <View style={defaultCSS.fancyLeft}></View>
               {/* icone */}
-              <Ionicons name="md-calendar" size={24} color="white" style={defaultCSS.headerIcon} />
+              <Ionicons
+                name="md-calendar"
+                size={24}
+                color="white"
+                style={defaultCSS.headerIcon}
+              />
               {/* titre, cour, salle, time left */}
               <Text style={defaultCSS.headerTitle}>Prochain cours</Text>
               <Text style={defaultCSS.headerSubject}>tqt</Text>
               <Text style={defaultCSS.headerRoom}>tqt</Text>
-              <Text style={defaultCSS.headerTime}>{timeDifference(Date.now() + 3600000, Date.parse(this.state.franck[0].from))}</Text>
+              <Text style={defaultCSS.headerTime}>
+                {timeDifference(
+                  Date.now() + 3600000,
+                  Date.parse(this.state.franck[0].from)
+                )}
+              </Text>
             </View>
 
             {/* emploi du temps complet de la journée */}
@@ -110,17 +78,21 @@ render() {
               <Text style={defaultCSS.bodyTitle}>Emploi du Temps</Text>
               {/* liste des prochains cours */}
               <View style={defaultCSS.bodyList}>
-                <View style={defaultCSS.bodyCours}>
-                  <FlatList 
-                    data={this.state.franck}
-                    renderItem={({ item }) => <Item subject={item.subject} room={item.room} time={item.time}/>}
-                    keyExtractor={item => item.id}
-                  />
-                </View>
+                <FlashList
+                  data={coursName}
+                  renderItem={({ item }) => (
+                    <Text style={defaultCSS.bodySubject}>
+                      {item}
+                    </Text>
+                  )}
+                  estimatedItemSize={200}
+                  ItemSeparatorComponent={() => (
+                    <View style={defaultCSS.separatorComponent} />
+                  )}
+                  containerComponentStyle={defaultCSS.bodyList}
+                />
               </View>
-
             </View>
-
           </View>
         </>
       );
