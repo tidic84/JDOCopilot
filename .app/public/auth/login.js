@@ -59,33 +59,33 @@ export default class Login extends React.Component {
 
     const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
     const password = await encrypt(this.state.pwd); // On encrypte le mot de passe
-    await AsyncStorage.setItem("username", username);
-    await AsyncStorage.setItem("password", password);
     
-   /* try {
-      const franck =  Object(JSON.parse(await AsyncStorage.getItem("franck")))
-      const sessionDate = franck.session
-      console.log(sessionDate.getDay())
-    } catch {
-      console.log("Erreur session ")
-    }
-    */
-   
-    
-    try {
-      const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
-      const franck = await response.json(); // On récupère les données de pronote
-      await AsyncStorage.setItem("franck", JSON.stringify(franck));
-      await AsyncStorage.setItem("username", username);
-      await AsyncStorage.setItem("password", password);
+    const franck =  Object(JSON.parse(await AsyncStorage.getItem("franck")))
+    const sessionDate = new Date(franck.session).getDay()
+    const todayDate = new Date().getDay()
 
-      console.log(await AsyncStorage.getItem("franck")); 
+    if( sessionDate == todayDate && decrypt(username) == decrypt(await AsyncStorage.getItem("username")) && decrypt(password) == decrypt(await AsyncStorage.getItem("password"))) {
+      await AsyncStorage.setItem("franck", JSON.stringify(franck));
       this.props.navigation.navigate("Main"); // On navigue vers la page principale
-      console.log("Switch page");
-    } catch {
-      this.setState({ disabledButton: false })
-      return this.errorMessage("Identifiant ou Mot de passe incorrect !"); // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
+      console.log("Switch page Fast");
+    } else {
+      try {
+        const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
+        const franck = await response.json(); // On récupère les données de pronote
+        await AsyncStorage.setItem("franck", JSON.stringify(franck));
+        await AsyncStorage.setItem("username", username);
+        await AsyncStorage.setItem("password", password);
+  
+        console.log(await AsyncStorage.getItem("franck")); 
+        this.props.navigation.navigate("Main"); // On navigue vers la page principale
+        console.log("Switch page Normal");
+      } catch {
+        this.setState({ disabledButton: false })
+        return this.errorMessage("Identifiant ou Mot de passe incorrect !"); // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
+      }
     }
+    
+    
   }
 
   getID = async () => {

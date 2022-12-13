@@ -32,7 +32,7 @@ export default class TopNav extends React.Component {
   render() {
     this.getFranck()
     if (this.state.franck != "") {
-      console.log("franck is full")
+      //console.log("franck is full")
       return(
     <View style={{ flex: 1, backgroundColor: '#8F5FC7' }}>
       <NavigationContainer independent={true}>
