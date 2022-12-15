@@ -45,17 +45,18 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   headerSubject: {
     position: "absolute",
-    left: 55,
+    left: 52,
     top: 37,
     color: "white",
     fontSize: 13,
   },
-  headerRoom: {
-    position: "absolute",
-    left: 120,
-    top: 37,
+  headerRoom: {  
     fontSize: 13,
     color: DEFAULT.accent,
+    // alignSelf: "flex-end",
+    // alignItems: 'flex-end',
+    // justifyContent: "flex-end",
+    
   },
   headerTime: {
     position: "absolute",
@@ -73,11 +74,13 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     marginTop: 20,
   },
   bodyList: {
+    position: "relative",
     width: width - 60,
-    height: 530,
+    height: 540,
     alignSelf: "center",
-    marginVertical: 40,
-    paddingVertical: 10,
+    //marginVertical: 40,
+    paddingVertical: 20,
+    
 
   },
   bodyTitle: {
@@ -88,43 +91,32 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     fontSize: 16,
     fontWeight: "bold",
   },
-  bodyCours: {
-    position: "absolute",
-    left: 20,
-    marginTop: 50,
-    paddingVertical: 10,
-    color: "white",
-    fontSize: 13,
-  },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   bodySubject: {
     color: "white",
     fontSize: 17,
-    padding: 10
+    paddingLeft: 10
   },
   bodyRoom: {
-    
+    color: DEFAULT.accent,
+    fontSize: 13,
+    paddingLeft: 10,
+
   },
   bodyTime: {
     color: DEFAULT.accent,
     fontSize: 13,
-    marginLeft: 225,
+    paddingLeft: width - 100,
     textAlign: "right",
+    transform: [{ translateY: -35 }, { translateX: -10 }],
+  },
+  separatorComponent: {
+    width: width - 60,
+    height: 3,
+    backgroundColor: DEFAULT.primary,
+  },
+  headerDynamicText: {
+    position: "relative",
+    width: (width - 60) / 2,
   },
   
 
