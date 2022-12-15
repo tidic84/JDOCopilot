@@ -4,7 +4,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { NavigationContainer } from "@react-navigation/native"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 
-
+import {DEFAULT} from "../themes/variables"
 //import tabs
 import Home from "./pages/home"
 import News from "./pages/news.js"
@@ -24,15 +24,15 @@ export default class BottomNav extends React.Component {
   
   render() {
     return(
-    <View style={{ flex: 1, backgroundColor: '#8F5FC7' }}>
+    <View style={{ flex: 1, backgroundColor: DEFAULT.primary }}>
       <NavigationContainer >
         <BottomBar.Navigator
             screenOptions={({ route }) => ({
                 tabBarActiveTintColor: "white",
                 tabBarInactiveTintColor: "#83698c",
                 tabBarStyle: {
-                    backgroundColor: "#4C3575",
-                    borderTopColor: "#4C3575",
+                    backgroundColor: DEFAULT.secondary,
+                    borderTopColor: DEFAULT.accent,
                     borderTopWidth: 1,
                     height: 60,
                     paddingTop: 5,
@@ -42,21 +42,28 @@ export default class BottomNav extends React.Component {
                 
                 },
                 
-                tabBarIcon: ({ focused, size, colour }) => {
+                tabBarIcon: ({ focused, size, color }) => {
                     let iconName;
+                    let iconColor;
 
+                    //set focused Icon color to DEFAULT.accent
                     if (route.name === "Accueil") {
                         iconName = focused ? "home" : "home-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "News") {
                         iconName = focused ? "book" : "book-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "Chat") {
                         iconName = focused ? "chatbox" : "chatbox-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "Year") {
                         iconName = focused ? "calendar" : "calendar-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "Params") {
                         iconName = focused ? "settings" : "settings-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
                     }
-                    return <Ionicons name={iconName} size={25} colour='#a128' />
+                    return <Ionicons name={iconName} size={25} color={iconColor} />
                 },
                 
                 
@@ -65,7 +72,7 @@ export default class BottomNav extends React.Component {
         
           <BottomBar.Screen name="Accueil" component={Home} options={{ title: 'Accueil', headerShown: false}} />
           <BottomBar.Screen name="News" component={News} options={{ title: 'Agenda', headerShown: false }} />
-          <BottomBar.Screen name="Chat" component={Chat} options={{ tabBarBadge: 3, tabBarBadgeStyle: { backgroundColor: '#d9be07', maxWidth: 10, maxHeight: 10, fontSize: 8 }, headerShown: false }} />
+          <BottomBar.Screen name="Chat" component={Chat} options={{ title: 'Chat', headerShown: false }} />
           <BottomBar.Screen name="Year" component={Year} options={{ title: 'Année', headerShown: false }} />
           <BottomBar.Screen name="Params" component={Param} options={{ title: 'Paramètres', headerShown: false }} />
         </BottomBar.Navigator>
