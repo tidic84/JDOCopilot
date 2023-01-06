@@ -26,7 +26,8 @@ export default class TopNav extends React.Component {
   }
   getFranck = async () => {
     const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))) // get the timetable from the storage
-    this.setState({ franck: franck.timetable})
+    this.setState({ franck: "franck.timetable"})
+
   }
     
   render() {
@@ -54,13 +55,13 @@ export default class TopNav extends React.Component {
                 
                 tabBarIcon: ({ focused, size, colour }) => {
                     let iconName;
-
-                    if (route.name === "EDT") {
+                    if (route.name === "PLAN") {
+                      iconName = focused ? "map" : "map-outline";
+                    }
+                    else if (route.name === "EDT") {
                         iconName = focused ? "albums" : "albums-outline";
                     } else if (route.name === "AS") {
                         iconName = focused ? "basketball" : "basketball-outline";
-                    } else if (route.name === "PLAN") {
-                        iconName = focused ? "map" : "map-outline";
                     }
                     return <Ionicons name={iconName} size={25} colour='#a128' />
                 },
@@ -74,13 +75,6 @@ export default class TopNav extends React.Component {
           <TopBar.Screen name="PLAN" component={Map} options={{headerShown: false, }} />
         </TopBar.Navigator>
       </NavigationContainer>
-
-      <View style={defaultCSS.container}>
-        <Text style={defaultCSS.text}>Cours: {this.state.franck[0].subject}</Text>
-        <Text style={defaultCSS.text}>Classe: {this.state.franck[0].room}</Text>
-        <Text style={defaultCSS.text}>{timeDifference(Date.now() + 3600000, Date.parse(this.state.franck[0].from))}</Text>
-      </View>
-      
     </View>
     
       )

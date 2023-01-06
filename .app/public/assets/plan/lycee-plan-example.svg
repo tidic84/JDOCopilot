@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="181.371mm"
+   height="213.42418mm"
+   viewBox="0 0 181.371 213.42418"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="lycee-plan-example.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-13.903225,-25.711293)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:5;stroke-dasharray:none;paint-order:normal"
+       d="m 79.306456,193.07097 v 45.06451 H 14.903225 V 26.711293 H 79.306456 V 177.00482 H 129.87097 V 26.711293 H 194.2742 V 238.13548 h -64.40323 v -45.06451 z"
+       id="path3597"
+       inkscape:label="Contour" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect115"
+       width="25.903225"
+       height="51.451611"
+       x="14.903225"
+       y="26.711292"
+       inkscape:label="Salle16" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect225"
+       width="25.903225"
+       height="51.451611"
+       x="14.903225"
+       y="80.035484"
+       inkscape:label="Salle15" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect253"
+       width="25.903225"
+       height="51.451611"
+       x="14.903225"
+       y="133.35968"
+       inkscape:label="Salle14" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect257"
+       width="25.903225"
+       height="51.451611"
+       x="14.903225"
+       y="186.68387"
+       inkscape:label="Salle13" />
+    <rect
+       style="fill:#000000;stroke-width:0.186217"
+       id="rect5533"
+       width="25.903225"
+       height="38.40435"
+       x="53.403229"
+       y="53.180145"
+       inkscape:label="Salle12" />
+    <rect
+       style="fill:#000000;stroke-width:0.186217"
+       id="rect5531"
+       width="25.903225"
+       height="38.40435"
+       x="53.403229"
+       y="94.580109"
+       inkscape:label="Salle11" />
+    <rect
+       style="fill:#000000;stroke-width:0.186217"
+       id="rect251"
+       width="25.903225"
+       height="38.40435"
+       x="53.403229"
+       y="135.98007"
+       inkscape:label="Salle10" />
+    <rect
+       style="fill:#000000;stroke-width:0.201719"
+       id="rect259"
+       width="25.903225"
+       height="45.064514"
+       x="53.403229"
+       y="193.07097"
+       inkscape:label="Salle09" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect275"
+       width="25.903225"
+       height="51.451611"
+       x="168.37097"
+       y="186.68387"
+       inkscape:label="Salle08" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect271"
+       width="25.903225"
+       height="51.451611"
+       x="168.37097"
+       y="133.35968"
+       inkscape:label="Salle07" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect267"
+       width="25.903225"
+       height="51.451611"
+       x="168.37097"
+       y="80.035484"
+       inkscape:label="Salle06" />
+    <rect
+       style="fill:#000000;stroke-width:0.21554"
+       id="rect263"
+       width="25.903225"
+       height="51.451611"
+       x="168.37097"
+       y="26.711292"
+       inkscape:label="Salle05" />
+    <rect
+       style="fill:#000000;stroke-width:0.201718"
+       id="rect273"
+       width="25.903225"
+       height="45.06451"
+       x="129.87097"
+       y="193.07097"
+       inkscape:label="Salle04" />
+    <rect
+       style="fill:#000000;stroke-width:0.186217"
+       id="rect5535"
+       width="25.903225"
+       height="38.40435"
+       x="129.87097"
+       y="135.98007"
+       inkscape:label="Salle03" />
+    <rect
+       style="fill:#000000;stroke-width:0.186217"
+       id="rect5537"
+       width="25.903225"
+       height="38.40435"
+       x="129.87097"
+       y="94.580109"
+       inkscape:label="Salle02" />
+    <rect
+       style="fill:#000000;stroke-width:0.186217"
+       id="rect5539"
+       width="25.903225"
+       height="38.40435"
+       x="129.87097"
+       y="53.180145"
+       inkscape:label="Salle01" />
+  </g>
+</svg>

@@ -67,6 +67,7 @@ export default class Login extends React.Component {
     if( sessionDate == todayDate && decrypt(username) == decrypt(await AsyncStorage.getItem("username")) && decrypt(password) == decrypt(await AsyncStorage.getItem("password"))) {
       await AsyncStorage.setItem("franck", JSON.stringify(franck));
       this.props.navigation.navigate("Main"); // On navigue vers la page principale
+      console.log(await AsyncStorage.getItem("franck")); 
       console.log("Switch page Fast");
     } else {
       try {
