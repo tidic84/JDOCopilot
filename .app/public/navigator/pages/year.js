@@ -2,20 +2,23 @@ import React from "react";
 import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
 import {defaultCSS} from "../../stylesheets/_default/year"
 import { timeDifference } from "../../util/relativeDays";
-let dataReady = false
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default class Year extends React.Component {
-    getHolidays = async () => {
-        if (!dataReady) {
-            const holidays = await (await fetch("https://jdocopilot-api.herokuapp.com/holidays")).json();
-            this.setState({ holidays: holidays });
-            dataReady = true;
-        }
 
+    state = {
+        holidays: ""
+      }
+    getFranck = async () => {
+        const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))) // get the timetable from the storage
+        this.setState({ holidays: franck.holidays})
+
+    
     }
+
     render() {
-        this.getHolidays();
-        if(dataReady){
+        this.getFranck();
+        if(this.state.holidays != ""){
             return (
                 <View style={defaultCSS.container}>
                     <Text style={defaultCSS.text}>Vacances</Text>
