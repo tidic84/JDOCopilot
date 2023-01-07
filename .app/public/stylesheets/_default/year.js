@@ -10,23 +10,44 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     backgroundColor: DEFAULT.primary,
     alignItems: "center",
   },
-  container: {
+  content: {
     flex: 1,
-    backgroundColor: DEFAULT.secondary,
+    backgroundColor: DEFAULT.primary,
     alignItems: "center",
-    height: 50,
     width: width / 1.2,
-    borderRadius: 20,
     alignSelf: "center",
-
   },
   text: {
-    color: DEFAULT.primary,
+    color: DEFAULT.text,
+    textAlign: "center",
+    top: 370,
+  },
+  text1: {
+    color: DEFAULT.text,
     fontSize: 20,
     textAlign: "center",
-    fontFamily: "Roboto",
     fontWeight: "bold",
-    top: 20,
-
+  },
+  text2: {
+    color: DEFAULT.text,
+    fontSize: 20,
+    textAlign: "center",
+    fontWeight: "regular",
+  },
+  text3: {
+    color: DEFAULT.text,
+    fontSize: 20,
+    textAlign: "center",
+    fontWeight: "regular",
+  },
+  text4: {
+    color: DEFAULT.text,
+    fontSize: 20,
+    textAlign: "center",
+    fontWeight: "regular",
+  },
+  num: {
+    color: DEFAULT.accent,
+    fontWeight: "bold",
   },
 });

@@ -5,25 +5,26 @@ import { timeDifference } from "../../util/relativeDays";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 let dataReady = false
 import * as Progress from 'react-native-progress';
+import { DEFAULT } from "../../themes/variables";
+import * as NavigationBar from 'expo-navigation-bar';
 
-const now = new Date();
-// console.log(Date.parse(now));
-var j1 = '2022-10-01T00:56:00.000Z'
-j1 = new Date(j1).getTime();
-var j2 = Date.now();
-j2 = new Date(j2).getTime();
-// console.log(j2);
-// console.log(j1);
+//setup
+const j1 = new Date("2022-09-01").getTime();
+const now = Date.now();
 
-    var difference = j2 - j1;
+//calcul des jours passés
+const elapsed = now - j1;
+const conv = Math.round((elapsed/1000/60/60/24) * 100 ) / 100
+
+//calcul du taux/%
+const taux = Math.round((conv / 310) * 100) /100
+const percent = Math.round((taux * 100) * 100) / 100
+
+
+
     
-    // console.log(difference);
-    var daysDifference = Math.floor(difference/1000/60/60/24);
-    difference -= daysDifference*1000*60*60*24
 
-    // console.log(daysDifference);
 
-    var yearPercentage = daysDifference / 365;
 export default class Year extends React.Component {
     getHolidays = async () => {
         if (!dataReady) {
@@ -39,17 +40,28 @@ export default class Year extends React.Component {
 
     render() {
         this.getHolidays();
-        
+    
+        NavigationBar.setVisibilityAsync("hidden");
+        NavigationBar.setBehaviorAsync('overlay-swipe');
+        NavigationBar.setButtonStyleAsync("light");
+        NavigationBar.setBackgroundColorAsync(DEFAULT.secondary);
         
         
         if(dataReady){
             return (
+                
                 <View style={defaultCSS.container}>
-                    <Text style={defaultCSS.text}>Les prochaines vacances </Text>
-                    <Text style={defaultCSS.text}>sont {timeDifference(Date.now() + 3600000, new Date(this.state.franck[0].dateStart).getTime())}</Text>
-                    <Text style={defaultCSS.text}>courage pour tenir jusqu'aux {this.state.franck[0].title} !</Text>
-                    <Progress.Circle progress={yearPercentage} size={250} color={'#FFF'}/>
-                    <Image source={require("../.././assets/images/logoRond.png")} style={{width: 190, height: 190, top: -220}} />
+                    <View style={defaultCSS.content}>
+                        <View style={defaultCSS.text}>
+                            <Text style={defaultCSS.text1}>Les prochaines vacances </Text>
+                            <Text style={defaultCSS.text2}>sont {timeDifference(Date.now() + 3600000, new Date(this.state.franck[0].dateStart).getTime())}, </Text>
+                            <Text style={defaultCSS.text3}>courage :</Text>
+                            <Text style={defaultCSS.text4}>Déjà <Text style={defaultCSS.num}>{percent}</Text>% de l'année écoulée !</Text>
+                        </View>
+                    
+                    <Progress.Circle progress={taux} size={250} color={DEFAULT.accent} style={{ top: -50, alignSelf: 'center'}}/>
+                    <Image source={require("../.././assets/images/logoRond.png")} style={{width: 190, height: 190, top: -270, alignSelf: 'center'}} />
+                    </View>
                 </View>
             );
         } else {
