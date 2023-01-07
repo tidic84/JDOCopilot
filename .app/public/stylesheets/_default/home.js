@@ -140,10 +140,15 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     marginVertical: 300,
 
   },
-  waitText: {
+  waitTextT: {
     color: "white",
     fontSize: 16,
     marginTop: 250,
+  },
+  waitTextB: {
+    color: "white",
+    fontSize: 16,
+    marginTop: 88,
   },
 
 

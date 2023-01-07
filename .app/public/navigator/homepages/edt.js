@@ -11,14 +11,9 @@ import { defaultCSS } from "../../stylesheets/_default/home.js";
 import { timeDifference, duration } from "../../util/relativeDaysWidget";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Ionicons } from "@expo/vector-icons";
-import * as Progress from "react-native-progress";
-import { cours } from "../../components/cours";
-import Refresh from "../../components/refresh.js";
 import { DEFAULT } from "../../themes/variables.js";
-import { Button } from "react-native-web";
 import { FlashList } from "@shopify/flash-list";
 import switchNames from "../../../private/subject.js";
-import Duration from "../../../private/duration.js";
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
@@ -30,10 +25,12 @@ export default class Edt extends React.Component {
   getFranck = async () => {
     const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))); // get the timetable from the storage
     this.setState({ franck: franck.timetable });
+    //console.log(this.state.franck);
   };
 
   render() {
     this.getFranck();
+    
     if (this.state.franck != "") {
       // recuperation du nombre de cours
       const franck = this.state.franck;
@@ -137,17 +134,30 @@ export default class Edt extends React.Component {
           </View>
         </>
       );
-    } else if (this.state.franck != "") {
+
+    } else if (this.state.franck == "") {
       return (
         <SafeAreaView style={defaultCSS.container}>
-          <Text style={defaultCSS.waitText}>
-            On va chercher tes données, attends nous un instant !
+          <Text style={defaultCSS.waitTextT}>
+            Franck est parti chercher tes données,
+          </Text>
+          <Text style={defaultCSS.waitTextB}>
+             attends nous un instant !
           </Text>
           <ActivityIndicator
             size="large"
             color={DEFAULT.accent}
             style={defaultCSS.wait}
           />
+        </SafeAreaView>
+      );
+    } else if (this.state.franck == []) {
+      return (
+        <SafeAreaView style={defaultCSS.container}>
+          <Text style={defaultCSS.waitTextT}>
+            Pas de cours avant piouuuuu
+          </Text>
+          
         </SafeAreaView>
       );
     }
