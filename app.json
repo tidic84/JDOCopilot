@@ -19,17 +19,23 @@
     ],
     "ios": {
       "supportsTablet": false,
-      "userInterfaceStyle": "automatic"
+      "userInterfaceStyle": "automatic",
+      "bundleIdentifier": "com.albatross.jdocopilot"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./.app/public/assets/expo/adaptive-icon.png",
         "backgroundColor": "#000000"
-      }
+      },
+      "package": "com.albatross.jdocopilot"
     },
     "web": {
       "favicon": "./.app/public/assets/expo/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "50ab60ad-16aa-4518-be79-ac09b2e02585"
+      }
     }
   }
-  
 }
