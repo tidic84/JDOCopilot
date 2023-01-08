@@ -5,7 +5,7 @@ import * as React from 'react';
 
 import * as NavigationBar from 'expo-navigation-bar';
 
-import Login from "./.app/public/auth/login.js"
+import Login from "./.app/public/auth/devlogin.js"
 import BottomNav from "./.app/public/navigator/navbar.js"
 const AppNavigator = createStackNavigator(
   {

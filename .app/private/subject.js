@@ -2,7 +2,7 @@ function switchNames(from, to) {
   //console.log('switchName called')
   if (from == "NUMERIQUE SC.INFORM.") {
     to.push("N.S.I. ");
-  } else if (from == "ARTS-PLASTIQUES OPTIONS") {
+  } else if (from == "ARTS-PLASTIQUES OPTION") {
     to.push("Arts-Plastiques (O)");
   } else if (from == "MATHS") {
     to.push("Maths");
@@ -22,7 +22,7 @@ function switchNames(from, to) {
     to.push("Allemand");
   } else if (from == "ENSEIGNEMENT SCIENTIFIQUE") {
     to.push("E.S.");
-  } else if (from == "AP FRANCAIS") {
+  } else if (from == "FRANCAIS") {
     to.push("Français");
   } else if (from == "ENS. MORAL & CIVIQUE") {
     to.push("E.M.C.");
@@ -44,7 +44,9 @@ function switchNames(from, to) {
     to.push("repas de noël")
   } else if (from == 'AP FRANCAIS') {
     to.push("Français (ap)")
-  } 
+  } else {
+    to.push(from);
+  }
 }
 
 export default switchNames;
