@@ -1,69 +1,63 @@
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
 import * as React from 'react';
 import { NavigationContainer } from "@react-navigation/native"
 import { Ionicons } from '@expo/vector-icons'
 import { View, Text } from "react-native";
-import * as NavigationBar from 'expo-navigation-bar';
-import {defaultCSS} from "../../stylesheets/_default/home.js"
-import { timeDifference } from "../../util/relativeDays";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import Edt from "../homepages/edt.js"
 import As from "../homepages/as.js"
 import Map from "../homepages/map.js"
 
-
+import {DEFAULT} from "../../themes/variables"
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
+import { Dimensions } from 'react-native';
+const width = Dimensions.get('window').width;
 
 const TopBar = createMaterialTopTabNavigator();
 
 export default class TopNav extends React.Component {
 
-  state = {
-    franck: ""
-  }
-  getFranck = async () => {
-    const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))) // get the timetable from the storage
-    this.setState({ franck: "franck.timetable"})
-
-  }
-    
   render() {
-    this.getFranck()
-    if (this.state.franck != "") {
-      //console.log("franck is full")
+
       return(
-    <View style={{ flex: 1, backgroundColor: '#8F5FC7' }}>
+    <View style={{ flex: 1, backgroundColor: DEFAULT.primary }}>
       <NavigationContainer independent={true}>
         <TopBar.Navigator
             screenOptions={({ route }) => ({
                 tabBarShowLabel: false,
-                tabBarIndicator: () => {'white'},
+                tabBarIndicatorStyle: {
+                  backgroundColor: DEFAULT.accent,
+                  height: 3,
+                  borderRadius: 10,
+                  width: width / 3,
+                },
                 tabBarStyle: {
-                    backgroundColor: "#4C3575",
-                    borderTopColor: "#4C3575",
+                    backgroundColor: DEFAULT.secondary,
+                    borderBottomColor: DEFAULT.accent,
                     borderTopWidth: 1,
                     height: 60,
                     paddingTop: 5,
                     paddingBottom: 5,
-                    borderBottomRightRadius: 5,
-                    borderBottomLeftRadius: 5,
+                    borderBottomRightRadius: 20,
+                    borderBottomLeftRadius: 20,
                 
                 },
                 
-                tabBarIcon: ({ focused, size, colour }) => {
+                tabBarIcon: ({ focused, size, color }) => {
                     let iconName;
-                    if (route.name === "PLAN") {
-                      iconName = focused ? "map" : "map-outline";
-                    }
-                    else if (route.name === "EDT") {
-                        iconName = focused ? "albums" : "albums-outline";
+                    let iconColor;
+
+                    if (route.name === "EDT") {
+                        iconName = focused ? "albums-outline" : "albums-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "AS") {
-                        iconName = focused ? "basketball" : "basketball-outline";
+                        iconName = focused ? "basketball-outline" : "basketball-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
+                    } else if (route.name === "PLAN") {
+                        iconName = focused ? "map-outline" : "map-outline";
+                        iconColor = focused ? '#C87327' : 'grey';
                     }
-                    return <Ionicons name={iconName} size={25} colour='#a128' />
+                    return <Ionicons name={iconName} size={25} color='white' />
                 },
                 
                 
@@ -77,14 +71,6 @@ export default class TopNav extends React.Component {
       </NavigationContainer>
     </View>
     
-      )
-    }
-    else if (this.state.franck == "") {
-      return(
-        <View style={defaultCSS.container}>
-          <Text>Fetching data, it may take a while</Text>
-        </View>
-      );
-    }
-  }
+  )
+  } 
 }

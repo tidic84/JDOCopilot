@@ -69,7 +69,7 @@ export function timeDifference(current, previous) {
         }
     }
     else {
-        return "Now"
+        return "trop tard"
     }
 
 }
