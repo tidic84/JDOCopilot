@@ -46,7 +46,7 @@ export default class Login extends React.Component {
     }
     let userN = this.state.name;
     userN = userN.slice(0, userN.indexOf('.'));
-    console.log('\x1b[36m%s\x1b[0m', `User ${userN} connected`);
+    console.log('\x1b[36m%s\x1b[0m', `User ${userN} is connecting`);
     this.errorMessage(`Bonjour, ${userN}`);
 
     const username = encrypt(this.state.name); // On encrypte le nom d'utilisateur

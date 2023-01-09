@@ -10,6 +10,7 @@ import {
 import { defaultCSS } from "../../stylesheets/_default/as.js";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { DEFAULT } from "../../themes/variables.js";
+import { Ionicons } from "@expo/vector-icons";
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
@@ -20,7 +21,7 @@ export default class Edt extends React.Component {
   // on lui demande de recupérer les données de l'utilisateur
   getFranck = async () => {
     const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))); // get the timetable from the storage
-    this.setState({ franck: franck.homeworks });
+    this.setState({ franck: franck.homeworks }); //on recup spécialement les devoirs
     //console.log(this.state.franck);
   };
 
@@ -31,6 +32,30 @@ export default class Edt extends React.Component {
       return (
         <>
           <View style={defaultCSS.container}>
+            {/**header**/}
+            <View style={defaultCSS.header}>
+              
+              {/* recatangle orange sur la gauche */}
+              <View style={defaultCSS.fancyLeft}></View>
+              {/* icone */}
+              <Ionicons
+                name="md-calendar"
+                size={24}
+                color="white"
+                style={defaultCSS.headerIcon}
+              />
+              {/* titre, cour, salle, time left */}
+              <Text style={defaultCSS.headerTitle}>Prochaines évals</Text>
+              <View style={defaultCSS.headerDynamicText}>
+                <Text style={defaultCSS.headerSubject}> 1
+                  <Text style={defaultCSS.headerRoom}>  2</Text>
+                </Text>
+                
+              </View>
+              <Text style={defaultCSS.headerTime}>3 </Text>
+              
+              
+            </View>
           </View>
         </>
       );
@@ -49,6 +74,15 @@ export default class Edt extends React.Component {
             color={DEFAULT.accent}
             style={defaultCSS.wait}
           />
+        </SafeAreaView>
+      );
+    } else if (this.state.franck == []) {
+      return (
+        <SafeAreaView style={defaultCSS.container}>
+          <Text style={defaultCSS.waitTextT}>
+            Pas de cours avant piouuuuu
+          </Text>
+          
         </SafeAreaView>
       );
     }

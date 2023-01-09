@@ -51,7 +51,7 @@ export default class TopNav extends React.Component {
                         iconName = focused ? "albums-outline" : "albums-outline";
                         iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "AS") {
-                        iconName = focused ? "basketball-outline" : "basketball-outline";
+                        iconName = focused ? "folder-open-outline" : "folder-open-outline";
                         iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "PLAN") {
                         iconName = focused ? "map-outline" : "map-outline";
