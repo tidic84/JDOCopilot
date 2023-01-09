@@ -127,10 +127,19 @@ export default class Edt extends React.Component {
       do {
         var x = new Date(j1[compteurB].from);
         var z = new Date(j1[compteurB].to)
-        y = new Date(x.getTime() + 55 * 60000).getUTCMinutes()
-        o =  new Date(x.getTime() + 55 * 60000).getUTCHours()
+        
         prettierNums(y, endM)
         prettierNums(o, endH)
+
+        if((z - x) == 7200000) {
+          let y = new Date(x.getTime() + 110 * 60000).getUTCMinutes()
+          let o =  new Date(x.getTime() + 110 * 60000).getUTCHours()
+        } else if ((z-x) == 3600000) {
+          let y = new Date(x.getTime() + 55 * 60000).getUTCMinutes()
+          let o =  new Date(x.getTime() + 55 * 60000).getUTCHours()
+        }
+
+
         // if (salle != null) {
         //   salle = salle
         // } else if (salle == null) {
