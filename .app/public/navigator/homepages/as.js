@@ -50,10 +50,12 @@ export default class Edt extends React.Component {
                 <Text style={defaultCSS.headerSubject}> 1
                   <Text style={defaultCSS.headerRoom}>  2</Text>
                 </Text>
+                <Text style={defaultCSS.headerSubject}> 3
+                  <Text style={defaultCSS.headerRoom}>  4</Text>
+                </Text>
                 
-              </View>
-              <Text style={defaultCSS.headerTime}>3 </Text>
-              
+                
+              </View>           
               
             </View>
           </View>

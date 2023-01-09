@@ -12,7 +12,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   header: {
     width: width - 60,
-    height: 130,
+    height: 95,
     backgroundColor: DEFAULT.secondary,
     borderRadius: 15,
     alignSelf: "center",
@@ -20,7 +20,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   fancyLeft: {
     width: 10,
-    height: 100,
+    height: 68,
     backgroundColor: DEFAULT.accent,
     borderTopRightRadius: 15,
     borderBottomRightRadius: 15,
@@ -32,21 +32,22 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   headerIcon: {
     position: "absolute",
-    left: 20,
-    top: 23,
+    right: 20,
+    top: 35,
   },
   headerTitle: {
     position: "absolute",
-    left: 55,
-    top: 15,
+    left: 30,
+    top: 8,
     color: "white",
-    fontWeight: 600,
+    fontWeight: "bold",
     fontSize: 20,
   },
   headerSubject: {
-    position: "absolute",
-    left: 52,
-    top: 37,
+    position: "relative",
+    //paddingTop: 35,
+    left: 26,
+    top: 47,
     color: "white",
     fontSize: 13,
   },
@@ -57,6 +58,9 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     // alignItems: 'flex-end',
     // justifyContent: "flex-end",
     
+  },
+  headerDynamicText: {
+    position: "relative",
   },
   headerTime: {
     position: "absolute",
