@@ -129,7 +129,7 @@ export default class Edt extends React.Component {
         switchRooms(j1[compteurA].room, salles)
         prettierNums(f.getUTCHours(), fromH)
         prettierNums(f.getUTCMinutes(), fromM)
-        
+
         //console.log(j1[compteurA].subject)
         compteurA++; // on incremente le compteur
       } while (compteurA < j1.length);
@@ -162,12 +162,14 @@ export default class Edt extends React.Component {
         } else if ((z-x) == 3600000) {
            y = new Date(x.getTime() + 55 * 60000).getUTCMinutes()
            o =  new Date(x.getTime() + 55 * 60000).getUTCHours()
+        } else {
         }
 
-        //console.log(y, o)
+        // console.log(y, o)
         prettierNums(y, endM)
         prettierNums(o, endH)
-        //console.log(endM, endH)
+        // console.log(endM, endH)
+
         // if (salle != null) {
         //   salle = salle
         // } else if (salle == null) {
@@ -192,8 +194,8 @@ export default class Edt extends React.Component {
           fromMin: fromM[compteurB],
           toHour: toH[compteurB],
           toMin: toM[compteurB],
-          endM: new Date(x.getTime() + 110 * 60000).getUTCMinutes(),
-          endH: new Date(x.getTime() + 110 * 60000).getUTCHours(),
+          endM: endM[compteurB],
+          endH: endH[compteurB],
           prof: franck[compteurB].teacher,
         };
 
