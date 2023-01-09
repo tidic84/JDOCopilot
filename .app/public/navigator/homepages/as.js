@@ -11,6 +11,7 @@ import { defaultCSS } from "../../stylesheets/_default/as.js";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { DEFAULT } from "../../themes/variables.js";
 import { Ionicons } from "@expo/vector-icons";
+import switchNames from "../../../private/subject.js";
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
@@ -21,7 +22,7 @@ export default class Edt extends React.Component {
   // on lui demande de recupérer les données de l'utilisateur
   getFranck = async () => {
     const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))); // get the timetable from the storage
-    this.setState({ franck: franck.homeworks }); //on recup spécialement les devoirs
+    this.setState({ franck: franck }); //on recup spécialement les devoirs
     //console.log(this.state.franck);
   };
 
@@ -29,6 +30,48 @@ export default class Edt extends React.Component {
     this.getFranck();
     
     if (this.state.franck != "") {
+
+      //récupération des devoirs
+      let franck = this.state.franck.homeworks
+      let evaluations = this.state.franck.evals
+      let devoirs = []
+      let sujet = []
+      let compteurA = 0
+
+      do {
+        switchNames(franck[compteurA].subject, sujet)
+
+        let dico = {
+          sujet: sujet[compteurA],
+          description: franck[compteurA].description,
+          pour: new Date(franck[compteurA].for).getTime(),
+          givenAt: new Date(franck[compteurA].givenAt).getTime(),
+          fait: franck[compteurA].done
+        }
+
+        devoirs.push(dico)
+        compteurA ++
+      } while (compteurA < franck.length)
+
+      //console.log(devoirs)
+
+      //récupération des 2 prochaines évals:
+      let evals = []
+      let mat = []
+      let compteurB = 0
+
+      if(evaluations === []){
+        evals.push( `Pas d'évaluations en vue, capitaîne`)
+      } else {
+        do {
+          
+          compteurB ++
+        } while (compteurB < 2)
+      }
+      
+
+
+
       return (
         <>
           <View style={defaultCSS.container}>
@@ -53,10 +96,18 @@ export default class Edt extends React.Component {
                 <Text style={defaultCSS.headerSubject}> 3
                   <Text style={defaultCSS.headerRoom}>  4</Text>
                 </Text>
-                
-                
               </View>           
-              
+            </View>
+
+            {/**body**/}
+            <View style={defaultCSS.bodyTitle}>
+              <Text style={defaultCSS.bodyTextIcon} >Devoirs :</Text>
+              <Ionicons 
+                name="funnel-outline"
+                size={24}
+                color="white"
+                style={defaultCSS.bodyTitleIcon}
+              />
             </View>
           </View>
         </>
@@ -93,7 +144,7 @@ export default class Edt extends React.Component {
 
 
 //let devSubjects = []
-//     // do {
+//      do {
         
 //        if (typeof franckBackPack[compteurA] === 'undefined') {
 //          devoirs.push(" ")
@@ -113,3 +164,25 @@ export default class Edt extends React.Component {
       //console.log(devoirs)
 
 //      let ew = [{"desc": "Ex 13 et 12 feuille", "for": 10, "sujet": ["Maths", "Histoire-Géographie", "Français"]}, {"desc": "Connaiître  l'essentiel du document de géographie : ( 2. Comment s'organise l'espace à l'intérieur des métropoles françaises a, b, c). Pensez à présenter en quelques minutes la métropole choisie ( sur atrium, site, classe, documents) car seuls deux élèves l'ont réalisé.", "for": 10, "sujet": ["Maths", "Histoire-Géographie", "Français"]}, {"desc": "Travail à faire avant : introduction à un commentaire pour l'extrait de la LL2 ATTENTION : 3 élèves seront interrogés à l’oral pour la lecture de ce texte", "for": 12, "sujet": ["Maths", "Histoire-Géographie", "Français"]}]
+
+let ew = [
+    {
+        "description": "Ex 13 et 12 feuille",
+        "fait": true,
+        "givenAt": 1672963200000,
+        "pour": 1673308800000,
+        "sujet": "Maths"
+    }, {
+        "description": "Connaiître  l'essentiel du document de géographie : ( 2. Comment s'organise l'espace à l'intérieur des métropoles françaises a, b, c). Pensez à présenter en quelques minutes la métropole choisie ( sur atrium, site, classe, documents) car seuls deux élèves l'ont réalisé.",
+        "fait": true,
+        "givenAt": 1673049600000,
+        "pour": 1673308800000,
+        "sujet": "Histoire-Géographie"
+    }, {
+        "description": "Travail à faire avant : introduction à un commentaire pour l’extrait de la LL2 ATTENTION : 3 élèves seront interrogés à l’oral pour la lecture de ce texte",
+        "fait": false,
+        "givenAt": 1673222400000,
+        "pour": 1673481600000,
+        "sujet": "Français"
+    }
+]
