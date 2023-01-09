@@ -18,6 +18,7 @@ import switchNames from "../../../private/subject.js";
 import EdtDropDown from '../../components/edtDropDown.js';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import switchRooms from '../../../private/room.js';
+import prettierNums from '../../../private/duration';
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
@@ -41,20 +42,6 @@ export default class Edt extends React.Component {
   
   render() {
 
-    let data = [
-      {
-          id: 1,
-          title: "Aujourd'hui",
-      },
-      {
-          id: 2,
-          title: "Demain",
-      },
-      {
-          id: 3,
-          title: "Après-demain",
-      },
-  ];
 
     this.getFranck();
    
@@ -102,15 +89,31 @@ export default class Edt extends React.Component {
       var salles = []; // cet Array va contenir les nouvelles salles
       let DATA = []; // cet Array va contenir le dictionnaire final pour le jour meme
       let DATA1 = []; // cet Array va contenir le dictionnaire final pour le jour suivant
+      
+      let fromH = []
+      let fromM = []
+      let toH = []
+      let toM = []
 
       do {
+        
+        var f = new Date(j1[compteurA].from);
+        var t = new Date(j1[compteurA].to)
+
+        
+
+
         //switchNames(franck[compteurA].subject, cours); // on appelle la fonction qui va remplacer les noms
         switchNames(j1[compteurA].subject, cours)
         switchRooms(j1[compteurA].room, salles)
+        prettierNums(f.getUTCHours(), fromH)
+        prettierNums(f.getUTCMinutes(), fromM)
+        prettierNums(t.getUTCHours(), toH)
+        prettierNums(t.getUTCMinutes(), toM)
         //console.log(j1[compteurA].subject)
         compteurA++; // on incremente le compteur
       } while (compteurA < j1.length);
-
+      
       do {
         //switchNames(franck[compteurA].subject, cours); // on appelle la fonction qui va remplacer les noms
         switchNames(j2[compteurD].subject, cours)
@@ -124,63 +127,48 @@ export default class Edt extends React.Component {
       // on met tout dans un dictionnaire pour pouvoir tout afficher
       
       do {
+        var x = new Date(j1[compteurB].from);
+        var z = new Date(j1[compteurB].to)
         
-        var f = new Date(j1[compteurB].from);
-        var t = new Date(j1[compteurB].to)
         // if (salle != null) {
         //   salle = salle
         // } else if (salle == null) {
         //   salle = "dehors :)"
         // }
-        let dico = {
+        let dico1h = {
           subject: cours[compteurB],
           room: salles[compteurB], //remplacer par salles[compteurB] quand la fonction sera faite
-          fromH: f.getUTCHours(),
-          fromM: f.getUTCMinutes(),
-          toH: t.getUTCHours(),
-          toM: t.getUTCMinutes(),
+          fromHour: fromH[compteurB],
+          fromMin: fromM[compteurB],
+          toHour: toH[compteurB],
+          toMin: toM[compteurB],
+          endM: new Date(x.getTime() + 55 * 60000).getUTCMinutes(),
+          endH: new Date(x.getTime() + 55 * 60000).getUTCHours()
         };
-        DATA.push(dico);
+        let dico2h = {
+          subject: cours[compteurB],
+          room: salles[compteurB], //remplacer par salles[compteurB] quand la fonction sera faite
+          fromHour: fromH[compteurB],
+          fromMin: fromM[compteurB],
+          toHour: toH[compteurB],
+          toMin: toM[compteurB],
+          endM: new Date(x.getTime() + 110 * 60000).getUTCMinutes(),
+          endH: new Date(x.getTime() + 110 * 60000).getUTCHours()
+        };
+
+        if((z - x) == 7200000) {
+          DATA.push(dico2h)
+        } else if ((z-x) == 3600000) {
+          DATA.push(dico1h)
+        }
+        
         compteurB++;
       } while (compteurB < j1.length );
 
-      do {
-        
-        //console.log(j2[compteurC])
-        var f = new Date(j2[compteurC].from);
-        var t = new Date(j2[compteurC].to)
-        // if (salle != null) {
-        //   salle = salle
-        // } else if (salle == null) {
-        //   salle = "dehors :)"
-        // }
-        let dico = {
-          subject: cours[compteurC],
-          room: salles[compteurC], //remplacer par salles[compteurB] quand la fonction sera faite
-          fromH: f.getUTCHours(),
-          fromM: f.getUTCMinutes(),
-          toH: t.getUTCHours(),
-          toM: t.getUTCMinutes(),
-        };
-        DATA1.push(dico);
-        compteurC++;
-      } while (compteurC < j2.length );
-
-      //console.log(DATA);
+      
 
       //pour pouvoir switch:
-      let n = DATA
       
-      const Hook = ({render}) => {
-        const [selectedItem, setSelectedItem] = useState(null)
-
-        return render({selectedItem, setSelectedItem})
-      }
-
-        //const [selectedItem, setSelectedItem] = useState(null)
-        const onSelect = (item) => {
-          setSelectedItem(item)
-        }
       
       
       return (
@@ -225,24 +213,26 @@ export default class Edt extends React.Component {
               )
             }} /> */}
             
-            <TouchableOpacity style={defaultCSS.bodyTitleContainer}
+            {/*<TouchableOpacity style={defaultCSS.bodyTitleContainer}
                               onPress={() => n = DATA1}
             >
               <Text style={defaultCSS.bodyTitle}>Aujourd'hui :</Text>
-            </TouchableOpacity>
-              
+            </TouchableOpacity>*/}
+              <View style={defaultCSS.bodyTitleContainer}>
+                <Text style={defaultCSS.bodyTitle}>Aujourd'hui :</Text>
+              </View>
               
               {/* liste des prochains cours */}
               <View style={defaultCSS.bodyList}>
                 <FlashList
-                  data={n}
+                  data={DATA}
                   renderItem={({ item }) => (<View >
                                                     <Text >  </Text>
                                                     <Text >   </Text>
                                                     <Text style={defaultCSS.bodySubject}>{item.subject}, </Text>
                                                     <Text style={defaultCSS.bodyRoom}>{item.room}</Text>
-                                                    <Text style={defaultCSS.bodyTime}>{item.fromH} : {item.fromM}</Text>
-                                                    <Text style={defaultCSS.bodyTime}>{item.toH} : {item.toM}</Text>
+                                                    <Text style={defaultCSS.bodyTime}>{item.fromHour} : {item.fromMin}</Text>
+                                                    <Text style={defaultCSS.bodyTime}>{item.endH} : {item.endM}</Text>
                                                     
                                             </View>)}
                   estimatedItemSize={200}

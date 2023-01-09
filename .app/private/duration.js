@@ -1,4 +1,4 @@
-function Duration(from, to) {
+function prettierNums(from, to) {
     //console.log('switchName called')
     if (from == "5") {
       to.push("05");
@@ -20,7 +20,9 @@ function Duration(from, to) {
       to.push("08");
     } else if (from == "9") {
       to.push("09");
-    } 
+    } else {
+      to.push(from)
+    }
   }
   
-  export default Duration;
+  export default prettierNums;

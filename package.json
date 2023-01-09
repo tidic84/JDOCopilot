@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
+    "gitpodi": "npm install --legacy-peer-deps && sudo apt-get update && sudo apt-get install android-sdk -y && npx expo start --tunnel",
     "start": "expo start",
     "st": "expo start --tunnel",
     "i": "npm install --legacy-peer-deps",
-    "gitpodi": "npm install --legacy-peer-deps && sudo apt-get update && sudo apt-get install android-sdk -y && npx expo start --tunnel",
     "update": "git pull && npm install --legacy-peer-deps"
   },
   "dependencies": {
