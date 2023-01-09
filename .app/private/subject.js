@@ -44,6 +44,10 @@ function switchNames(from, to) {
     to.push("repas de noël")
   } else if (from == 'AP FRANCAIS') {
     to.push("Français (ap)")
+  } else if(from == 'null') {
+    to.push(" ")
+  } else if(from == 'undefined') {
+    to.push(" ")
   } else {
     to.push(from);
   }

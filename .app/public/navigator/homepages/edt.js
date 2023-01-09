@@ -1,6 +1,7 @@
 // import modules
 import React from "react";
 import {
+  Alert,
   View,
   Text,
   ActivityIndicator,
@@ -15,6 +16,8 @@ import { FlashList } from "@shopify/flash-list";
 import switchNames from "../../../private/subject.js";
 import switchRooms from '../../../private/room.js';
 import prettierNums from '../../../private/duration';
+import { TouchableOpacity } from "react-native-gesture-handler";
+import * as NavigationBar from 'expo-navigation-bar';
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
@@ -36,11 +39,31 @@ export default class Edt extends React.Component {
 
 
   
+
+  
+
   render() {
 
-
+    //this.threeOptionAlertHandler()
     this.getFranck();
-   
+   function hideThisFuckingBar(){ 
+      NavigationBar.setVisibilityAsync("hidden");
+      NavigationBar.setBehaviorAsync('overlay-swipe');
+      NavigationBar.setButtonStyleAsync("light");
+    }
+
+    function actionOnRow(item) {
+      Alert.alert(
+        //title
+        'Infos',
+        //body
+        'Prof : ' + item.prof + '\n' ,
+        [
+          { text: 'Chouette', onPress: () => hideThisFuckingBar() },
+        ],
+        { cancelable: true }
+      );
+    }
 
     if (this.state.franck != "") {
       // recuperation du nombre de cours
@@ -50,6 +73,7 @@ export default class Edt extends React.Component {
       let datesToTest = []
       let j1 = []
       let j2 = []
+      let devoirs = []
 
       //modif chiantes pr la date
       let m = 0
@@ -91,6 +115,7 @@ export default class Edt extends React.Component {
       let toH = []
       let toM = []
 
+
       do {
         
         var f = new Date(j1[compteurA].from);
@@ -104,12 +129,11 @@ export default class Edt extends React.Component {
         switchRooms(j1[compteurA].room, salles)
         prettierNums(f.getUTCHours(), fromH)
         prettierNums(f.getUTCMinutes(), fromM)
-        prettierNums(t.getUTCHours(), toH)
-        prettierNums(t.getUTCMinutes(), toM)
+        
         //console.log(j1[compteurA].subject)
         compteurA++; // on incremente le compteur
       } while (compteurA < j1.length);
-      
+      //console.log(devoirs)
       do {
         //switchNames(franck[compteurA].subject, cours); // on appelle la fonction qui va remplacer les noms
         switchNames(j2[compteurD].subject, cours)
@@ -128,18 +152,22 @@ export default class Edt extends React.Component {
         var x = new Date(j1[compteurB].from);
         var z = new Date(j1[compteurB].to)
         
-        prettierNums(y, endM)
-        prettierNums(o, endH)
+        
+        let y = null
+        let o = null
 
         if((z - x) == 7200000) {
-          let y = new Date(x.getTime() + 110 * 60000).getUTCMinutes()
-          let o =  new Date(x.getTime() + 110 * 60000).getUTCHours()
+           y = new Date(x.getTime() + 110 * 60000).getUTCMinutes()
+           o =  new Date(x.getTime() + 110 * 60000).getUTCHours()
         } else if ((z-x) == 3600000) {
-          let y = new Date(x.getTime() + 55 * 60000).getUTCMinutes()
-          let o =  new Date(x.getTime() + 55 * 60000).getUTCHours()
+           y = new Date(x.getTime() + 55 * 60000).getUTCMinutes()
+           o =  new Date(x.getTime() + 55 * 60000).getUTCHours()
         }
 
-
+        //console.log(y, o)
+        prettierNums(y, endM)
+        prettierNums(o, endH)
+        //console.log(endM, endH)
         // if (salle != null) {
         //   salle = salle
         // } else if (salle == null) {
@@ -153,7 +181,9 @@ export default class Edt extends React.Component {
           toHour: toH[compteurB],
           toMin: toM[compteurB],
           endM: endM[compteurB],
-          endH: endH[compteurB]
+          endH: endH[compteurB],
+          prof: franck[compteurB].teacher,
+          
         };
         let dico2h = {
           subject: cours[compteurB],
@@ -163,8 +193,14 @@ export default class Edt extends React.Component {
           toHour: toH[compteurB],
           toMin: toM[compteurB],
           endM: new Date(x.getTime() + 110 * 60000).getUTCMinutes(),
-          endH: new Date(x.getTime() + 110 * 60000).getUTCHours()
+          endH: new Date(x.getTime() + 110 * 60000).getUTCHours(),
+          prof: franck[compteurB].teacher,
         };
+
+
+        
+        
+        
 
         if((z - x) == 7200000) {
           DATA.push(dico2h)
@@ -177,12 +213,13 @@ export default class Edt extends React.Component {
 
       
 
-      //pour pouvoir switch:
+      //alerte:
       
       
       
       return (
         <>
+        
           <View style={defaultCSS.container}>
             
             {/* prochain cour */}
@@ -236,7 +273,7 @@ export default class Edt extends React.Component {
               <View style={defaultCSS.bodyList}>
                 <FlashList
                   data={DATA}
-                  renderItem={({ item }) => (<View >
+                  renderItem={({ item }) => (<TouchableOpacity onPress={() => actionOnRow(item)}>
                                                     <Text >  </Text>
                                                     <Text >   </Text>
                                                     <Text style={defaultCSS.bodySubject}>{item.subject}, </Text>
@@ -244,7 +281,7 @@ export default class Edt extends React.Component {
                                                     <Text style={defaultCSS.bodyTime}>{item.fromHour} : {item.fromMin}</Text>
                                                     <Text style={defaultCSS.bodyTime}>{item.endH} : {item.endM}</Text>
                                                     
-                                            </View>)}
+                                            </TouchableOpacity>)}
                   estimatedItemSize={200}
                   ItemSeparatorComponent={() => (
                     <View style={defaultCSS.separatorComponent} />
@@ -285,5 +322,6 @@ export default class Edt extends React.Component {
         </SafeAreaView>
       );
     }
+    
   }
 }

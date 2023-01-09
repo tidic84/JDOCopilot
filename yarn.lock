@@ -11569,6 +11569,13 @@
   "resolved" "https://registry.npmjs.org/react-native-dropdown-picker/-/react-native-dropdown-picker-5.4.4.tgz"
   "version" "5.4.4"
 
+"react-native-expo-fancy-alerts@^2.1.1":
+  "integrity" "sha512-oaB1Eyca0EeAiCbM7xMwyxMOjJA4bhMZCLoGKHIYXu5ZQAIn/h281wT+0g3fpGurBXDwn6P5uMx18q7dFFoC2A=="
+  "resolved" "https://registry.npmjs.org/react-native-expo-fancy-alerts/-/react-native-expo-fancy-alerts-2.1.1.tgz"
+  "version" "2.1.1"
+  dependencies:
+    "prop-types" "^15.7.2"
+
 "react-native-gesture-handler@~2.5.0":
   "integrity" "sha512-djZdcprFf08PZC332D+AeG5wcGeAPhzfCJtB3otUgOgTlvjVXmg/SLFdPJSpzLBqkRAmrC77tM79QgKbuLxkfw=="
   "resolved" "https://registry.npmjs.org/react-native-gesture-handler/-/react-native-gesture-handler-2.5.0.tgz"
