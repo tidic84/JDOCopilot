@@ -1,22 +1,18 @@
 // import modules
-import DropDownPicker from 'react-native-dropdown-picker'
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   Text,
-  ScrollView,
   ActivityIndicator,
   SafeAreaView,
 } from "react-native";
 import { defaultCSS } from "../../stylesheets/_default/home.js";
-import { timeDifference, duration } from "../../util/relativeDaysWidget";
+import { timeDifference } from "../../util/relativeDaysWidget";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Ionicons } from "@expo/vector-icons";
 import { DEFAULT } from "../../themes/variables.js";
 import { FlashList } from "@shopify/flash-list";
 import switchNames from "../../../private/subject.js";
-import EdtDropDown from '../../components/edtDropDown.js';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import switchRooms from '../../../private/room.js';
 import prettierNums from '../../../private/duration';
 
@@ -125,11 +121,16 @@ export default class Edt extends React.Component {
       // console.log(j1.length)
       //console.log(cours)
       // on met tout dans un dictionnaire pour pouvoir tout afficher
-      
+      let endM = []
+      let endH = []
+
       do {
         var x = new Date(j1[compteurB].from);
         var z = new Date(j1[compteurB].to)
-        
+        y = new Date(x.getTime() + 55 * 60000).getUTCMinutes()
+        o =  new Date(x.getTime() + 55 * 60000).getUTCHours()
+        prettierNums(y, endM)
+        prettierNums(o, endH)
         // if (salle != null) {
         //   salle = salle
         // } else if (salle == null) {
@@ -142,8 +143,8 @@ export default class Edt extends React.Component {
           fromMin: fromM[compteurB],
           toHour: toH[compteurB],
           toMin: toM[compteurB],
-          endM: new Date(x.getTime() + 55 * 60000).getUTCMinutes(),
-          endH: new Date(x.getTime() + 55 * 60000).getUTCHours()
+          endM: endM[compteurB],
+          endH: endH[compteurB]
         };
         let dico2h = {
           subject: cours[compteurB],
