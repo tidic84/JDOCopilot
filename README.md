@@ -7,7 +7,16 @@ Le principal objectif de l'application est d'optimiser les déplacements dans le
 les horraires des AS avec comment s'y inscrire, un affichage hors ligne de l'emploi du temps, permettant de conaître sa salle de n'importe où, une page de nouvelles, permettant
 aux élèves du cve, cvl, etc d'afficher des informations et une vue d'ensemble de la progression jusqu'au bac. Des 'widgets' seront aussi disponibles pour ne pas avoir a attendre pour conaître sa salle.
 
-## comment ça marche?
+
+## table des matières :
+
+ › [Comment ça marche](https://github.com/tidic84/JDOCopilot/tree/f-end#comment-%C3%A7a-marche) <br />
+ › [C'est sécurisé ?](https://github.com/tidic84/JDOCopilot/tree/f-end#est-ce-que-cest-s%C3%A9curis%C3%A9) <br />
+ › [Tout est de nous ?](https://github.com/tidic84/JDOCopilot/tree/f-end#tout-est-de-nous) <br />
+ › [C'est codé comment ?](https://github.com/tidic84/JDOCopilot/tree/f-end#tout-est-de-nous) <br />
+ › [Screens](https://github.com/tidic84/JDOCopilot/tree/f-end#screens-sparkles) <br />
+
+## comment ça marche ?
 
 le schema de pronote pour notre académie est très simple:
 un client passe par atrium comme un tunnel pour accéder aux serveurs de pronote.
@@ -40,9 +49,13 @@ Donc nous remercions expressement tous ces développeurs qui mettent leurs outil
 
 **L'application est codée en react native, utilise l'API pronote de Litarvan et Expo go**
 
+## C'est gratuit?
+
+Pour l'heure, JDO-Copilot est gratuit et open-source, vous pouvez y participer en faisant une pull request, avec une explication détaillée de ce qu'apporte votre contribution. Si celle-ci est acceptée, vous serez mentionné comme contributeur.
 
 ## screens :sparkles:
 ![Login](https://media.discordapp.net/attachments/657940718186266645/1062448523439771669/Screenshot_1673377835.png?width=285&height=586) ![edt](https://media.discordapp.net/attachments/1051199896239218849/1062445353560973312/Screenshot_1673377056.png?width=285&height=586) ![edt2](https://media.discordapp.net/attachments/1051199896239218849/1062445353875542087/Screenshot_1673377060.png?width=285&height=586) ![progression de l'année](https://media.discordapp.net/attachments/657940718186266645/1061927807099338752/Screenshot_1673199363.png?width=285&height=586) ![devoirs](https://media.discordapp.net/attachments/1051199896239218849/1062445352885686424/Screenshot_1673377018.png?width=285&height=586) ![devoirs2](https://media.discordapp.net/attachments/1051199896239218849/1062445353229635694/Screenshot_1673377038.png?width=285&height=586)
 
 
 ### Love, Albatross! xoxo
+*Albatross! NSI cross-team*
