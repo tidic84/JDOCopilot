@@ -3,7 +3,7 @@ import * as React from "react";
 import {
   View,
   Text,
-  ScrollView,
+  Alert,
   ActivityIndicator,
   SafeAreaView,
 } from "react-native";
@@ -12,6 +12,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { DEFAULT } from "../../themes/variables.js";
 import { Ionicons } from "@expo/vector-icons";
 import switchNames from "../../../private/subject.js";
+import { FlashList } from "@shopify/flash-list";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import * as NavigationBar from 'expo-navigation-bar';
+import { timeDifference } from "../../util/relativeDaysWidget.js";
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
@@ -29,11 +33,39 @@ export default class Edt extends React.Component {
   render() {
     this.getFranck();
     
+    function hideThisFuckingBar(){ 
+      NavigationBar.setVisibilityAsync("hidden");
+      NavigationBar.setBehaviorAsync('overlay-swipe');
+      NavigationBar.setButtonStyleAsync("light");
+    }
+
+    function actionOnRow(item) {
+      let state = undefined
+      if(item.fait === false) {
+        state = 'non ;-;'
+      } else if (item.fait === true) {
+        state = 'oui !'
+      } else {
+        state = 'quelle est cette sorcellerie ????'
+      }
+      let givenAt = timeDifference(new Date(), item.givenAt)
+      Alert.alert(
+        //title
+        item.sujet,
+        //body
+        '\nDonné ' + givenAt + '\nFait : ' + state,
+        [
+          { text: 'Chouette', onPress: () => hideThisFuckingBar() },
+        ],
+        { cancelable: true }
+      );
+    }
+
     if (this.state.franck != "") {
 
       //récupération des devoirs
       let franck = this.state.franck.homeworks
-      let evaluations = this.state.franck.evals
+      //let evaluations = this.state.franck.evals
       let devoirs = []
       let sujet = []
       let compteurA = 0
@@ -41,14 +73,16 @@ export default class Edt extends React.Component {
       do {
         switchNames(franck[compteurA].subject, sujet)
 
+        //console.log(sujet)
         let dico = {
           sujet: sujet[compteurA],
           description: franck[compteurA].description,
           pour: new Date(franck[compteurA].for).getTime(),
           givenAt: new Date(franck[compteurA].givenAt).getTime(),
-          fait: franck[compteurA].done
+          fait: franck[compteurA].done,
         }
 
+        //console.log(dico)
         devoirs.push(dico)
         compteurA ++
       } while (compteurA < franck.length)
@@ -56,7 +90,7 @@ export default class Edt extends React.Component {
       //console.log(devoirs)
 
       //récupération des 2 prochaines évals:
-      let evals = []
+      /**let evals = []
       let mat = []
       let compteurB = 0
 
@@ -67,7 +101,7 @@ export default class Edt extends React.Component {
           
           compteurB ++
         } while (compteurB < 2)
-      }
+      }**/
       
 
 
@@ -90,11 +124,11 @@ export default class Edt extends React.Component {
               {/* titre, cour, salle, time left */}
               <Text style={defaultCSS.headerTitle}>Prochaines évals</Text>
               <View style={defaultCSS.headerDynamicText}>
-                <Text style={defaultCSS.headerSubject}> 1
-                  <Text style={defaultCSS.headerRoom}>  2</Text>
+                <Text style={defaultCSS.headerSubject}> 
+                  <Text style={defaultCSS.headerRoom}>Pas d'évaluations prévues</Text>
                 </Text>
-                <Text style={defaultCSS.headerSubject}> 3
-                  <Text style={defaultCSS.headerRoom}>  4</Text>
+                <Text style={defaultCSS.headerSubject}> Ok j'ai triché, ça marche pas encore
+                  <Text style={defaultCSS.headerRoom}>  </Text>
                 </Text>
               </View>           
             </View>
@@ -102,14 +136,37 @@ export default class Edt extends React.Component {
             {/**body**/}
             <View style={defaultCSS.bodyTitle}>
               <Text style={defaultCSS.bodyTextIcon} >Devoirs :</Text>
-              <Ionicons 
+              {/**<Ionicons 
                 name="funnel-outline"
                 size={24}
                 color="white"
                 style={defaultCSS.bodyTitleIcon}
-              />
+              />**/}
             </View>
+            <View style={defaultCSS.bodyContainer}>
+            <FlashList
+                  data={devoirs}
+                  renderItem={({ item }) => (<TouchableOpacity onPress={() => actionOnRow(item)}>
+                                                    <Text >  </Text>
+                                                    <Text >  </Text>
+                                                    <Text style={defaultCSS.bodySubject}>{item.sujet} : </Text>
+                                                    <Text style={defaultCSS.bodyDesc}>{item.description}</Text>
+                                                    <Text style={defaultCSS.bodyFor}>Pour <Text style={defaultCSS.num}>{timeDifference(Date.now() + 3600000, item.pour)}</Text></Text>
+                                                    <Text >  </Text>
+                                                    <Text >  </Text>
+                                                    
+                                            </TouchableOpacity>)}
+                  estimatedItemSize={200}
+                  ItemSeparatorComponent={() => (
+                    <View style={defaultCSS.separatorComponent} />
+                    
+                  )}
+                  containerComponentStyle={defaultCSS.bodyList}
+                />
+            </View>
+
           </View>
+          
         </>
       );
 

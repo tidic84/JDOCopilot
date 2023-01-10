@@ -19,6 +19,7 @@ import prettierNums from '../../../private/duration';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import * as NavigationBar from 'expo-navigation-bar';
 
+
 export default class Edt extends React.Component {
   // on vide le sac de franck
    constructor(props) {
@@ -44,6 +45,7 @@ export default class Edt extends React.Component {
 
   render() {
 
+    
     //this.threeOptionAlertHandler()
     this.getFranck();
    function hideThisFuckingBar(){ 
@@ -57,7 +59,7 @@ export default class Edt extends React.Component {
         //title
         'Infos',
         //body
-        'Prof : ' + item.prof + '\n' ,
+        'Prof : ' + item.prof + '\nEtat du cours : ' + item.stat,
         [
           { text: 'Chouette', onPress: () => hideThisFuckingBar() },
         ],
@@ -147,8 +149,15 @@ export default class Edt extends React.Component {
       // on met tout dans un dictionnaire pour pouvoir tout afficher
       let endM = []
       let endH = []
+      let stat = undefined
 
       do {
+        if (j1[compteurB].isAway === true) {
+          stat = j1[compteurB].status
+        } else {
+          stat = 'maintenu'
+        }
+
         var x = new Date(j1[compteurB].from);
         var z = new Date(j1[compteurB].to)
         
@@ -164,6 +173,8 @@ export default class Edt extends React.Component {
            o =  new Date(x.getTime() + 55 * 60000).getUTCHours()
         } else {
         }
+
+        
 
         // console.log(y, o)
         prettierNums(y, endM)
@@ -185,6 +196,7 @@ export default class Edt extends React.Component {
           endM: endM[compteurB],
           endH: endH[compteurB],
           prof: franck[compteurB].teacher,
+          stat: stat,
           
         };
         let dico2h = {
@@ -197,12 +209,10 @@ export default class Edt extends React.Component {
           endM: endM[compteurB],
           endH: endH[compteurB],
           prof: franck[compteurB].teacher,
+          stat: stat,
         };
+        
 
-
-        
-        
-        
 
         if((z - x) == 7200000) {
           DATA.push(dico2h)

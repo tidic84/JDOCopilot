@@ -69,10 +69,65 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     color: DEFAULT.accent,
     fontSize: 13,
   },
+  /** bodyTitle: {
+    position: 'relative',
+    flexDirection: 'row',
+    top: 32,
+    left: width / 2 - 60
+  }, **/
+  bodyTextIcon: {
+    flex: 1,
+    position: "absolute",
+    alignSelf: 'center',
+    top: 20,
+    color: "white",
+    fontWeight: "bold",
+    fontSize: 20,
+  },
+  
 
 
+  bodyContainer:{
+    width: width - 60,
+    height: height / 1.72,
+    backgroundColor: DEFAULT.secondary,
+    borderRadius: 15,
+    alignSelf: "center",
+    marginTop: 70,
+  },
 
-
+  bodyList: {
+    position: "relative",
+    width: width - 60,
+    height: height / 1.585,
+    alignSelf: "center",
+    marginVertical: 5,
+    paddingVertical: 5,
+    borderRadius: 15,
+  },
+  separatorComponent: {
+    width: width - 60,
+    height: 3,
+    backgroundColor: DEFAULT.primary,
+  },
+  bodySubject: {
+    color: "white",
+    fontSize: 17,
+    paddingLeft: 10
+  },
+  bodyDesc:{
+    color: DEFAULT.textSecondary,
+    fontSize: 13,
+    paddingLeft: 15,
+  },
+  bodyFor: {
+    color: DEFAULT.textSecondary,
+    fontSize: 13,
+    paddingLeft: 10,
+  },
+  num:{
+    color: DEFAULT.accent,
+  },
 
 
 

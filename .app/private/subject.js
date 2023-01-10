@@ -21,7 +21,7 @@ function switchNames(from, to) {
   } else if (from == "ALLEMAND LV2") {
     to.push("Allemand");
   } else if (from == "ENSEIGNEMENT SCIENTIFIQUE") {
-    to.push("E.S.");
+    to.push("E.Sc.");
   } else if (from == "FRANCAIS") {
     to.push("Français");
   } else if (from == "ENS. MORAL & CIVIQUE") {
