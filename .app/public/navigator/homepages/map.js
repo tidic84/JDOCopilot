@@ -1,53 +1,58 @@
-//import modules
-import React, { useState } from 'react';
-import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard, TouchableWithoutFeedback } from "react-native";
-import { Ionicons } from '@expo/vector-icons'
-import { Dimensions } from 'react-native';
-import * as NavigationBar from 'expo-navigation-bar';
-import { encrypt, decrypt } from "../../util/crypto";
-import * as d3 from 'd3';
-import { Svg, SvgUri } from 'react-native-svg';
+// import modules
+import * as React from "react";
+import {
+  View,
+  Text,
+  ScrollView,
+  ActivityIndicator,
+  SafeAreaView,
+} from "react-native";
+import { defaultCSS } from "../../stylesheets/_default/map";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { DEFAULT } from "../../themes/variables.js";
 
-import {defaultCSS} from "../../stylesheets/_default/map.js"; //first theme
-// import oceanLogin from "../stylesheets/login/ocean";
-
-
-//import assets/utils
-
-const logo = require('../../assets/images/logoRond.png')
-import LyceePlan from "../../assets/plan/lycee-plan.svg"
-
-//init bottomPopup
-// import BottomPopup from '../components/bottomPopup.js'
-// const popupList = [
-//   { id: 1, name: 'Task' },
-//   { id: 2, name: 'Message' },
-//   { id: 3, name: 'Note' }
-// ]
-
-
-export default class Map extends React.Component {
+export default class Edt extends React.Component {
+  // on vide le sac de franck
   state = {
-    name: ""
-  }
+    franck: "",
+  };
 
-  handlePress = (event) => {
-    const element = d3.select(event.target);
-    const name = element.attr('inkscape:label');
-    if (name && name.includes('Salle')) {
-      console.log('Element salle survolé : ', name);
-    }
+  // on lui demande de recupérer les données de l'utilisateur
+  getFranck = async () => {
+    const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))); // get the timetable from the storage
+    this.setState({ franck: franck.timetable });
+    //console.log(this.state.franck);
   };
 
   render() {
-    return (
-      <View style={defaultCSS.container}>
-        <Text>Test</Text>
-        
-        <Svg style={defaultCSS.svg}>
-          <LyceePlan style={defaultCSS.lyceeplan} width="90%"/>
-        </Svg>
-      </View>
-    );
+    this.getFranck();
+    
+    if (this.state.franck != "") {
+
+      return (
+        <>
+          <View style={defaultCSS.container}>
+            
+          </View>
+        </>
+      );
+
+    } else if (this.state.franck == "") {
+      return (
+        <SafeAreaView style={defaultCSS.container}>
+          <Text style={defaultCSS.waitTextT}>
+            Franck est parti chercher tes données,
+          </Text>
+          <Text style={defaultCSS.waitTextB}>
+             attends nous un instant !
+          </Text>
+          <ActivityIndicator
+            size="large"
+            color={DEFAULT.accent}
+            style={defaultCSS.wait}
+          />
+        </SafeAreaView>
+      );
+    }
   }
 }

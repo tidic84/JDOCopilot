@@ -67,7 +67,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   body: {
     width: width - 60,
-    height: 530,
+    height: height / 1.45,
     backgroundColor: DEFAULT.secondary,
     borderRadius: 15,
     alignSelf: "center",
@@ -76,20 +76,31 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   bodyList: {
     position: "relative",
     width: width - 60,
-    height: 540,
+    height: height / 1.585,
     alignSelf: "center",
-    //marginVertical: 40,
-    paddingVertical: 20,
+    marginVertical: 5,
+    paddingVertical: 5,
     
 
   },
+  bodyTitleContainer: {
+    width: width - 60,
+    height: 20,
+    top: 0,
+    backgroundColor: DEFAULT.secondary,
+    alignSelf: "center",
+    marginTop: 20,
+  },
   bodyTitle: {
+    zIndex: 10,
     position: "absolute",
     alignSelf: "center",
-    top: 10,
-    color: "white",
+    top: 0,
+    color: DEFAULT.text,
+    height: 100,
     fontSize: 16,
     fontWeight: "bold",
+    textAlign: "center",
   },
   bodySubject: {
     color: "white",
@@ -140,10 +151,15 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     marginVertical: 300,
 
   },
-  waitText: {
+  waitTextT: {
     color: "white",
     fontSize: 16,
     marginTop: 250,
+  },
+  waitTextB: {
+    color: "white",
+    fontSize: 16,
+    marginTop: 88,
   },
 
 

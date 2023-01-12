@@ -1,14 +1,16 @@
 //import modules
 import React, { useState } from 'react';
-import { ToastAndroid, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard } from "react-native";
+import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard, TouchableWithoutFeedback } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
+import { Dimensions } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
 import { encrypt, decrypt } from "../util/crypto";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+import {DEFAULT} from "../themes/variables"
 import {defaultCSS} from "../stylesheets/_default/login"; //default theme
 
-//import assets/utils
+
 const logo = require('../assets/images/logoRond.png')
 let dataReady = false;
 
@@ -35,60 +37,50 @@ export default class Login extends React.Component {
   
   //verification des données
   continue = async () => {
-    this.setState({ disabledButton: true})
 
+    this.setState({ disabledButton: true})
+    
     if ( this.state.name == "" || this.state.pwd == "" || this.state.name == undefined || this.state.pwd == undefined) { 
       if (await AsyncStorage.getItem("username") != "" || await AsyncStorage.getItem("username") != undefined || await AsyncStorage.getItem("password") != "" || await AsyncStorage.getItem("password")!= undefined) {
         this.state.name = decrypt(await AsyncStorage.getItem("username"));
         this.state.pwd = decrypt(await AsyncStorage.getItem("password"));
       }
-      else return this.errorMessage("Merci de remplir tout les champs de connexion :)") 
+      else return this.errorMessage("Les informations de connexion sont incorrectes !") 
+    } 
+    console.log("Connection try: " + this.state.name)
+
+    
+    const username = await encrypt(this.state.name); // On encrypte le nom d'utilisateur
+    const password = await encrypt(this.state.pwd); // On encrypte le mot de passe
+    await AsyncStorage.setItem("username", username);
+    await AsyncStorage.setItem("password", password);
+   
+    console.log('loading: ' + this.state.loading)
+    try {
+      this.errorMessage('On te connecte ! Donne nous quelques secondes...')
+      
+      const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
+      const franck = await response.json(); // On récupère les données de pronote
+      await AsyncStorage.setItem("franck", JSON.stringify(franck));
+      await AsyncStorage.setItem("username", username);
+      await AsyncStorage.setItem("password", password);
+
+      //83.console.log(await AsyncStorage.getItem("franck")); 
+      this.props.navigation.navigate("Main"); // On navigue vers la page principale
+      this.errorMessage("Connexion établie, redirection vers la page principale...");
+
+    } catch {
+      this.setState({ disabledButton: false })
+      return this.errorMessage("Identifiant ou Mot de passe incorrect !"); // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
     }
-    let userN = this.state.name;
-    userN = userN.slice(0, userN.indexOf('.'));
-    console.log('\x1b[36m%s\x1b[0m', `User ${userN} is connecting`);
-    this.errorMessage(`Bonjour, ${userN}`);
-
-    const username = encrypt(this.state.name); // On encrypte le nom d'utilisateur
-    const password = encrypt(this.state.pwd); // On encrypte le mot de passe
-    //console.log(username, password)
-    
-    const franck =  Object(JSON.parse(await AsyncStorage.getItem("franck")))
-    const sessionDate = new Date(franck.session).getDay()
-    const todayDate = new Date().getDay()
-
-    
-     if( sessionDate == todayDate && decrypt(username) == decrypt(await AsyncStorage.getItem("username")) && decrypt(password) == decrypt(await AsyncStorage.getItem("password"))) {
-       await AsyncStorage.setItem("franck", JSON.stringify(franck));
-       this.props.navigation.navigate("Main"); // On navigue vers la page principale
-       //console.log(await AsyncStorage.getItem("franck")); 
-       console.log("Fast connection");
-     } else {
-      try {
-        const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
-        const franck = await response.json(); // On récupère les données de pronote
-        await AsyncStorage.setItem("franck", JSON.stringify(franck));
-
-        await AsyncStorage.setItem("username", username);
-        await AsyncStorage.setItem("password", password);
-
-        //console.log(await AsyncStorage.getItem("franck")); 
-        this.props.navigation.navigate("Main"); // On navigue vers la page principale
-        console.log("Slow connection");
-      } catch {
-        this.setState({ disabledButton: false })
-        return this.errorMessage("Identifiant ou Mot de passe incorrect !"); // Si l'identifiant ou le mot de passe est incorrect, on affiche un message d'erreur
-      }
-    }
-    
   }
 
   getID = async () => {
     if ( dataReady == false ){
       try {
-        const keptName = decrypt(await AsyncStorage.getItem("username"));
-        const keptPassword = decrypt(await AsyncStorage.getItem("password"));
-        console.log( "Existing user: "+ keptName)
+        const keptName = await decrypt(await AsyncStorage.getItem("username"));
+        const keptPassword = await decrypt(await AsyncStorage.getItem("password"));
+        console.log( "Existing Name: "+ keptName)
         this.setState({ keptName: keptName });
         this.setState({ keptPassword: keptPassword });
         dataReady = true;
@@ -96,7 +88,7 @@ export default class Login extends React.Component {
       } catch {
         const keptName = "";
         const keptPassword = "";
-        console.log( "No existing user: "+ keptName)
+        console.log( "No existing name: "+ keptName)
         this.setState({ keptName: keptName });
         this.setState({ keptPassword: keptPassword });
         dataReady = true;
@@ -145,22 +137,6 @@ export default class Login extends React.Component {
         </Pressable>
       );
     }
-    //checkbox 'Connexion rapide'
-    function CheckBox2() {
-      const [checked2, onChange2] = useState(false);
-
-      function onCheckmarkPress2() {
-        onChange2(!checked2);
-      }
-
-      return (
-        <Pressable
-          style={[defaultCSS.checkboxBase, checked2 && defaultCSS.checkboxChecked]}
-          onPress={onCheckmarkPress2}>
-          {checked2 && <Ionicons style={defaultCSS.check} name="checkmark" size={24} color="white" />}
-        </Pressable>
-      );
-    }
 
 
     if (dataReady)  {
@@ -180,7 +156,7 @@ export default class Login extends React.Component {
 
             <View style={{ marginHorizontal: 32 }}>
               <Text style={defaultCSS.header}>Bonjour, </Text>
-              <Text style={defaultCSS.underHeader}>connectez-vous pour acceder à nos services</Text>
+              <Text style={defaultCSS.underHeader}>Dev login, fast connection disabled.</Text>
 
 
               <TextInput defaultValue={this.state.keptName}
@@ -209,8 +185,6 @@ export default class Login extends React.Component {
 
               <CheckBox />
               <Text style={defaultCSS.checkboxLabel}>Se souvenir de moi</Text>
-              <CheckBox2 />
-              <Text style={defaultCSS.checkboxLabel}>Connexion rapide</Text>
 
 
 
