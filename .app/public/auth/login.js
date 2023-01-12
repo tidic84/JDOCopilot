@@ -8,7 +8,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import {defaultCSS} from "../stylesheets/_default/login"; //default theme
 
-
+//import assets/utils
 const logo = require('../assets/images/logoRond.png')
 let dataReady = false;
 

@@ -1,0 +1,101 @@
+<svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="685.497"
+      height="806.643"
+      version="1.1"
+      viewBox="0 0 181.371 213.424"
+    >
+      <g transform="translate(-13.903 -25.711)">
+        <path 
+          fill="none"
+          stroke="#000"
+          strokeDasharray="none"
+          strokeLinecap="butt"
+          strokeLinejoin="miter"
+          strokeMiterlimit="5"
+          strokeWidth="2"
+          d="M79.306 193.071v45.064H14.903V26.711h64.403v150.294h50.565V26.71h64.403v211.424h-64.403v-45.064z"
+          paintOrder="normal"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M14.903 26.711H40.806V78.163H14.903z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M14.903 80.035H40.806V131.487H14.903z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M14.903 133.36H40.806V184.812H14.903z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M14.903 186.684H40.806V238.136H14.903z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.186"
+          d="M53.403 53.18H79.306V91.584H53.403z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.186"
+          d="M53.403 94.58H79.306V132.984H53.403z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.186"
+          d="M53.403 135.98H79.306V174.384H53.403z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.202"
+          d="M53.403 193.071H79.306V238.136H53.403z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M168.371 186.684H194.274V238.136H168.371z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M168.371 133.36H194.274V184.812H168.371z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M168.371 80.035H194.274V131.487H168.371z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.216"
+          d="M168.371 26.711H194.274V78.163H168.371z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.202"
+          d="M129.871 193.071H155.774V238.136H129.871z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.186"
+          d="M129.871 135.98H155.774V174.384H129.871z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.186"
+          d="M129.871 94.58H155.774V132.984H129.871z"
+        ></path>
+        <path
+          fill="#000"
+          strokeWidth="0.186"
+          d="M129.871 53.18H155.774V91.584H129.871z"
+        ></path>
+      </g>
+    </svg>
