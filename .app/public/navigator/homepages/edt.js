@@ -138,8 +138,10 @@ export default class Edt extends React.Component {
       //console.log(devoirs)
       do {
         //switchNames(franck[compteurA].subject, cours); // on appelle la fonction qui va remplacer les noms
-        switchNames(j2[compteurD].subject, cours)
-        switchRooms(j2[compteurD].room, salles)
+        if( j2.length > 0){
+            switchNames(j2[compteurD].subject, cours)
+            switchRooms(j2[compteurD].room, salles)
+        }
         //console.log(j1[compteurD].subject)
         compteurD++; // on incremente le compteur
       } while (compteurD < j2.length);
