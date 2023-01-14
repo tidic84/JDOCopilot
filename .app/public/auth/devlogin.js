@@ -59,7 +59,7 @@ export default class Login extends React.Component {
     try {
       this.errorMessage('On te connecte ! Donne nous quelques secondes...')
       
-      const response = await fetch(`https://jdocopilot-api.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
+      const response = await fetch(`https://jdocopilot-api-stable.herokuapp.com/?username=${username}=&password=${password}`); // On récupère les données de pronote
       const franck = await response.json(); // On récupère les données de pronote
       await AsyncStorage.setItem("franck", JSON.stringify(franck));
       await AsyncStorage.setItem("username", username);
