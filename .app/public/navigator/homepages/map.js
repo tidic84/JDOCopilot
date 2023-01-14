@@ -1,4 +1,5 @@
 // import modules
+import { imports } from "../../../private/imports";
 import * as React from "react";
 import {
   View,
@@ -8,8 +9,9 @@ import {
   SafeAreaView,
 } from "react-native";
 import { defaultCSS } from "../../stylesheets/_default/map";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { DEFAULT } from "../../themes/variables.js";
+
 
 export default class Edt extends React.Component {
   // on vide le sac de franck

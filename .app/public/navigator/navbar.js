@@ -1,8 +1,8 @@
 import React from "react"
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, Button } from "react-native"
 import { Ionicons } from '@expo/vector-icons'
-import { NavigationContainer } from "@react-navigation/native"
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {DEFAULT} from "../themes/variables"
 //import tabs
@@ -11,6 +11,7 @@ import News from "./pages/news.js"
 import Chat from "./pages/chat.js"
 import Year from "./pages/year.js"
 import Param from "./pages/param.js"
+
 
 const BottomBar = createBottomTabNavigator();
 

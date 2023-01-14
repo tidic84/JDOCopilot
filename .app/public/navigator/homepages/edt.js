@@ -1,4 +1,5 @@
 // import modules
+import { imports } from "../../../private/imports";
 import React from "react";
 import {
   Alert,
@@ -9,14 +10,14 @@ import {
 } from "react-native";
 import { defaultCSS } from "../../stylesheets/_default/home.js";
 import { timeDifference } from "../../util/relativeDaysWidget";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import { Ionicons } from "@expo/vector-icons";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Ionicons } from '@expo/vector-icons';
 import { DEFAULT } from "../../themes/variables.js";
-import { FlashList } from "@shopify/flash-list";
+import { FlashList } from '@shopify/flash-list';
 import switchNames from "../../../private/subject.js";
 import switchRooms from '../../../private/room.js';
 import prettierNums from '../../../private/duration';
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as NavigationBar from 'expo-navigation-bar';
 
 

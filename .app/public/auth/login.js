@@ -1,10 +1,11 @@
 //import modules
+import {imports} from '../../private/imports.js';
 import React, { useState } from 'react';
 import { ToastAndroid, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
 import * as NavigationBar from 'expo-navigation-bar';
 import { encrypt, decrypt } from "../util/crypto";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import {defaultCSS} from "../stylesheets/_default/login"; //default theme
 
@@ -46,7 +47,7 @@ export default class Login extends React.Component {
     }
     let userN = this.state.name;
     userN = userN.slice(0, userN.indexOf('.'));
-    console.log('\x1b[36m%s\x1b[0m', `User ${userN} is connecting`);
+    console.log('\x1b[36m%s\x1b[0m', `>> connexion de ${userN}`);
     this.errorMessage(`Bonjour, ${userN}`);
 
     const username = encrypt(this.state.name); // On encrypte le nom d'utilisateur

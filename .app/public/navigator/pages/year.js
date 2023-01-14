@@ -1,12 +1,14 @@
+import { imports } from "../../../private/imports";
 import React from "react";
 import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
 import {defaultCSS} from "../../stylesheets/_default/year"
-import { timeDifference } from "../../util/relativeDays";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { timeDifference } from "../../util/relativeDaysWidget";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 let dataReady = false
 import * as Progress from 'react-native-progress';
 import { DEFAULT } from "../../themes/variables";
 import * as NavigationBar from 'expo-navigation-bar';
+
 
 //setup
 const j1 = new Date("2022-09-01").getTime();

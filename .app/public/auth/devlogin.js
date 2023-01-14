@@ -1,13 +1,11 @@
 //import modules
 import React, { useState } from 'react';
-import { ToastAndroid, StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard, TouchableWithoutFeedback } from "react-native";
+import { ToastAndroid, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
-import { Dimensions } from 'react-native';
 import * as NavigationBar from 'expo-navigation-bar';
 import { encrypt, decrypt } from "../util/crypto";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {DEFAULT} from "../themes/variables"
 import {defaultCSS} from "../stylesheets/_default/login"; //default theme
 
 

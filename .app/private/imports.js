@@ -1,0 +1,15 @@
+export const imports = {
+    AsyncStorage: '@react-native-async-storage/async-storage',
+    FlashList: '@shopify/flash-list',
+    MaskedView: '@react-native-masked-view/masked-view',
+    NavBar: 'expo-navigation-bar',
+    Ionicons: '@expo/vector-icons',
+    Navigation: 'react-navigation',
+    NavigationStack: 'react-navigation-stack',
+    NavigationContainer: '@react-navigation/native',
+    NavigationTopTab: '@react-navigation/material-top-tabs',
+    NavigationBottomTab: '@react-navigation/bottom-tabs',
+    gestureHandler: 'react-native-gesture-handler',
+    progressBar: 'react-native-progress',
+    reduce: 'd3',
+};

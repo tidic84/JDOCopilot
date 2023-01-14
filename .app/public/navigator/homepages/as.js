@@ -1,4 +1,5 @@
 // import modules
+import { imports } from "../../../private/imports";
 import * as React from "react";
 import {
   View,
@@ -8,12 +9,12 @@ import {
   SafeAreaView,
 } from "react-native";
 import { defaultCSS } from "../../stylesheets/_default/as.js";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { DEFAULT } from "../../themes/variables.js";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
 import switchNames from "../../../private/subject.js";
-import { FlashList } from "@shopify/flash-list";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { FlashList } from '@shopify/flash-list';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as NavigationBar from 'expo-navigation-bar';
 import { timeDifference } from "../../util/relativeDaysWidget.js";
 

@@ -1,6 +1,7 @@
+import { imports } from "../../../private/imports";
 import * as React from 'react';
-import { NavigationContainer } from "@react-navigation/native"
-import { Ionicons } from '@expo/vector-icons'
+import { NavigationContainer } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 import { View, Text } from "react-native";
 
 import Edt from "../homepages/edt.js"
