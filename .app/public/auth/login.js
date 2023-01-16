@@ -208,10 +208,10 @@ export default class Login extends React.Component {
                 value={this.state.pwd}
               />
 
-              <CheckBox />
+              {/* <CheckBox />
               <Text style={defaultCSS.checkboxLabel}>Se souvenir de moi</Text>
               <CheckBox2 />
-              <Text style={defaultCSS.checkboxLabel}>Connexion rapide</Text>
+              <Text style={defaultCSS.checkboxLabel}>Connexion rapide</Text> */}
 
 
 

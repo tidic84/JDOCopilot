@@ -63,7 +63,7 @@ export default class LoginWithoutFastCo extends React.Component {
       await AsyncStorage.setItem("username", username);
       await AsyncStorage.setItem("password", password);
 
-      //83.console.log(await AsyncStorage.getItem("franck")); 
+      //console.log(await AsyncStorage.getItem("franck")); 
       this.props.navigation.navigate("Main"); // On navigue vers la page principale
       this.errorMessage("Connexion établie, redirection vers la page principale...");
 

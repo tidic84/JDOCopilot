@@ -1,329 +1,841 @@
 {
-    "session": "2022-12-12T17:24:49.684Z",
-    "timetable": [
-        {
-            "id": "508a93d9cca1e5d1",
-            "from": "2022-12-13T08:00:00.000Z",
-            "to": "2022-12-13T10:00:00.000Z",
-            "isDetention": false,
-            "remoteLesson": false,
-            "hasDuplicate": false,
-            "isAway": false,
-            "isCancelled": false,
-            "color": "#7CB927",
-            "subject": "ED.PHYSIQUE & SPORT.",
-            "teacher": "OZIMEK E.",
-            "room": "SALLE EPS"
-        },
-        {
-            "id": "a8d06dfb7bd14fcd",
-            "from": "2022-12-13T10:05:00.000Z",
-            "to": "2022-12-13T12:05:00.000Z",
-            "isDetention": false,
-            "remoteLesson": false,
-            "hasDuplicate": false,
-            "isAway": false,
-            "isCancelled": false,
-            "color": "#FFED00",
-            "subject": "PHYSIQUE-CHIMIE",
-            "teacher": "LAVEIL L.",
-            "room": "TP PC1"
-        },
-        {
-            "id": "e6400651683d9f75",
-            "from": "2022-12-13T13:10:00.000Z",
-            "to": "2022-12-13T15:10:00.000Z",
-            "isDetention": false,
-            "remoteLesson": false,
-            "hasDuplicate": false,
-            "isAway": false,
-            "isCancelled": false,
-            "color": "#910EF1",
-            "subject": "MATHEMATIQUES",
-            "teacher": "BANGIL N.",
-            "room": "N162"
-        },
-        {
-            "id": "c6a681dd4bb8721d",
-            "from": "2022-12-13T15:15:00.000Z",
-            "to": "2022-12-13T17:15:00.000Z",
-            "isDetention": false,
-            "remoteLesson": false,
-            "hasDuplicate": false,
-            "isAway": false,
-            "isCancelled": false,
-            "color": "#0E3611",
-            "subject": "HISTOIRE-GEOGRAPHIE",
-            "teacher": "ROSELLO L.",
-            "room": "S102"
-        }
-    ],
-    "marks": {
-        "subjects": [
-            {
-                "name": "PHYSIQUE-CHIMIE",
-                "averages": {
-                    "student": 13.5,
-                    "studentClass": 10.73,
-                    "max": 18.5,
-                    "min": 3
-                },
-                "color": "#FFED00",
-                "marks": [
-                    {
-                        "id": "2c3e499d7fe273c3",
-                        "title": "",
-                        "isAway": false,
-                        "value": 13.5,
-                        "min": 3,
-                        "max": 18.5,
-                        "average": 10.73,
-                        "scale": 20,
-                        "coefficient": 3,
-                        "date": "2022-11-17T00:00:00.000Z"
-                    }
-                ]
-            },
-            {
-                "name": "NUMERIQUE SC.INFORM.",
-                "averages": {
-                    "student": 14,
-                    "studentClass": 14.36,
-                    "max": 19,
-                    "min": 4
-                },
-                "color": "#AFDEF9",
-                "marks": [
-                    {
-                        "id": "2e472bf91447d275",
-                        "title": "documenter le code algo tri Python",
-                        "isAway": false,
-                        "value": 7,
-                        "min": 2,
-                        "max": 9.5,
-                        "average": 7.18,
-                        "scale": 10,
-                        "coefficient": 1,
-                        "date": "2022-12-02T00:00:00.000Z"
-                    }
-                ]
-            },
-            {
-                "name": "ANGLAIS LV1",
-                "averages": {
-                    "student": 15,
-                    "studentClass": 14.23,
-                    "max": 17,
-                    "min": 10
-                },
-                "color": "#212853",
-                "marks": [
-                    {
-                        "id": "11785cf3539e52de",
-                        "title": "Canvassing debate",
-                        "isAway": false,
-                        "value": 15,
-                        "min": 15,
-                        "max": 17,
-                        "average": 15.57,
-                        "scale": 20,
-                        "coefficient": 1,
-                        "date": "2022-12-02T00:00:00.000Z"
-                    }
-                ]
-            },
-            {
-                "name": "FRANCAIS",
-                "averages": {
-                    "student": 18.25,
-                    "studentClass": 14.54,
-                    "max": 20,
-                    "min": 10
-                },
-                "color": "#FE031D",
-                "marks": [
-                    {
-                        "id": "abaa52cf600d477",
-                        "title": "cercle 1 seq2",
-                        "isAway": false,
-                        "value": 10,
-                        "min": 5,
-                        "max": 10,
-                        "average": 7.56,
-                        "scale": 10,
-                        "coefficient": 0.5,
-                        "date": "2022-12-03T00:00:00.000Z"
-                    },
-                    {
-                        "id": "c55cc0d2f3396e55",
-                        "title": "Cercle GDT 2",
-                        "isAway": false,
-                        "value": 10,
-                        "min": 6,
-                        "max": 10,
-                        "average": 7.63,
-                        "scale": 10,
-                        "coefficient": 0.5,
-                        "date": "2022-12-03T00:00:00.000Z"
-                    },
-                    {
-                        "id": "ce959699a6113ab",
-                        "title": "GDT 3 ",
-                        "isAway": false,
-                        "value": 8.5,
-                        "min": 5,
-                        "max": 8.5,
-                        "average": 6.9,
-                        "scale": 10,
-                        "coefficient": 0.5,
-                        "date": "2022-12-03T00:00:00.000Z"
-                    },
-                    {
-                        "id": "9da7f07cc8ab397e",
-                        "title": "cercle LC",
-                        "isAway": false,
-                        "value": 8,
-                        "min": 3,
-                        "max": 8,
-                        "average": 6.68,
-                        "scale": 10,
-                        "coefficient": 0.5,
-                        "date": "2022-12-03T00:00:00.000Z"
-                    }
-                ]
-            },
-            {
-                "name": "ENSEIGNEMENT SCIENTIFIQUE",
-                "averages": {
-                    "student": 16,
-                    "studentClass": 11.4,
-                    "max": 20,
-                    "min": 2
-                },
-                "color": "#FFED00",
-                "marks": [
-                    {
-                        "id": "fba0b25920bca08",
-                        "title": "",
-                        "isAway": false,
-                        "value": 4,
-                        "min": 0.5,
-                        "max": 5,
-                        "average": 2.84,
-                        "scale": 5,
-                        "coefficient": 0.5,
-                        "date": "2022-12-04T00:00:00.000Z"
-                    }
-                ]
-            },
-            {
-                "name": "MATHEMATIQUES",
-                "averages": {
-                    "student": 14,
-                    "studentClass": 10.55,
-                    "max": 19.6,
-                    "min": 2.8
-                },
-                "color": "#910EF1",
-                "marks": [
-                    {
-                        "id": "101153c7fc38833",
-                        "title": "",
-                        "isAway": false,
-                        "value": 17.5,
-                        "min": 3.5,
-                        "max": 24.5,
-                        "average": 13.19,
-                        "scale": 25,
-                        "coefficient": 1,
-                        "date": "2022-12-06T00:00:00.000Z"
-                    }
-                ]
-            }
-        ],
-        "averages": {
-            "student": 14.64,
-            "studentClass": 12.89
-        }
+  "session": "2023-01-16T18:37:44.910Z",
+  "timetable": [
+    {
+      "id": "d75ce725e00fe4f5",
+      "from": "2023-01-17T08:00:00.000Z",
+      "to": "2023-01-17T10:00:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#7CB927",
+      "subject": "ED.PHYSIQUE & SPORT.",
+      "teacher": "OZIMEK E.",
+      "room": "SALLE EPS"
     },
-    "menu": [
-        {
-            "date": "2022-12-13T00:00:00.000Z",
-            "meals": [
-                [
-                    [
-                        {
-                            "name": "Croissant au fromage, chou fromage blanc, salade composée",
-                            "labels": []
-                        }
-                    ],
-                    [
-                        {
-                            "name": "Sauté de bœuf citronnelle et coriandre / Hoki aux crevettes aigres douce / Nouille chinoise    Wok a",
-                            "labels": []
-                        }
-                    ],
-                    [
-                        {
-                            "name": "Coupe fromage blanc crème de marron ou ile flottante ",
-                            "labels": []
-                        }
-                    ],
-                    [
-                        {
-                            "name": "COTE SNACk",
-                            "labels": []
-                        }
-                    ],
-                    [
-                        {
-                            "name": "Salade de feta et oignon frits / Bagnat niçois / Yaourt à boire ",
-                            "labels": []
-                        }
-                    ]
-                ]
-            ]
-        }
-    ],
-    "homeworks": [
-        {
-            "id": "ea6aa2b94209ebd0",
-            "description": "Le contrôle est prévu le 13 décembre 2022. Je vous joins le lexique 1 ( quelques mots à apprendre), le lexique 2 et le cours à lire et à retenir les idées essentielles ( les parties et problématiques sont à connaître).",
-            "htmlDescription": "<div>Le contrôle est prévu le 13 décembre 2022. Je vous joins le lexique 1 ( quelques mots à apprendre), le lexique 2 et le cours à lire et à retenir les idées essentielles ( les parties et problématiques sont à connaître).</div>",
-            "subject": "HISTOIRE-GEOGRAPHIE",
-            "givenAt": "2022-12-06T00:00:00.000Z",
-            "for": "2022-12-13T00:00:00.000Z",
-            "done": false,
-            "color": "#0E3611",
-            "files": [
-                {
-                    "id": "e21ac54089f36a3f",
-                    "name": "Cours pour élèves.pdf",
-                    "url": "https://0134252b.index-education.net/pronote/FichiersExternes/c437fba9852a445595a38166911b12f001d2373d04cd5f64df65c143f95aa51d/Cours%2520pour%2520%25C3%25A9l%25C3%25A8ves.pdf?Session=3053443"
-                },
-                {
-                    "id": "3b3ff27493310339",
-                    "name": "Lexique 2 (2).pdf",
-                    "url": "https://0134252b.index-education.net/pronote/FichiersExternes/37934016ae28d56a819211325a8060eb0b4cf8a0e8cdac76e4dff6d95f00460d/Lexique%25202%2520(2).pdf?Session=3053443"
-                },
-                {
-                    "id": "6f3914d930772a18",
-                    "name": "Vocabulaire 1.pdf",
-                    "url": "https://0134252b.index-education.net/pronote/FichiersExternes/a41fffa613ba2beabece12f37eaf84e4eda0353dae142dfbb473ce50586cb139/Vocabulaire%25201.pdf?Session=3053443"
-                }
-            ]
+    {
+      "id": "210a371a936079b2",
+      "from": "2023-01-17T10:05:00.000Z",
+      "to": "2023-01-17T12:05:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#FFED00",
+      "subject": "PHYSIQUE-CHIMIE",
+      "teacher": "LAVEIL L.",
+      "room": "TP PC1"
+    },
+    {
+      "id": "1175c2528e618d40",
+      "from": "2023-01-17T13:10:00.000Z",
+      "to": "2023-01-17T15:10:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#910EF1",
+      "subject": "MATHEMATIQUES",
+      "teacher": "BANGIL N.",
+      "room": "N162"
+    },
+    {
+      "id": "c5d54ffacf4c30bc",
+      "from": "2023-01-17T15:15:00.000Z",
+      "to": "2023-01-17T17:15:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#0E3611",
+      "subject": "HISTOIRE-GEOGRAPHIE",
+      "teacher": "ROSELLO L.",
+      "room": "S102"
+    },
+    {
+      "id": "474022699e1f4b86",
+      "from": "2023-01-18T08:00:00.000Z",
+      "to": "2023-01-18T10:00:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#AFDEF9",
+      "subject": "NUMERIQUE SC.INFORM.",
+      "teacher": "JURAIN T.",
+      "room": "S103 INFORMATIQUE"
+    },
+    {
+      "id": "6dde6b5399771185",
+      "from": "2023-01-18T10:05:00.000Z",
+      "to": "2023-01-18T12:05:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#195A46",
+      "subject": "ARTS-PLASTIQUES OPTION",
+      "teacher": "JOST R.",
+      "room": "S101 ARTS PLASTIQUES"
+    },
+    {
+      "id": "1307c7f81e82806f",
+      "from": "2023-01-19T08:00:00.000Z",
+      "to": "2023-01-19T09:00:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#FE031D",
+      "subject": "FRANCAIS",
+      "teacher": "LAFONT A.",
+      "room": "S106"
+    },
+    {
+      "id": "ba3fcc8f602b5483",
+      "from": "2023-01-19T08:55:00.000Z",
+      "to": "2023-01-19T09:55:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#FE031D",
+      "subject": "FRANCAIS",
+      "teacher": "LAFONT A.",
+      "room": "S106"
+    },
+    {
+      "id": "103e3adddb6316d9",
+      "from": "2023-01-19T10:05:00.000Z",
+      "to": "2023-01-19T12:05:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#FFED00",
+      "subject": "PHYSIQUE-CHIMIE",
+      "teacher": "LAVEIL L.",
+      "room": "TP PC2"
+    },
+    {
+      "id": "99ba8922aa578a5e",
+      "from": "2023-01-19T11:55:00.000Z",
+      "to": "2023-01-19T12:55:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#212853",
+      "subject": "ANGLAIS LV1",
+      "teacher": "BARRE P.",
+      "room": "S109"
+    },
+    {
+      "id": "a106ae4b984aba21",
+      "from": "2023-01-19T14:05:00.000Z",
+      "to": "2023-01-19T15:05:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#367167",
+      "subject": "ENS. MORAL & CIVIQUE",
+      "teacher": "ROSELLO L.",
+      "room": "S115 INFORMATIQUE"
+    },
+    {
+      "id": "78afddb53ca3c6ba",
+      "from": "2023-01-19T15:15:00.000Z",
+      "to": "2023-01-19T16:15:00.000Z",
+      "isDetention": false,
+      "remoteLesson": false,
+      "hasDuplicate": false,
+      "isAway": false,
+      "isCancelled": false,
+      "color": "#ED6566",
+      "subject": "AP FRANCAIS",
+      "teacher": "LAFONT A.",
+      "room": "S106"
+    }
+  ],
+  "marks": {
+    "subjects": [
+      {
+        "name": "ARTS-PLASTIQUES OPTION",
+        "averages": {
+          "student": 17,
+          "studentClass": 16.33,
+          "max": 19.25,
+          "min": 11.5
         },
-        {
-            "id": "ea6aa2b94209ebd1",
-            "description": "Interro sur les activités 10, 11, 12 (20 min) sauf la définition d'isomères. Donner la formule de Lewis de n'importe qu'elle molécules est à savoir.",
-            "htmlDescription": "<div>Interro sur les activités 10, 11, 12 (20 min) sauf la définition d&#039;isomères. Donner la formule de Lewis de n&#039;importe qu&#039;elle molécules est à savoir.</div>",
-            "subject": "PHYSIQUE-CHIMIE",
-            "givenAt": "2022-12-09T00:00:00.000Z",
-            "for": "2022-12-13T00:00:00.000Z",
-            "done": false,
-            "color": "#FFED00",
-            "files": []
-        }
+        "color": "#195A46",
+        "marks": [
+          {
+            "id": "c093b6b0a509c7d4",
+            "title": "figuration narrative sujet classe",
+            "isAway": false,
+            "value": 17,
+            "min": 11.5,
+            "max": 20,
+            "average": 16.22,
+            "scale": 20,
+            "coefficient": 1,
+            "date": "2022-11-23T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "PHYSIQUE-CHIMIE",
+        "averages": {
+          "student": 14,
+          "studentClass": 10.99,
+          "max": 18.71,
+          "min": 3.71
+        },
+        "color": "#FFED00",
+        "marks": [
+          {
+            "id": "2c3e499d7fe273c3",
+            "title": "",
+            "isAway": false,
+            "value": 13.5,
+            "min": 3,
+            "max": 18.5,
+            "average": 10.73,
+            "scale": 20,
+            "coefficient": 3,
+            "date": "2022-11-17T00:00:00.000Z"
+          },
+          {
+            "id": "9472baf0d62efb0",
+            "title": "",
+            "isAway": false,
+            "value": 8.5,
+            "min": 4,
+            "max": 10,
+            "average": 7.11,
+            "scale": 10,
+            "coefficient": 1,
+            "date": "2022-12-15T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "NUMERIQUE SC.INFORM.",
+        "averages": {
+          "student": 18.8,
+          "studentClass": 15.07,
+          "max": 19.6,
+          "min": 4
+        },
+        "color": "#AFDEF9",
+        "marks": [
+          {
+            "id": "2e472bf91447d275",
+            "title": "documenter le code algo tri Python",
+            "isAway": false,
+            "value": 7,
+            "min": 2,
+            "max": 9.5,
+            "average": 7.18,
+            "scale": 10,
+            "coefficient": 1,
+            "date": "2022-12-02T00:00:00.000Z"
+          },
+          {
+            "id": "2ba85e259882d455",
+            "title": "Projet #1 : exposé en classe",
+            "isAway": false,
+            "value": 20,
+            "min": 13,
+            "max": 20,
+            "average": 15.89,
+            "scale": 20,
+            "coefficient": 2,
+            "date": "2023-01-09T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "ANGLAIS LV1",
+        "averages": {
+          "student": 15,
+          "studentClass": 14.39,
+          "max": 17,
+          "min": 10
+        },
+        "color": "#212853",
+        "marks": [
+          {
+            "id": "11785cf3539e52de",
+            "title": "Canvassing debate",
+            "isAway": false,
+            "value": 15,
+            "min": 11,
+            "max": 17,
+            "average": 14.81,
+            "scale": 20,
+            "coefficient": 1,
+            "date": "2022-12-02T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "FRANCAIS",
+        "averages": {
+          "student": 12.26,
+          "studentClass": 12.09,
+          "max": 18.45,
+          "min": 7.68
+        },
+        "color": "#FE031D",
+        "marks": [
+          {
+            "id": "abaa52cf600d477",
+            "title": "cercle 1 seq2",
+            "isAway": false,
+            "value": 10,
+            "min": 5,
+            "max": 10,
+            "average": 7.56,
+            "scale": 10,
+            "coefficient": 0.5,
+            "date": "2022-12-03T00:00:00.000Z"
+          },
+          {
+            "id": "c55cc0d2f3396e55",
+            "title": "Cercle GDT 2",
+            "isAway": false,
+            "value": 10,
+            "min": 6,
+            "max": 10,
+            "average": 7.63,
+            "scale": 10,
+            "coefficient": 0.5,
+            "date": "2022-12-03T00:00:00.000Z"
+          },
+          {
+            "id": "ce959699a6113ab",
+            "title": "GDT 3 ",
+            "isAway": false,
+            "value": 8.5,
+            "min": 5,
+            "max": 8.5,
+            "average": 6.9,
+            "scale": 10,
+            "coefficient": 0.5,
+            "date": "2022-12-03T00:00:00.000Z"
+          },
+          {
+            "id": "9da7f07cc8ab397e",
+            "title": "cercle LC",
+            "isAway": false,
+            "value": 8,
+            "min": 3,
+            "max": 8,
+            "average": 6.68,
+            "scale": 10,
+            "coefficient": 0.5,
+            "date": "2022-12-03T00:00:00.000Z"
+          },
+          {
+            "id": "99c5de3b193b0d4e",
+            "title": "dissertation DM théâtre",
+            "isAway": false,
+            "value": 11,
+            "min": 6,
+            "max": 18,
+            "average": 10.44,
+            "scale": 20,
+            "coefficient": 1,
+            "date": "2022-12-18T00:00:00.000Z"
+          },
+          {
+            "id": "532df222574cf158",
+            "title": "carnet",
+            "isAway": false,
+            "value": 12,
+            "min": 7,
+            "max": 20,
+            "average": 13.31,
+            "scale": 20,
+            "coefficient": 0.75,
+            "date": "2022-12-18T00:00:00.000Z"
+          },
+          {
+            "id": "ddb7cbd7fe0cbc16",
+            "title": "EF séquence 2",
+            "isAway": false,
+            "value": 10,
+            "min": 6,
+            "max": 18,
+            "average": 11.02,
+            "scale": 20,
+            "coefficient": 2,
+            "date": "2022-12-18T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "ENSEIGNEMENT SCIENTIFIQUE",
+        "averages": {
+          "student": 12,
+          "studentClass": 11.4,
+          "max": 19.2,
+          "min": 4.8
+        },
+        "color": "#FFED00",
+        "marks": [
+          {
+            "id": "fba0b25920bca08",
+            "title": "",
+            "isAway": false,
+            "value": 4,
+            "min": 0.5,
+            "max": 5,
+            "average": 2.84,
+            "scale": 5,
+            "coefficient": 0.5,
+            "date": "2022-12-04T00:00:00.000Z"
+          },
+          {
+            "id": "1dfede139c46f597",
+            "title": "DS cellule 1",
+            "isAway": false,
+            "value": 5.5,
+            "min": 2.5,
+            "max": 10,
+            "average": 5.65,
+            "scale": 10,
+            "coefficient": 1,
+            "date": "2022-12-12T00:00:00.000Z"
+          },
+          {
+            "id": "d693642b06ccec8",
+            "title": "",
+            "isAway": false,
+            "value": 4.5,
+            "min": 3.5,
+            "max": 5,
+            "average": 4.19,
+            "scale": 5,
+            "coefficient": 1,
+            "date": "2023-01-04T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "MATHEMATIQUES",
+        "averages": {
+          "student": 13,
+          "studentClass": 11.42,
+          "max": 18.7,
+          "min": 3.8
+        },
+        "color": "#910EF1",
+        "marks": [
+          {
+            "id": "101153c7fc38833",
+            "title": "",
+            "isAway": false,
+            "value": 17.5,
+            "min": 3.5,
+            "max": 24.5,
+            "average": 13.19,
+            "scale": 25,
+            "coefficient": 1,
+            "date": "2022-12-06T00:00:00.000Z"
+          },
+          {
+            "id": "2a8cefc0b230fa3e",
+            "title": "DM4",
+            "isAway": false,
+            "value": 6,
+            "min": 4.5,
+            "max": 9,
+            "average": 7.28,
+            "scale": 10,
+            "coefficient": 0.2,
+            "date": "2022-12-09T00:00:00.000Z"
+          },
+          {
+            "id": "771aece0f47d568f",
+            "title": "DM5",
+            "isAway": false,
+            "value": 9,
+            "min": 1.5,
+            "max": 9.5,
+            "average": 7.45,
+            "scale": 10,
+            "coefficient": 0.2,
+            "date": "2023-01-03T00:00:00.000Z"
+          },
+          {
+            "id": "c94da48dd5d87297",
+            "title": "IE4",
+            "isAway": false,
+            "value": 5.5,
+            "min": 2.5,
+            "max": 10,
+            "average": 6.81,
+            "scale": 12,
+            "coefficient": 1,
+            "date": "2023-01-10T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "ITALIEN LV2",
+        "averages": {
+          "student": 15.2,
+          "studentClass": 15.2,
+          "max": 20,
+          "min": 10
+        },
+        "color": "#A02E65",
+        "marks": [
+          {
+            "id": "f049bf8c2a74bc6e",
+            "title": "Progetto finale Unità 2",
+            "isAway": false,
+            "value": 14,
+            "min": 8.5,
+            "max": 20,
+            "average": 14.29,
+            "scale": 20,
+            "coefficient": 2,
+            "date": "2022-12-09T00:00:00.000Z"
+          },
+          {
+            "id": "1d9949ea8337a195",
+            "title": "questions-réponses sur la Sicilia",
+            "isAway": false,
+            "value": 10,
+            "min": 8,
+            "max": 10,
+            "average": 9.07,
+            "scale": 10,
+            "coefficient": 1,
+            "date": "2023-01-09T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "ED.PHYSIQUE & SPORT.",
+        "averages": {
+          "student": 14.3,
+          "studentClass": 15,
+          "max": 19.8,
+          "min": 10
+        },
+        "color": "#7CB927",
+        "marks": [
+          {
+            "id": "b1972bc9af75604f",
+            "title": "step-sécurité",
+            "isAway": false,
+            "value": 6,
+            "min": 5,
+            "max": 10,
+            "average": 7.33,
+            "scale": 10,
+            "coefficient": 1,
+            "date": "2022-12-13T00:00:00.000Z"
+          },
+          {
+            "id": "12b9450fcddece90",
+            "title": "step-création bloc",
+            "isAway": false,
+            "value": 16.5,
+            "min": 10,
+            "max": 20,
+            "average": 15.63,
+            "scale": 20,
+            "coefficient": 1,
+            "date": "2023-01-16T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "HISTOIRE-GEOGRAPHIE",
+        "averages": {
+          "student": 13.5,
+          "studentClass": 12.5,
+          "max": 19,
+          "min": 3
+        },
+        "color": "#0E3611",
+        "marks": [
+          {
+            "id": "ab2d7509c8aa48a7",
+            "title": "",
+            "isAway": false,
+            "value": 13.5,
+            "min": 3,
+            "max": 19,
+            "average": 12.5,
+            "scale": 20,
+            "coefficient": 2,
+            "date": "2022-12-13T00:00:00.000Z"
+          }
+        ]
+      },
+      {
+        "name": "ENSEIGNEMENT SCIENTIFIQUE",
+        "averages": {
+          "student": 18,
+          "studentClass": 16.75,
+          "max": 20,
+          "min": 14
+        },
+        "color": "#FFED00",
+        "marks": []
+      }
     ],
-    "contents": []
+    "averages": { "student": 14.85, "studentClass": 13.71 }
+  },
+  "menu": [
+    {
+      "date": "2023-01-17T00:00:00.000Z",
+      "meals": [
+        [
+          [{ "name": "Buffet d’entrées variées", "labels": [] }],
+          [
+            {
+              "name": "Escalope de porc à la provençale ou dorade tapenade ou steak végé  / Frite fraiche  / Gratin de butt",
+              "labels": []
+            }
+          ],
+          [{ "name": " Dessert", "labels": [] }],
+          [{ "name": "COTE SNACk", "labels": [] }],
+          [
+            {
+              "name": "Salade de gnocchi  / Club poulet / Chausson aux pommes",
+              "labels": []
+            }
+          ]
+        ]
+      ]
+    },
+    {
+      "date": "2023-01-19T00:00:00.000Z",
+      "meals": [
+        [
+          [{ "name": "Buffet d’entrées variées", "labels": [] }],
+          [
+            {
+              "name": "Cuisse de poulet confit ou encornet à la tomate ou rougail de tofu / Riz parfumé / Achard de légumes",
+              "labels": []
+            }
+          ],
+          [{ "name": " Dessert", "labels": [] }],
+          [{ "name": "COTE SNACk", "labels": [] }],
+          [
+            {
+              "name": " Salade et crudités / Croque fromage  Muffin caramel ",
+              "labels": []
+            }
+          ]
+        ]
+      ]
+    }
+  ],
+  "homeworks": [
+    {
+      "id": "ea6aa2b94209ebd2",
+      "description": "Ex 17;19 p 268",
+      "htmlDescription": "<div>Ex 17;19 p 268</div>",
+      "subject": "MATHEMATIQUES",
+      "givenAt": "2023-01-13T00:00:00.000Z",
+      "for": "2023-01-17T00:00:00.000Z",
+      "done": false,
+      "color": "#910EF1",
+      "files": []
+    },
+    {
+      "id": "ea6aa2b94209ebd4",
+      "description": "Retenir l'essentiel du cours : I) La Révolution de 1848 marque un tournant décisif",
+      "htmlDescription": "<div>Retenir l&#039;essentiel du cours : I) La Révolution de 1848 marque un tournant décisif</div>",
+      "subject": "HISTOIRE-GEOGRAPHIE",
+      "givenAt": "2023-01-13T00:00:00.000Z",
+      "for": "2023-01-17T00:00:00.000Z",
+      "done": false,
+      "color": "#0E3611",
+      "files": []
+    },
+    {
+      "id": "ea6aa2b94209ebd0",
+      "description": "lien nouveau padlet séquence 3 : https://padlet.com/amlafont1379/7730o8k66fjqr28a",
+      "htmlDescription": "<div>lien nouveau padlet séquence 3 : https://padlet.com/amlafont1379/7730o8k66fjqr28a</div>",
+      "subject": "AP FRANCAIS",
+      "givenAt": "2022-12-15T00:00:00.000Z",
+      "for": "2023-01-19T00:00:00.000Z",
+      "done": false,
+      "color": "#ED6566",
+      "files": []
+    },
+    {
+      "id": "ea6aa2b94209ebd1",
+      "description": "Cercle lecture LC Nabokov 1 : avoir lu du chapitre 1 au chapitre 13 inclus (et répondre aux questions sur carnet)",
+      "htmlDescription": "<div>Cercle lecture LC Nabokov 1 : avoir lu du chapitre 1 au chapitre 13 inclus (et répondre aux questions sur carnet)</div>",
+      "subject": "FRANCAIS",
+      "givenAt": "2023-01-05T00:00:00.000Z",
+      "for": "2023-01-19T00:00:00.000Z",
+      "done": false,
+      "color": "#FE031D",
+      "files": []
+    },
+    {
+      "id": "ea6aa2b94209ebd3",
+      "description": "Finish filling in the columns",
+      "htmlDescription": "<div>Finish filling in the columns</div>",
+      "subject": "ANGLAIS LV1",
+      "givenAt": "2023-01-13T00:00:00.000Z",
+      "for": "2023-01-19T00:00:00.000Z",
+      "done": true,
+      "color": "#212853",
+      "files": []
+    }
+  ],
+  "contents": [],
+  "holidays": [
+    {
+      "title": "Vacances d'Hiver",
+      "dateStart": "2023-02-11T00:00:00.000Z",
+      "dateEnd": "2023-02-27T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de Printemps",
+      "dateStart": "2023-04-15T00:00:00.000Z",
+      "dateEnd": "2023-05-02T00:00:00.000Z"
+    },
+    {
+      "title": "Pont de l'Ascension",
+      "dateStart": "2023-05-18T00:00:00.000Z",
+      "dateEnd": "2023-05-22T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Été",
+      "dateStart": "2023-07-08T00:00:00.000Z",
+      "dateEnd": "2023-09-04T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Été (prérentrée Enseignants )",
+      "dateStart": "2023-09-01T00:00:00.000Z",
+      "dateEnd": "2023-09-04T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de la Toussaint",
+      "dateStart": "2023-10-21T00:00:00.000Z",
+      "dateEnd": "2023-11-06T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de Noël",
+      "dateStart": "2023-12-23T00:00:00.000Z",
+      "dateEnd": "2024-01-08T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Hiver",
+      "dateStart": "2024-02-24T00:00:00.000Z",
+      "dateEnd": "2024-03-11T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de Printemps",
+      "dateStart": "2024-04-20T00:00:00.000Z",
+      "dateEnd": "2024-05-06T00:00:00.000Z"
+    },
+    {
+      "title": "Pont de l'Ascension",
+      "dateStart": "2024-05-10T00:00:00.000Z",
+      "dateEnd": "2024-05-11T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Été",
+      "dateStart": "2024-07-06T00:00:00.000Z",
+      "dateEnd": "2024-09-02T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Été (prérentrée Enseignants )",
+      "dateStart": "2024-08-30T00:00:00.000Z",
+      "dateEnd": "2024-09-02T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de la Toussaint",
+      "dateStart": "2024-10-19T00:00:00.000Z",
+      "dateEnd": "2024-11-04T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de Noël",
+      "dateStart": "2024-12-21T00:00:00.000Z",
+      "dateEnd": "2025-01-06T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Hiver",
+      "dateStart": "2025-02-08T00:00:00.000Z",
+      "dateEnd": "2025-02-24T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de Printemps",
+      "dateStart": "2025-04-05T00:00:00.000Z",
+      "dateEnd": "2025-04-22T00:00:00.000Z"
+    },
+    {
+      "title": "Pont de l'Ascension",
+      "dateStart": "2025-05-30T00:00:00.000Z",
+      "dateEnd": "2025-05-31T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Été",
+      "dateStart": "2025-07-05T00:00:00.000Z",
+      "dateEnd": "2025-09-01T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Été (prérentrée Enseignants )",
+      "dateStart": "2025-08-29T00:00:00.000Z",
+      "dateEnd": "2025-09-01T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de la Toussaint",
+      "dateStart": "2025-10-18T00:00:00.000Z",
+      "dateEnd": "2025-11-03T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de Noël",
+      "dateStart": "2025-12-20T00:00:00.000Z",
+      "dateEnd": "2026-01-05T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances d'Hiver",
+      "dateStart": "2026-02-14T00:00:00.000Z",
+      "dateEnd": "2026-03-02T00:00:00.000Z"
+    },
+    {
+      "title": "Vacances de Printemps",
+      "dateStart": "2026-04-11T00:00:00.000Z",
+      "dateEnd": "2026-04-27T00:00:00.000Z"
+    },
+    {
+      "title": "Pont de l'Ascension",
+      "dateStart": "2026-05-15T00:00:00.000Z",
+      "dateEnd": "2026-05-16T00:00:00.000Z"
+    },
+    {
+      "title": "Début des Vacances d'Été",
+      "dateStart": "2026-07-04T00:00:00.000Z",
+      "dateEnd": "2026-07-04T00:00:00.000Z"
+    }
+  ],
+  "eval": []
 }
