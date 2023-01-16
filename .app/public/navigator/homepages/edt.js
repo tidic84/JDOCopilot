@@ -49,11 +49,9 @@ export default class Edt extends React.Component {
     
     //this.threeOptionAlertHandler()
     this.getFranck();
-   function hideThisFuckingBar(){ 
-      NavigationBar.setVisibilityAsync("hidden");
-      NavigationBar.setBehaviorAsync('overlay-swipe');
-      NavigationBar.setButtonStyleAsync("light");
-    }
+    
+    NavigationBar.setBackgroundColorAsync(DEFAULT.secondary);
+    NavigationBar.setButtonStyleAsync("light");
 
     function actionOnRow(item) {
       Alert.alert(
@@ -62,7 +60,7 @@ export default class Edt extends React.Component {
         //body
         'Prof : ' + item.prof + '\nEtat du cours : ' + item.stat,
         [
-          { text: 'Chouette', onPress: () => hideThisFuckingBar() },
+          { text: ' ', onPress: () => hideThisFuckingBar() },
         ],
         { cancelable: true }
       );
@@ -115,6 +113,7 @@ export default class Edt extends React.Component {
       
       let fromH = []
       let fromM = []
+      let fromD = []
       let toH = []
       let toM = []
 
@@ -133,6 +132,7 @@ export default class Edt extends React.Component {
         prettierNums(f.getUTCHours(), fromH)
         prettierNums(f.getUTCMinutes(), fromM)
 
+        fromD.push(f.getDay)
         //console.log(j1[compteurA].subject)
         compteurA++; // on incremente le compteur
       } while (compteurA < j1.length);
@@ -147,6 +147,29 @@ export default class Edt extends React.Component {
         compteurD++; // on incremente le compteur
       } while (compteurD < j2.length);
       
+    //   let lysopaine = 0;
+    //   let gaviscon = { //il faut garder l'architecture
+    //     subject: 'Transition Cochon !',
+    //     room: ' ',
+    //     fromHour: ' ',
+    //     fromMin: ' ',
+    //     toHour: ' ',
+    //     toMin: ' ',
+    //     endM: ' ',
+    //     endH: ' ',
+    //     prof: "Les profs c'est pour les faibles",
+    //     stat: "C'est pas un cours",
+    // }
+
+    //   if (j2.length > 0) {
+    //     j1.push(gaviscon)
+    //     do {
+    //       j1.push(j2[lysopaine]);
+
+    //       lysopaine++;
+    //     } while (lysopaine < j2.length);
+    //   }
+    
       // console.log(j1.length)
       //console.log(cours)
       // on met tout dans un dictionnaire pour pouvoir tout afficher
@@ -194,6 +217,7 @@ export default class Edt extends React.Component {
           room: salles[compteurB], //remplacer par salles[compteurB] quand la fonction sera faite
           fromHour: fromH[compteurB],
           fromMin: fromM[compteurB],
+          fromD: fromD[compteurB],
           toHour: toH[compteurB],
           toMin: toM[compteurB],
           endM: endM[compteurB],
@@ -207,6 +231,7 @@ export default class Edt extends React.Component {
           room: salles[compteurB], //remplacer par salles[compteurB] quand la fonction sera faite
           fromHour: fromH[compteurB],
           fromMin: fromM[compteurB],
+          fromD: fromD[compteurB],
           toHour: toH[compteurB],
           toMin: toM[compteurB],
           endM: endM[compteurB],
@@ -226,7 +251,26 @@ export default class Edt extends React.Component {
         compteurB++;
       } while (compteurB < j1.length );
 
+      //console.log(j1)
       
+            //transition entre les 2 jours ou plus que l'edt atteint
+            // let c = 0
+            // let v = 0
+            // let the_real_DATA = []
+            
+      
+            // do {
+            //   if((DATA[c].fromD - DATA[v].fromD) >= 1){
+            //     the_real_DATA.push(gaviscon)
+            //     the_real_DATA.push(DATA[c])
+            //     v++
+                
+            //   } else {
+            //     the_real_DATA.push(DATA[c])
+            //   }
+              
+            //   c++
+            // } while(c < DATA.length)
 
       //alerte:
       
@@ -281,7 +325,7 @@ export default class Edt extends React.Component {
               <Text style={defaultCSS.bodyTitle}>Aujourd'hui :</Text>
             </TouchableOpacity>*/}
               <View style={defaultCSS.bodyTitleContainer}>
-                <Text style={defaultCSS.bodyTitle}>Aujourd'hui :</Text>
+                <Text style={defaultCSS.bodyTitle}>Dans la même journée :</Text>
               </View>
               
               {/* liste des prochains cours */}
@@ -340,3 +384,6 @@ export default class Edt extends React.Component {
     
   }
 }
+
+
+

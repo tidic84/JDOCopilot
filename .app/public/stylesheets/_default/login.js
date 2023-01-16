@@ -33,6 +33,7 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     color: "#FFFFFF",
     marginTop: 5,
     alignSelf: "center",
+    textAlign: "center",
   },
   textInput: {
     marginTop: 32,
@@ -87,7 +88,7 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     alignItems: "center",
     justifyContent: "center",
     left: 2,
-    top: -12
+    top: -50
   },
   continueDisabled: {
     width: 70,
@@ -97,7 +98,7 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     alignItems: "center",
     justifyContent: "center",
     left: 2,
-    top: -12,
+    top: -50,
     opacity: 0.3,
   },
 

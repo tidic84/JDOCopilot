@@ -67,7 +67,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   body: {
     width: width - 60,
-    height: height / 1.45,
+    height: height / 1.68,
     backgroundColor: DEFAULT.secondary,
     borderRadius: 15,
     alignSelf: "center",
@@ -76,7 +76,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   bodyList: {
     position: "relative",
     width: width - 60,
-    height: height / 1.585,
+    height: height / 1.87,
     alignSelf: "center",
     marginVertical: 5,
     paddingVertical: 5,

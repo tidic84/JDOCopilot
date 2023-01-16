@@ -89,7 +89,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
 
   bodyContainer:{
     width: width - 60,
-    height: height / 1.72,
+    height: height / 1.95,
     backgroundColor: DEFAULT.secondary,
     borderRadius: 15,
     alignSelf: "center",

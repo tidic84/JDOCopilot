@@ -43,8 +43,8 @@ export default class Year extends React.Component {
     render() {
         this.getHolidays();
     
-        NavigationBar.setVisibilityAsync("hidden");
-        NavigationBar.setBehaviorAsync('overlay-swipe');
+        // NavigationBar.setVisibilityAsync("hidden");
+        // NavigationBar.setBehaviorAsync('overlay-swipe');
         NavigationBar.setButtonStyleAsync("light");
         NavigationBar.setBackgroundColorAsync(DEFAULT.secondary);
         
