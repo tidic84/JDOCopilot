@@ -19,7 +19,7 @@ import switchRooms from '../../../private/room.js';
 import prettierNums from '../../../private/duration';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as NavigationBar from 'expo-navigation-bar';
-
+import { StatusBar } from 'expo-status-bar';
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
@@ -280,6 +280,7 @@ export default class Edt extends React.Component {
         <>
         
           <View style={defaultCSS.container}>
+            <StatusBar style="dark" hidden={true} />
             
             {/* prochain cour */}
             <View style={defaultCSS.header}>

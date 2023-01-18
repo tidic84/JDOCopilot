@@ -1,15 +1,15 @@
 {
   "expo": {
     "name": "JDO-Copilot",
-    "slug": "JDO-Copilot",
+    "slug": "jdocopilot-beta",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./.app/public/assets/expo/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./.app/public/assets/expo/splash.png",
+      "image": "./.app/public/assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#201F4F"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -20,22 +20,23 @@
     "ios": {
       "supportsTablet": false,
       "userInterfaceStyle": "automatic",
-      "bundleIdentifier": "com.albatross.jdocopilot"
+      "bundleIdentifier": "me.albatross.jdocopilot"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./.app/public/assets/expo/adaptive-icon.png",
-        "backgroundColor": "#000000"
+        "backgroundColor": "#FFFFFF"
       },
-      "package": "com.albatross.jdocopilot"
+      "package": "me.albatross.jdocopilot"
     },
     "web": {
       "favicon": "./.app/public/assets/expo/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "50ab60ad-16aa-4518-be79-ac09b2e02585"
+        "projectId": "c86994fa-e104-440a-9a07-c2f0281631be"
       }
-    }
+    },
+    "owner": "albatrosss"
   }
 }

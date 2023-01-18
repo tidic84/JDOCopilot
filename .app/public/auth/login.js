@@ -61,7 +61,7 @@ export default class Login extends React.Component {
     
      if( sessionDate == todayDate && decrypt(username) == decrypt(await AsyncStorage.getItem("username")) && decrypt(password) == decrypt(await AsyncStorage.getItem("password"))) {
        await AsyncStorage.setItem("franck", JSON.stringify(franck));
-       this.props.navigation.navigate("Main"); // On navigue vers la page principale
+       this.props.navigation.replace("Main"); // On navigue vers la page principale
        //console.log(await AsyncStorage.getItem("franck")); 
        console.log("Fast connection");
      } else {
@@ -74,7 +74,7 @@ export default class Login extends React.Component {
         await AsyncStorage.setItem("password", password);
 
         //console.log(await AsyncStorage.getItem("franck")); 
-        this.props.navigation.navigate("Main"); // On navigue vers la page principale
+        this.props.navigation.replace("Main"); // On navigue vers la page principale
         console.log("Slow connection");
       } catch {
         this.setState({ disabledButton: false })
