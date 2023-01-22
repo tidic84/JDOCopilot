@@ -280,7 +280,7 @@ export default class Edt extends React.Component {
         <>
         
           <View style={defaultCSS.container}>
-            <StatusBar style="dark" hidden={true} />
+            <StatusBar style="light" hidden={false} backgroundColor={DEFAULT.secondary}/>
             
             {/* prochain cour */}
             <View style={defaultCSS.header}>

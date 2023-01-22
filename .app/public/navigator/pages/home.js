@@ -54,10 +54,7 @@ export default class TopNav extends React.Component {
                     } else if (route.name === "AS") {
                         iconName = focused ? "folder-open-outline" : "folder-open-outline";
                         iconColor = focused ? '#C87327' : 'grey';
-                    } else if (route.name === "PLAN") {
-                        iconName = focused ? "map-outline" : "map-outline";
-                        iconColor = focused ? '#C87327' : 'grey';
-                    }
+                    } 
                     return <Ionicons name={iconName} size={25} color='white' />
                 },
                 
@@ -67,7 +64,7 @@ export default class TopNav extends React.Component {
         
           <TopBar.Screen name="EDT" component={Edt} options={{headerShown: false}} />
           <TopBar.Screen name="AS" component={As} options={{headerShown: false, }} />
-          <TopBar.Screen name="PLAN" component={Map} options={{headerShown: false, }} />
+          {/* <TopBar.Screen name="PLAN" component={Map} options={{headerShown: false, }} /> */}
         </TopBar.Navigator>
       </NavigationContainer>
     </View>
@@ -75,3 +72,8 @@ export default class TopNav extends React.Component {
   )
   } 
 }
+
+// else if (route.name === "PLAN") {
+//   iconName = focused ? "map-outline" : "map-outline";
+//   iconColor = focused ? '#C87327' : 'grey';
+// }

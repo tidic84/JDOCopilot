@@ -51,12 +51,12 @@ export default class BottomNav extends React.Component {
                     if (route.name === "Accueil") {
                         iconName = focused ? "home" : "home-outline";
                         iconColor = focused ? '#C87327' : 'grey';
-                    } else if (route.name === "News") {
-                        iconName = focused ? "book" : "book-outline";
-                        iconColor = focused ? '#C87327' : 'grey';
-                    } else if (route.name === "Chat") {
-                        iconName = focused ? "chatbox" : "chatbox-outline";
-                        iconColor = focused ? '#C87327' : 'grey';
+                    // } else if (route.name === "News") {
+                    //     iconName = focused ? "book" : "book-outline";
+                    //     iconColor = focused ? '#C87327' : 'grey';
+                    // } else if (route.name === "Chat") {
+                    //     iconName = focused ? "chatbox" : "chatbox-outline";
+                    //     iconColor = focused ? '#C87327' : 'grey';
                     } else if (route.name === "Year") {
                         iconName = focused ? "calendar" : "calendar-outline";
                         iconColor = focused ? '#C87327' : 'grey';
@@ -72,8 +72,8 @@ export default class BottomNav extends React.Component {
         >
         
           <BottomBar.Screen name="Accueil" component={Home} options={{ title: 'Accueil', headerShown: false}} />
-          <BottomBar.Screen name="News" component={News} options={{ title: 'Agenda', headerShown: false }} />
-          <BottomBar.Screen name="Chat" component={Chat} options={{ title: 'Chat', headerShown: false }} />
+          {/* <BottomBar.Screen name="News" component={News} options={{ title: 'Agenda', headerShown: false }} />
+          <BottomBar.Screen name="Chat" component={Chat} options={{ title: 'Chat', headerShown: false }} /> */}
           <BottomBar.Screen name="Year" component={Year} options={{ title: 'Année', headerShown: false }} />
           <BottomBar.Screen name="Params" component={Param} options={{ title: 'Paramètres', headerShown: false }} />
         </BottomBar.Navigator>

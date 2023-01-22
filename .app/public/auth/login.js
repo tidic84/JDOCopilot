@@ -39,7 +39,7 @@ class Login extends React.Component {
     const response = await fetch(`http://jdocopilot.me/pps/isThereAnUpdate.json`);
     const data = await response.json();
 
-    console.log(data)
+    //console.log(data)
 
     if (data.isUpdateAvailable === true && data.slug != appInfos.slug && data.isNeeded == false){
       Alert.alert(
