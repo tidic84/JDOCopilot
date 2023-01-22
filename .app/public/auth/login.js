@@ -1,20 +1,27 @@
 //import modules
-import {imports} from '../../private/imports.js';
 import React, { useState } from 'react';
-import { ToastAndroid, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard } from "react-native";
+import { ToastAndroid, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, Pressable, Keyboard, Alert, Linking } from "react-native";
 import { Ionicons } from '@expo/vector-icons'
 import * as NavigationBar from 'expo-navigation-bar';
 import { encrypt, decrypt } from "../util/crypto";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {defaultCSS} from "../stylesheets/_default/login"; //default theme
+//import { withNavigation } from 'react-navigation';
 
+import {defaultCSS} from "../stylesheets/_default/login"; //default theme
 //import assets/utils
 const logo = require('../assets/images/logoRond.png')
 let dataReady = false;
 
+const appInfos = {
+  'version':'Beta 0.1.0',
+  'slug':'b0.1.0'
+}
 
-export default class Login extends React.Component {
+class Login extends React.Component {
+
+
+  
 
   // Définition de la fonction errorMessage qui renvoie un message d'erreur sur android ou sur iOS
   errorMessage = (err) => {
@@ -27,13 +34,45 @@ export default class Login extends React.Component {
     }
   }
 
+  // on verifie si il y a des majs:
+  async componentDidMount() {
+    const response = await fetch(`http://jdocopilot.me/pps/isThereAnUpdate.json`);
+    const data = await response.json();
+
+    console.log(data)
+
+    if (data.isUpdateAvailable === true && data.slug != appInfos.slug && data.isNeeded == false){
+      Alert.alert(
+        'Recherche de mise a jours...',
+        `Une nouvelle version de l'app est disponnible : la ${data.version} ! C'est une mise a jour facultative, veuillez télécharger ici :`,
+        [
+          {text: 'Plus tard', onPress: () => console.log('OK Pressed')},
+          {text: 'télécharger', onPress: () => Linking.openURL(data.ilink)},
+        ],
+        { cancelable: true }
+      )
+    } else if (data.isUpdateAvailable === true && data.slug != appInfos.slug && data.isNeeded == true) {
+      Alert.alert(
+        'Recherche de mise a jours...',
+        `Une nouvelle version majeure de l'app est disponnible : la ${data.version} ! C'est une mise a jour necessaire, veuillez la télécharger ici :`,
+        [
+          {text: 'télécharger', onPress: () => Linking.openURL(data.ilink)},
+        ],
+        { cancelable: false }
+      )
+    } else if (!data.isUpdateAvailable){
+      this.errorMessage(`Vous utilisez la dernière version : ${appInfos.version}`)
+    }
+  }
+
+
   state = {
     keptName: "",
     keptPassword: "",
-    disabledButton: false
+    disabledButton: false,
   }
 
-  
+
   //verification des données
   continue = async () => {
     this.setState({ disabledButton: true})
@@ -61,7 +100,7 @@ export default class Login extends React.Component {
     
      if( sessionDate == todayDate && decrypt(username) == decrypt(await AsyncStorage.getItem("username")) && decrypt(password) == decrypt(await AsyncStorage.getItem("password"))) {
        await AsyncStorage.setItem("franck", JSON.stringify(franck));
-       this.props.navigation.replace("Main"); // On navigue vers la page principale
+       this.props.navigation.replace('Main'); // On navigue vers la page principale
        //console.log(await AsyncStorage.getItem("franck")); 
        console.log("Fast connection");
      } else {
@@ -74,7 +113,7 @@ export default class Login extends React.Component {
         await AsyncStorage.setItem("password", password);
 
         //console.log(await AsyncStorage.getItem("franck")); 
-        this.props.navigation.replace("Main"); // On navigue vers la page principale
+        this.props.navigation.replace('Main'); // On navigue vers la page principale
         console.log("Slow connection");
       } catch {
         this.setState({ disabledButton: false })
@@ -126,6 +165,11 @@ export default class Login extends React.Component {
     NavigationBar.setBehaviorAsync('overlay-swipe');
     NavigationBar.setButtonStyleAsync("light");
   }
+
+  // componentDidMount() {
+  //   //initialize navigation
+  //   NavigationBar.setVisibilityAsync("hidden");
+  // }
 
   render() {
     this.getID()
@@ -250,3 +294,6 @@ export default class Login extends React.Component {
     }
   }
 }
+
+
+export default Login;

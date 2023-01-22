@@ -12,6 +12,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import * as NavigationBar from 'expo-navigation-bar';
 import * as Linking from 'expo-linking'
 
+import LoginWithoutFastCo from "../../auth/loginwofc.js"
+
 export default class Param extends React.Component {
   // on vide le sac de franck
    constructor(props) {
@@ -25,15 +27,18 @@ export default class Param extends React.Component {
 }
 
 
-
+  
 
   render() {
-
+    function reload() {
+      return < LoginWithoutFastCo />
+    }
     
     //this.threeOptionAlertHandler()
     
     //this.goOn(); <= ici ça marche
     const randomClosePopupsText = [
+      'OK',
       'Ok.',
       'Super !',
       'Chouette',
@@ -46,7 +51,18 @@ export default class Param extends React.Component {
 
     function actionOnRow(item) {
       //console.log('Selected Item :', item);
-        if (item.id == 5) {
+      if(item.maintenance == true) {
+        Alert.alert(
+          //title
+          ' ',
+          //body
+          "Cette fonctionnalité est en cours de développement, elle sera disponible prochainement !",
+          [
+            { text: randomClosePopupsText[Math.floor(Math.random() * (9 - 1 +1)) + 1] },
+          ],
+          { cancelable: true }
+        );
+      } else if (item.id == 5) {
             Alert.alert(
                 //title
                 ' ',
@@ -72,14 +88,14 @@ export default class Param extends React.Component {
           );
         } else if(item.id == 4) {
           Linking.openURL('https://github.com/tidic84/JDOCopilot/blob/main/CGUs.md')
-         } else if(item.maintenance == true) {
+         } else if(item.id == 1) {
           Alert.alert(
             //title
-            ' ',
+            'Êtes-vous sûr de vouloir re-charger les données ?',
             //body
-            "Cette fonctionnalité est en cours de développement, elle sera disponible prochainement !",
+            " ",
             [
-              { text: randomClosePopupsText[Math.floor(Math.random() * (9 - 1 +1)) + 1] },
+              { text: 'Yep', onPress: () => reload() },
             ],
             { cancelable: true }
           );

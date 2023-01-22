@@ -4,12 +4,12 @@
     "slug": "jdocopilot-beta",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./.app/public/assets/expo/icon.png",
+    "icon": "./.app/public/assets/images/logoRond.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./.app/public/assets/images/splash.png",
+      "image": "./.app/public/assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#201F4F"
+      "backgroundColor": "#2F4F4F"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -25,7 +25,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./.app/public/assets/expo/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#2F4F4F"
       },
       "package": "me.albatross.jdocopilot"
     },

@@ -37,7 +37,7 @@ export default class TopNav extends React.Component {
                     borderBottomColor: DEFAULT.accent,
                     borderTopWidth: 1,
                     height: 75,
-                    paddingTop: 20,
+                    paddingTop: 15,
                     paddingBottom: 5,
                     borderBottomRightRadius: 20,
                     borderBottomLeftRadius: 20,
