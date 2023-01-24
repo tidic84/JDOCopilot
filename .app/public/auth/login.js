@@ -87,7 +87,7 @@ class Login extends React.Component {
     let userN = this.state.name;
     userN = userN.slice(0, userN.indexOf('.'));
     console.log('\x1b[36m%s\x1b[0m', `>> connexion de ${userN}`);
-    this.errorMessage(`Bonjour, ${userN}`);
+    this.errorMessage(`On te connecte, ça peut prendre un moment si c'est la première fois de la journée...`);
 
     const username = encrypt(this.state.name); // On encrypte le nom d'utilisateur
     const password = encrypt(this.state.pwd); // On encrypte le mot de passe

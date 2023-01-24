@@ -24,14 +24,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./.app/public/assets/expo/adaptive-icon.png",
+        "foregroundImage": "./.app/public/assets/images/logoRond.png",
         "backgroundColor": "#2F4F4F"
       },
       "versionCode": 2,
       "package": "me.albatross.jdocopilot"
     },
     "web": {
-      "favicon": "./.app/public/assets/expo/favicon.png"
+      "favicon": "./.app/public/assets/images/logoRond.png"
     },
     "extra": {
       "eas": {

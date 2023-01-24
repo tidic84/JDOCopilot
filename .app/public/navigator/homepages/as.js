@@ -111,28 +111,7 @@ export default class Edt extends React.Component {
         <>
           <View style={defaultCSS.container}>
             {/**header**/}
-            <View style={defaultCSS.header}>
-              
-              {/* recatangle orange sur la gauche */}
-              <View style={defaultCSS.fancyLeft}></View>
-              {/* icone */}
-              <Ionicons
-                name="md-calendar"
-                size={24}
-                color="white"
-                style={defaultCSS.headerIcon}
-              />
-              {/* titre, cour, salle, time left */}
-              <Text style={defaultCSS.headerTitle}>Prochaines évals</Text>
-              <View style={defaultCSS.headerDynamicText}>
-                <Text style={defaultCSS.headerSubject}> 
-                  <Text style={defaultCSS.headerRoom}>Pas d'évaluations prévues</Text>
-                </Text>
-                <Text style={defaultCSS.headerSubject}> Ok j'ai triché, ça marche pas encore
-                  <Text style={defaultCSS.headerRoom}>  </Text>
-                </Text>
-              </View>           
-            </View>
+            
 
             {/**body**/}
             <View style={defaultCSS.bodyTitle}>
@@ -223,24 +202,28 @@ export default class Edt extends React.Component {
 
 //      let ew = [{"desc": "Ex 13 et 12 feuille", "for": 10, "sujet": ["Maths", "Histoire-Géographie", "Français"]}, {"desc": "Connaiître  l'essentiel du document de géographie : ( 2. Comment s'organise l'espace à l'intérieur des métropoles françaises a, b, c). Pensez à présenter en quelques minutes la métropole choisie ( sur atrium, site, classe, documents) car seuls deux élèves l'ont réalisé.", "for": 10, "sujet": ["Maths", "Histoire-Géographie", "Français"]}, {"desc": "Travail à faire avant : introduction à un commentaire pour l'extrait de la LL2 ATTENTION : 3 élèves seront interrogés à l’oral pour la lecture de ce texte", "for": 12, "sujet": ["Maths", "Histoire-Géographie", "Français"]}]
 
-let ew = [
-    {
-        "description": "Ex 13 et 12 feuille",
-        "fait": true,
-        "givenAt": 1672963200000,
-        "pour": 1673308800000,
-        "sujet": "Maths"
-    }, {
-        "description": "Connaiître  l'essentiel du document de géographie : ( 2. Comment s'organise l'espace à l'intérieur des métropoles françaises a, b, c). Pensez à présenter en quelques minutes la métropole choisie ( sur atrium, site, classe, documents) car seuls deux élèves l'ont réalisé.",
-        "fait": true,
-        "givenAt": 1673049600000,
-        "pour": 1673308800000,
-        "sujet": "Histoire-Géographie"
-    }, {
-        "description": "Travail à faire avant : introduction à un commentaire pour l’extrait de la LL2 ATTENTION : 3 élèves seront interrogés à l’oral pour la lecture de ce texte",
-        "fait": false,
-        "givenAt": 1673222400000,
-        "pour": 1673481600000,
-        "sujet": "Français"
-    }
-]
+
+
+
+//  <View style={defaultCSS.header}>
+              
+//               {/* recatangle orange sur la gauche */}
+//               <View style={defaultCSS.fancyLeft}></View>
+//               {/* icone */}
+//               <Ionicons
+//                 name="md-calendar"
+//                 size={24}
+//                 color="white"
+//                 style={defaultCSS.headerIcon}
+//               />
+//               {/* titre, cour, salle, time left */}
+//               <Text style={defaultCSS.headerTitle}>Prochaines évals</Text>
+//               <View style={defaultCSS.headerDynamicText}>
+//                 <Text style={defaultCSS.headerSubject}> 
+//                   <Text style={defaultCSS.headerRoom}>Pas d'évaluations prévues</Text>
+//                 </Text>
+//                 <Text style={defaultCSS.headerSubject}> Ok j'ai triché, ça marche pas encore
+//                   <Text style={defaultCSS.headerRoom}>  </Text>
+//                 </Text>
+//               </View>           
+//             </View> 

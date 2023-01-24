@@ -30,7 +30,7 @@ export default class TopNav extends React.Component {
                   backgroundColor: DEFAULT.accent,
                   height: 3,
                   borderRadius: 10,
-                  width: width / 3,
+                  width: width / 2,
                 },
                 tabBarStyle: {
                     backgroundColor: DEFAULT.secondary,
