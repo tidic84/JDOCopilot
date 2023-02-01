@@ -14,7 +14,6 @@ aux élèves du cve, cvl, etc d'afficher des informations et une vue d'ensemble 
  › [C'est sécurisé ?](https://github.com/tidic84/JDOCopilot/tree/f-end#est-ce-que-cest-s%C3%A9curis%C3%A9) <br />
  › [Tout est de nous ?](https://github.com/tidic84/JDOCopilot/tree/f-end#tout-est-de-nous) <br />
  › [C'est codé comment ?](https://github.com/tidic84/JDOCopilot/tree/f-end#tout-est-de-nous) <br />
- › [Screens](https://github.com/tidic84/JDOCopilot/tree/f-end#screens-sparkles) <br />
 
 ## comment ça marche ?
 
@@ -53,8 +52,6 @@ Donc nous remercions expressement tous ces développeurs qui mettent leurs outil
 
 Pour l'heure, JDO-Copilot est gratuit et open-source, vous pouvez y participer en faisant une pull request, avec une explication détaillée de ce qu'apporte votre contribution. Si celle-ci est acceptée, vous serez mentionné comme contributeur.
 
-## screens :sparkles:
-![Login](https://media.discordapp.net/attachments/657940718186266645/1062448523439771669/Screenshot_1673377835.png?width=285&height=586) ![edt](https://media.discordapp.net/attachments/1051199896239218849/1062445353560973312/Screenshot_1673377056.png?width=285&height=586) ![edt2](https://media.discordapp.net/attachments/1051199896239218849/1062445353875542087/Screenshot_1673377060.png?width=285&height=586) ![progression de l'année](https://media.discordapp.net/attachments/657940718186266645/1061927807099338752/Screenshot_1673199363.png?width=285&height=586) ![devoirs](https://media.discordapp.net/attachments/1051199896239218849/1062445352885686424/Screenshot_1673377018.png?width=285&height=586) ![devoirs2](https://media.discordapp.net/attachments/1051199896239218849/1062445353229635694/Screenshot_1673377038.png?width=285&height=586)
 
 
 ### Love, Albatross! xoxo
