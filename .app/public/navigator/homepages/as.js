@@ -7,21 +7,25 @@ import {
   Alert,
   ActivityIndicator,
   SafeAreaView,
+  Animated,
+  Platform,
 } from "react-native";
 import { defaultCSS } from "../../stylesheets/_default/as.js";
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { DEFAULT } from "../../themes/variables.js";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
 import switchNames from "../../../private/subject.js";
-import { FlashList } from '@shopify/flash-list';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-import * as NavigationBar from 'expo-navigation-bar';
+import { FlashList } from "@shopify/flash-list";
+import * as NavigationBar from "expo-navigation-bar";
 import { timeDifference } from "../../util/relativeDaysWidget.js";
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
   state = {
     franck: "",
+    hideDevs: false,
   };
 
   // on lui demande de recupérer les données de l'utilisateur
@@ -31,48 +35,38 @@ export default class Edt extends React.Component {
     //console.log(this.state.franck);
   };
 
+  _states = async () => {
+    if ((await AsyncStorage.getItem("hideDevoirs")) == null) {
+      this.setState({ hideDevs: false });
+    } else if ((await AsyncStorage.getItem("hideDevoirs")) == "true") {
+      this.setState({ hideDevs: true });
+    } else if ((await AsyncStorage.getItem("hideDevoirs")) == "false") {
+      this.setState({ hideDevs: false });
+    }
+
+    console.log("_States called");
+  };
+
+  componentDidMount() {
+    this._states();
+  }
+
   render() {
     this.getFranck();
-    
-    function hideThisFuckingBar(){ 
-      NavigationBar.setVisibilityAsync("hidden");
-      NavigationBar.setBehaviorAsync('overlay-swipe');
-      NavigationBar.setButtonStyleAsync("light");
-    }
 
-    function actionOnRow(item) {
-      let state = undefined
-      if(item.fait === false) {
-        state = 'non ;-;'
-      } else if (item.fait === true) {
-        state = 'oui !'
-      } else {
-        state = 'quelle est cette sorcellerie ????'
-      }
-      let givenAt = timeDifference(new Date(), item.givenAt)
-      Alert.alert(
-        //title
-        item.sujet,
-        //body
-        '\nDonné ' + givenAt + '\nFait : ' + state,
-        [
-          { text: 'Chouette', onPress: () => hideThisFuckingBar() },
-        ],
-        { cancelable: true }
-      );
-    }
+    NavigationBar.setBackgroundColorAsync(DEFAULT.secondary),
+      NavigationBar.setButtonStyleAsync("light");
 
     if (this.state.franck != "") {
-
       //récupération des devoirs
-      let franck = this.state.franck.homeworks
+      let franck = this.state.franck.homeworks;
       //let evaluations = this.state.franck.evals
-      let devoirs = []
-      let sujet = []
-      let compteurA = 0
+      let devoirs = [];
+      let sujet = [];
+      let compteurA = 0;
 
       do {
-        switchNames(franck[compteurA].subject, sujet)
+        switchNames(franck[compteurA].subject, sujet);
 
         //console.log(sujet)
         let dico = {
@@ -81,41 +75,29 @@ export default class Edt extends React.Component {
           pour: new Date(franck[compteurA].for).getTime(),
           givenAt: new Date(franck[compteurA].givenAt).getTime(),
           fait: franck[compteurA].done,
-        }
+        };
 
         //console.log(dico)
-        devoirs.push(dico)
-        compteurA ++
-      } while (compteurA < franck.length)
+        devoirs.push(dico);
+        compteurA++;
+      } while (compteurA < franck.length);
 
-      //console.log(devoirs)
-
-      //récupération des 2 prochaines évals:
-      /**let evals = []
-      let mat = []
-      let compteurB = 0
-
-      if(evaluations === []){
-        evals.push( `Pas d'évaluations en vue, capitaîne`)
-      } else {
-        do {
-          
-          compteurB ++
-        } while (compteurB < 2)
-      }**/
-      
-
-
+      const updatedData = devoirs.filter((_devsData) => {
+        if (_devsData.fait) {
+          return false;
+        } else {
+          return true;
+        }
+      });
 
       return (
         <>
           <View style={defaultCSS.container}>
             {/**header**/}
-            
 
             {/**body**/}
             <View style={defaultCSS.bodyTitle}>
-              <Text style={defaultCSS.bodyTextIcon} >Devoirs :</Text>
+              <Text style={defaultCSS.bodyTextIcon}>Devoirs :</Text>
               {/**<Ionicons 
                 name="funnel-outline"
                 size={24}
@@ -123,42 +105,63 @@ export default class Edt extends React.Component {
                 style={defaultCSS.bodyTitleIcon}
               />**/}
             </View>
-            <View style={defaultCSS.bodyContainer}>
-            <FlashList
-                  data={devoirs}
-                  renderItem={({ item }) => (<TouchableOpacity onPress={() => actionOnRow(item)}>
-                                                    <Text >  </Text>
-                                                    <Text >  </Text>
-                                                    <Text style={defaultCSS.bodySubject}>{item.sujet} : </Text>
-                                                    <Text style={defaultCSS.bodyDesc}>{item.description}</Text>
-                                                    <Text style={defaultCSS.bodyFor}>Pour <Text style={defaultCSS.num}>{timeDifference(Date.now() + 3600000, item.pour)}</Text></Text>
-                                                    <Text >  </Text>
-                                                    <Text >  </Text>
-                                                    
-                                            </TouchableOpacity>)}
-                  estimatedItemSize={200}
-                  ItemSeparatorComponent={() => (
-                    <View style={defaultCSS.separatorComponent} />
-                    
-                  )}
-                  containerComponentStyle={defaultCSS.bodyList}
-                />
-            </View>
 
+            <View style={defaultCSS.bodyContainer}>
+              <Pressable
+                onPress={() => this._states() + console.log("refreshed")}
+                style={{
+                  right: 5,
+                  top: 5,
+                  opacity: 1,
+                  zIndex: 1,
+                  position: "absolute",
+                }}
+              >
+                <Ionicons
+                  name="refresh-outline"
+                  size={22}
+                  color={DEFAULT.accent}
+                />
+              </Pressable>
+              <FlashList
+                data={this.state.hideDevs ? updatedData : devoirs}
+                renderItem={({ item }) => (
+                  <View
+                    style={{
+                      opacity: !this.state.hideDevs ? (item.fait ? 0.5 : 1) : 1,
+                    }}
+                  >
+                    <Text> </Text>
+                    <Text> </Text>
+                    <Text style={defaultCSS.bodySubject}>{item.sujet}</Text>
+                    <Text style={defaultCSS.bodyDesc}>{item.description}</Text>
+                    <Text style={defaultCSS.bodyFor}>
+                      Pour{" "}
+                      <Text style={defaultCSS.num}>
+                        {timeDifference(Date.now() + 3600000, item.pour)}
+                      </Text>
+                    </Text>
+                    <Text> </Text>
+                    <Text> </Text>
+                  </View>
+                )}
+                estimatedItemSize={200}
+                ItemSeparatorComponent={() => (
+                  <View style={defaultCSS.separatorComponent} />
+                )}
+                containerComponentStyle={defaultCSS.bodyList}
+              />
+            </View>
           </View>
-          
         </>
       );
-
     } else if (this.state.franck == "") {
       return (
         <SafeAreaView style={defaultCSS.container}>
           <Text style={defaultCSS.waitTextT}>
             Franck est parti chercher tes données,
           </Text>
-          <Text style={defaultCSS.waitTextB}>
-             attends nous un instant !
-          </Text>
+          <Text style={defaultCSS.waitTextB}>attends nous un instant !</Text>
           <ActivityIndicator
             size="large"
             color={DEFAULT.accent}
@@ -169,61 +172,9 @@ export default class Edt extends React.Component {
     } else if (this.state.franck == []) {
       return (
         <SafeAreaView style={defaultCSS.container}>
-          <Text style={defaultCSS.waitTextT}>
-            Pas de cours avant piouuuuu
-          </Text>
-          
+          <Text style={defaultCSS.waitTextT}>Pas de cours avant piouuuuu</Text>
         </SafeAreaView>
       );
     }
   }
 }
-
-
-//let devSubjects = []
-//      do {
-        
-//        if (typeof franckBackPack[compteurA] === 'undefined') {
-//          devoirs.push(" ")
-//        } else {
-//          switchNames(franckBackPack[compteurC].subject, devSubjects);
-//          devDico = {
-//            sujet: devSubjects,
-//            desc: franckBackPack[compteurC].description,
-//            for: new Date(franckBackPack[compteurC].for).getDate(),
-//          }
-
-//          devoirs.push(devDico)
-//        }
-                
-//        compteurC ++
-//      } while (compteurC < franckBackPack.length)
-      //console.log(devoirs)
-
-//      let ew = [{"desc": "Ex 13 et 12 feuille", "for": 10, "sujet": ["Maths", "Histoire-Géographie", "Français"]}, {"desc": "Connaiître  l'essentiel du document de géographie : ( 2. Comment s'organise l'espace à l'intérieur des métropoles françaises a, b, c). Pensez à présenter en quelques minutes la métropole choisie ( sur atrium, site, classe, documents) car seuls deux élèves l'ont réalisé.", "for": 10, "sujet": ["Maths", "Histoire-Géographie", "Français"]}, {"desc": "Travail à faire avant : introduction à un commentaire pour l'extrait de la LL2 ATTENTION : 3 élèves seront interrogés à l’oral pour la lecture de ce texte", "for": 12, "sujet": ["Maths", "Histoire-Géographie", "Français"]}]
-
-
-
-
-//  <View style={defaultCSS.header}>
-              
-//               {/* recatangle orange sur la gauche */}
-//               <View style={defaultCSS.fancyLeft}></View>
-//               {/* icone */}
-//               <Ionicons
-//                 name="md-calendar"
-//                 size={24}
-//                 color="white"
-//                 style={defaultCSS.headerIcon}
-//               />
-//               {/* titre, cour, salle, time left */}
-//               <Text style={defaultCSS.headerTitle}>Prochaines évals</Text>
-//               <View style={defaultCSS.headerDynamicText}>
-//                 <Text style={defaultCSS.headerSubject}> 
-//                   <Text style={defaultCSS.headerRoom}>Pas d'évaluations prévues</Text>
-//                 </Text>
-//                 <Text style={defaultCSS.headerSubject}> Ok j'ai triché, ça marche pas encore
-//                   <Text style={defaultCSS.headerRoom}>  </Text>
-//                 </Text>
-//               </View>           
-//             </View> 

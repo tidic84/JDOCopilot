@@ -1,6 +1,6 @@
 import { imports } from "../../../private/imports";
 import React from "react";
-import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
+import { Text, View, Platform, TextInput, TouchableOpacity, Image } from "react-native";
 import {defaultCSS} from "../../stylesheets/_default/year"
 import { timeDifference } from "../../util/relativeDaysWidget";
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -45,8 +45,10 @@ export default class Year extends React.Component {
     
         // NavigationBar.setVisibilityAsync("hidden");
         // NavigationBar.setBehaviorAsync('overlay-swipe');
-        NavigationBar.setButtonStyleAsync("light");
-        NavigationBar.setBackgroundColorAsync(DEFAULT.secondary);
+       
+            NavigationBar.setBackgroundColorAsync(DEFAULT.primary),
+            NavigationBar.setButtonStyleAsync("light")
+          
         
         
         if(dataReady){

@@ -42,6 +42,9 @@ export default function App() {
     },
     NavigationBar.setBackgroundColorAsync(DEFAULT.primary),
     NavigationBar.setButtonStyleAsync("light")
+
+    
+    
   );
   
   const AppContainer = createAppContainer(AppNavigator);

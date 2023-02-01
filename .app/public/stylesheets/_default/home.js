@@ -100,16 +100,27 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     height: 100,
     fontSize: 16,
     fontWeight: "bold",
-    textAlign: "center",
+    left: 20,
+  },
+  bodyTitleArrow: {
+    zIndex: 10,
+    position: "absolute",
+    alignSelf: "center",
+    top: -3,
+    color: DEFAULT.text,
+    right: 20,
   },
   bodySubject: {
     color: "white",
     fontSize: 17,
-    paddingLeft: 10
+    paddingLeft: 10,
+    marginLeft: 20,
+    paddingTop:"2.5%"
   },
   bodyRoom: {
     color: DEFAULT.accent,
     fontSize: 13,
+    marginLeft: 20,
     paddingLeft: 10,
 
   },
@@ -118,7 +129,8 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     fontSize: 13,
     paddingLeft: width - 100,
     textAlign: "right",
-    transform: [{ translateY: -35 }, { translateX: -10 }],
+    transform: [{ translateY: -40 }, { translateX: -10 }],
+    
   },
   separatorComponent: {
     width: width - 60,

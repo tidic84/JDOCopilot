@@ -4,7 +4,15 @@ function switchRooms(from, to) {
       to.push("S103");
     } else if (from == "S101 ARTS PLASTIQUES") {
       to.push("S101");
-    } else {
+    } else if (from == "S115 INFORMATIQUE") {
+      to.push("S115");
+    } else if (from == "SALLE EPS") {
+      to.push("Salle EPS");
+    } 
+    
+    
+    
+    else {
       to.push(from);
     }
   }

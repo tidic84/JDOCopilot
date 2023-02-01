@@ -32,12 +32,12 @@ export default function OnboardingScreen1({ navigation }) {
     const [count, setCount] = React.useState(0);
 
     const texts = [
-        '* C\'est moi qui récupère tes infos sur pronote !',
+        '*  récupèrer tes infos sur pronote !(en toute légalité)',
         '* Cette application est en phase de bêta test. Merci pour tes retours ! (la politesse est de mise, nous sommes humains malgré tout)',
         '* Vous pouvez faire vos retours sur le discord, le github dans la catégorie \'issues\' ou par mail !',
         '* Vous trouverez tout dans paramètres -> \'Nous contacter\'',
         '* Toute l\'équipe vous souhaite le meilleur avec nos applications, ',
-        '* Love, @Albatross!! <3',
+        '* , @Albatross!! xoxo',
         ''
     ]
 
@@ -94,7 +94,7 @@ export default function OnboardingScreen1({ navigation }) {
               <View style={defaultCSS.modalContent}>
                 <TypeWriter
                   typing={1}
-                  minDelay={40}
+                  minDelay={1}
                 //   onTyped={() => playSound()}
                 >
                   <Text style={defaultCSS.text}>{currentText}</Text>

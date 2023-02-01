@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import { Dimensions } from 'react-native';
 import { DEFAULT } from "../../themes/variables";
 const { width, height } = Dimensions.get('window');
@@ -103,18 +103,40 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
   },
 
   bottomContainer: {
-    flex: 1,
+    //flex: 1,
+    position: 'relative',
     justifyContent: 'flex-end',
+    marginBottom: 0,
+    backgroundColor: DEFAULT.primary,
   },
   bottomBox: {
-    backgroundColor: '#342F3A',
+    alignSelf: 'center',
+    justifyContent: 'center',
+    backgroundColor: DEFAULT.links,
     borderRadius: 15,
-    width: width - 15,
+    width: width - 40,
     alignItems: 'center',
     textAlignVertical: 'center',
     marginHorizontal: width - (width - 7),
     marginVertical: 7,
     paddingVertical: 5,
+    height: 50,
+    textAlign: 'center',
+  },
+  bottomBoxDisabled: {
+    alignSelf: 'center',
+    justifyContent: 'center',
+    backgroundColor: DEFAULT.links,
+    borderRadius: 15,
+    width: width - 40,
+    alignItems: 'center',
+    textAlignVertical: 'center',
+    marginHorizontal: width - (width - 7),
+    marginVertical: 7,
+    paddingVertical: 5,
+    opacity: 0.3,
+    height: 50,
+    textAlign: 'center',
   },
 
   isolateTextInput: {

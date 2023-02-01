@@ -8439,6 +8439,11 @@
   dependencies:
     "@expo/config-plugins" "~5.0.0"
 
+"expo-checkbox@~2.2.0":
+  "integrity" "sha512-0DXbeJdVAPfqiy+RBkGXHYU2dLxdpyaWAaV3+N+/xWEC2ilqrqCiSqsPcbFQer1f9qaqjNeDUi51qPuF5AgTIw=="
+  "resolved" "https://registry.npmjs.org/expo-checkbox/-/expo-checkbox-2.2.2.tgz"
+  "version" "2.2.2"
+
 "expo-constants@~13.2.0", "expo-constants@~13.2.2", "expo-constants@~13.2.4":
   "integrity" "sha512-Zobau8EuTk2GgafwkfGnWM6CmSLB7X8qnQXVuXe0nd3v92hfQUmRWGhJwH88uxXj3LrfqctM6PaJ8taG1vxfBw=="
   "resolved" "https://registry.npmjs.org/expo-constants/-/expo-constants-13.2.4.tgz"
@@ -15013,7 +15018,7 @@
     "kleur" "^3.0.3"
     "sisteransi" "^1.0.5"
 
-"prop-types@*", "prop-types@^15.5.7", "prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@^15.8.1":
+"prop-types@*", "prop-types@^15.5.10", "prop-types@^15.5.7", "prop-types@^15.6.2", "prop-types@^15.7.2", "prop-types@^15.8.1":
   "integrity" "sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   "version" "15.8.1"
@@ -15498,6 +15503,20 @@
   dependencies:
     "prop-types" "^15.7.2"
 
+"react-native-root-siblings@^4.0.0":
+  "integrity" "sha512-sdmLElNs5PDWqmZmj4/aNH4anyxreaPm61c4ZkRiR8SO/GzLg6KjAbb0e17RmMdnBdD0AIQbS38h/l55YKN4ZA=="
+  "resolved" "https://registry.npmjs.org/react-native-root-siblings/-/react-native-root-siblings-4.1.1.tgz"
+  "version" "4.1.1"
+
+"react-native-root-toast@^3.3.1":
+  "integrity" "sha512-+3BoxU3672VtmISDgIkjQ/l4qsisKMkl6j6Syc325q+QqDxoOxnDD1cWUUrtRgefbYqDCfcAWfX958BtplBIMg=="
+  "resolved" "https://registry.npmjs.org/react-native-root-toast/-/react-native-root-toast-3.3.1.tgz"
+  "version" "3.3.1"
+  dependencies:
+    "deprecated-react-native-prop-types" "^2.3.0"
+    "prop-types" "^15.5.10"
+    "react-native-root-siblings" "^4.0.0"
+
 "react-native-safe-area-context@>= 0.6.0", "react-native-safe-area-context@>= 3.0.0", "react-native-safe-area-context@4.3.1":
   "integrity" "sha512-cEr7fknJCToTrSyDCVNg0GRdRMhyLeQa2NZwVCuzEQcWedOw/59ExomjmzCE4rxrKXs6OJbyfNtFRNyewDaHuA=="
   "resolved" "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-4.3.1.tgz"
@@ -15586,7 +15605,7 @@
     "postcss-value-parser" "^4.2.0"
     "styleq" "^0.1.2"
 
-"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.71 || 1000.0.0", "react-native@>= 0.30.0", "react-native@>=0.41.x", "react-native@>=0.42.0", "react-native@>=0.46", "react-native@>=0.46.0", "react-native@>=0.50.0", "react-native@>=0.56", "react-native@>=0.57", "react-native@>=0.59.0", "react-native@>=0.65.0", "react-native@0.69.6":
+"react-native@*", "react-native@^0.0.0-0 || 0.60 - 0.71 || 1000.0.0", "react-native@>= 0.30.0", "react-native@>=0.41.x", "react-native@>=0.42.0", "react-native@>=0.46", "react-native@>=0.46.0", "react-native@>=0.47.0", "react-native@>=0.50.0", "react-native@>=0.56", "react-native@>=0.57", "react-native@>=0.59.0", "react-native@>=0.65.0", "react-native@0.69.6":
   "integrity" "sha512-wwXpqM+12kdEYdBZCJUb5SBu95CzgejrwFeYJ78RzHZV/Sj6DBRekbsHGrDDsY4R25QXALQxy4DQYQCObVvWjA=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.69.6.tgz"
   "version" "0.69.6"

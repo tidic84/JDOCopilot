@@ -26,7 +26,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   },
   text: {
     padding: 20,
-    top: 10,
+    top: 5,
     color: "white",
     fontSize: 16,
     fontWeight: "bold",

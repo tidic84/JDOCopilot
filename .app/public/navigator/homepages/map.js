@@ -29,6 +29,7 @@ export default class Edt extends React.Component {
   render() {
     this.getFranck();
     
+    
     if (this.state.franck != "") {
 
       return (

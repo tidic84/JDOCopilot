@@ -4,9 +4,7 @@ function switchNames(from, to) {
     to.push("N.S.I. ");
   } else if (from == "ARTS-PLASTIQUES OPTION") {
     to.push("Arts-Plastiques (O)");
-  } else if (from == "MATHS") {
-    to.push("Maths");
-  } else if (from == "PHYSIQUE-CHIMIE") {
+  }  else if (from == "PHYSIQUE-CHIMIE") {
     to.push("Physique-Chimie");
   } else if (from == "HISTOIRE-GEOGRAPHIE") {
     to.push("Histoire-Géographie");
@@ -44,10 +42,8 @@ function switchNames(from, to) {
     to.push("repas de noël")
   } else if (from == 'AP FRANCAIS') {
     to.push("Français (ap)")
-  } else if(from == 'null') {
-    to.push(" ")
-  } else if(from == 'undefined') {
-    to.push(" ")
+  } else if(from == "BAC BLANC FRANCAIS  ECRITS") {
+    to.push("Bac Blanc écrit ! (fr)")
   } else {
     to.push(from);
   }

@@ -10,71 +10,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     backgroundColor: DEFAULT.primary,
     alignItems: "center",
   },
-  // header: {
-  //   width: width - 60,
-  //   height: 95,
-  //   backgroundColor: DEFAULT.secondary,
-  //   borderRadius: 15,
-  //   alignSelf: "center",
-  //   marginTop: 40,
-  // },
-  // fancyLeft: {
-  //   width: 10,
-  //   height: 68,
-  //   backgroundColor: DEFAULT.accent,
-  //   borderTopRightRadius: 15,
-  //   borderBottomRightRadius: 15,
-  //   borderBottomLeftRadius: 10,
-  //   borderTopLeftRadius: 10,
-  //   position: "absolute",
-  //   left: 0,
-  //   top: 15,
-  // },
-  // headerIcon: {
-  //   position: "absolute",
-  //   right: 20,
-  //   top: 35,
-  // },
-  // headerTitle: {
-  //   position: "absolute",
-  //   left: 30,
-  //   top: 8,
-  //   color: "white",
-  //   fontWeight: "bold",
-  //   fontSize: 20,
-  // },
-  // headerSubject: {
-  //   position: "relative",
-  //   //paddingTop: 35,
-  //   left: 26,
-  //   top: 47,
-  //   color: "white",
-  //   fontSize: 13,
-  // },
-  // headerRoom: {  
-  //   fontSize: 13,
-  //   color: DEFAULT.accent,
-  //   // alignSelf: "flex-end",
-  //   // alignItems: 'flex-end',
-  //   // justifyContent: "flex-end",
-    
-  // },
-  // headerDynamicText: {
-  //   position: "relative",
-  // },
-  // headerTime: {
-  //   position: "absolute",
-  //   right: 20,
-  //   top: 19,
-  //   color: DEFAULT.accent,
-  //   fontSize: 13,
-  // },
-  /** bodyTitle: {
-    position: 'relative',
-    flexDirection: 'row',
-    top: 32,
-    left: width / 2 - 60
-  }, **/
+  
   bodyTextIcon: {
     flex: 1,
     position: "absolute",
@@ -93,7 +29,7 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     backgroundColor: DEFAULT.secondary,
     borderRadius: 15,
     alignSelf: "center",
-    marginTop: 70,
+    marginTop: height / 9.5,
   },
 
   bodyList: {
