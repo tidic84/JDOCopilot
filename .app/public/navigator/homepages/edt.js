@@ -8,7 +8,7 @@ import {
   ActivityIndicator,
   SafeAreaView,
   Button,
-  Platform,
+  Image,
   Dimensions,
 } from "react-native";
 import { defaultCSS } from "../../stylesheets/_default/home.js";
@@ -260,182 +260,194 @@ export default class Edt extends React.Component {
         compteur++;
       } while (compteur < updatedData.length);
 
-      do {
-        let _o = new Date(__EDT2[professeurZebi].from);
-        let _l = new Date(__EDT2[0].from);
-        _o = _o.getDay();
-        _l = _l.getDay();
+      // console.log('checkpoint 1');
 
-        if (_o > _l) {
-          poubelle.push(__EDT2[professeurZebi]);
-        } else {
-          __EDT3.push(__EDT2[professeurZebi]);
-        }
-        professeurZebi++;
-      } while (professeurZebi < __EDT2.length);
-
-      let xXROYALkillXx = 0;
-      let now = new Date();
-
-      if (now > __EDT1[xXROYALkillXx].from) {
-        //console.log('check 1')
+      if(__EDT2.length > 0) {
         do {
-          xXROYALkillXx++;
-        } while (__EDT1[xXROYALkillXx].from < now);
-      }
-
-      //click sound
-      const soundObject = new Audio.Sound();
-      async function playSound() {
-        try {
-          await soundObject.loadAsync(
-            require("../../assets/sounds/minecraft_click.mp3")
-          );
-          await soundObject.playAsync();
-          // Your sound is playing!
-        } catch (error) {
-          // An error occurred!
-          console.log(error);
+          let _o = new Date(__EDT2[professeurZebi].from);
+          let _l = new Date(__EDT2[0].from);
+          _o = _o.getDay();
+          _l = _l.getDay();
+  
+          if (_o > _l) {
+            poubelle.push(__EDT2[professeurZebi]);
+          } else {
+            __EDT3.push(__EDT2[professeurZebi]);
+          }
+          professeurZebi++;
+        } while (professeurZebi < __EDT2.length);
+  
+        let xXROYALkillXx = 0;
+        let now = new Date();
+  
+        if (now > __EDT1[xXROYALkillXx].from) {
+          //console.log('check 1')
+          do {
+            xXROYALkillXx++;
+          } while (__EDT1[xXROYALkillXx].from < now);
         }
       }
+      
+
+      // console.log('checkpoint 2');
 
       //console.log(DATA);
-      return (
-        <>
-          <Modal
-            isVisible={this.state.visibleModal === 4}
-            backdropColor={DEFAULT.secondary}
-            backdropOpacity={0.8}
-            animationIn="zoomIn"
-            animationOut="zoomOut"
-            animationInTiming={500}
-            animationOutTiming={500}
-            backdropTransitionInTiming={1000}
-            backdropTransitionOutTiming={1000}
-            //onShow={() => {playSound()}}
-            onBackdropPress={() => this.setState({ visibleModal: null })}
-            //style={{  height: 100, width: width - 60, borderRadius: 10, alignSelf: "center", justifyContent: "center", alignItems: "center"}}
+
+      if (__EDT1.length == 0 || __EDT2.length == 0) {
+        return (
+          <View
+            style={defaultCSS.no_lessons}
           >
-            {this._renderModalContent()}
-          </Modal>
-
-          <View style={defaultCSS.container}>
-            <StatusBar
-              style="light"
-              hidden={false}
-              backgroundColor={DEFAULT.secondary}
-            />
-
-            {/* prochain cour */}
-            <View style={defaultCSS.header}>
-              {/* recatangle orange sur la gauche */}
-              <View
-                style={{
-                  width: 5,
-                  height: 40,
-                  backgroundColor: __EDT1[xXROYALkillXx].color,
-                  borderTopRightRadius: 15,
-                  borderBottomRightRadius: 15,
-                  borderBottomLeftRadius: 10,
-                  borderTopLeftRadius: 10,
-                  position: "absolute",
-                  left: 0,
-                  top: 15,
-                }}
-              ></View>
-              {/* icone */}
-              <Ionicons
-                name="md-calendar"
-                size={24}
-                color="white"
-                style={defaultCSS.headerIcon}
+            <Text style={defaultCSS.nlText}>
+              Pas de cours tout de suite, profitez-en !
+            </Text>
+            <Image 
+                style={defaultCSS.franckImg}
+                source={{
+                    uri: "http://jdocopilot.me/pps/Franck1.jpg",
+                  }}
               />
-              {/* titre, cour, salle, time left */}
-              <Text style={defaultCSS.headerTitle}>Prochain cours</Text>
-              <View style={defaultCSS.headerDynamicText}>
-                <Text style={defaultCSS.headerSubject}>
-                  {" "}
-                  {__EDT1[xXROYALkillXx].subject}
-                  <Text style={defaultCSS.headerRoom}>
-                    {" "}
-                    {__EDT1[xXROYALkillXx].room}
-                  </Text>
-                </Text>
-              </View>
-              <Text style={defaultCSS.headerTime}>
-                {timeDifference(
-                  Date.now() + 3600000,
-                  Date.parse(__EDT1[xXROYALkillXx].from)
-                )}{" "}
-              </Text>
-            </View>
-            {/* emploi du temps complet de la journée */}
-            <View style={defaultCSS.body}>
-              <TouchableOpacity
-                onPress={() => {
-                  this.setState({ edt1: !this.state.edt1 });
-                }}
-                style={defaultCSS.bodyTitleContainer}
-              >
-                <Text style={defaultCSS.bodyTitle}>
-                  {this.state.edt1 ? "Dans la même journée" : "Le lendemain"}
-                </Text>
-                <Ionicons
-                  name={
-                    this.state.edt1
-                      ? "arrow-forward-circle-outline"
-                      : "arrow-back-circle-outline"
-                  }
-                  size={22}
-                  color="white"
-                  style={defaultCSS.bodyTitleArrow}
-                />
-              </TouchableOpacity>
-
-              {/* liste des prochains cours */}
-              <View style={defaultCSS.bodyList}>
-                <FlashList
-                  data={this.state.edt1 ? __EDT1 : __EDT3}
-                  renderItem={({ item }) => (
-                    <TouchableOpacity
-                      onPress={() => this._states(item)}
-                      style={{ opacity: 1 }}
-                    >
-                      <Text> </Text>
-                      <View
-                        style={{
-                          width: 10,
-                          height: 10,
-                          backgroundColor: item.color,
-                          borderRadius: 50,
-                          marginLeft: 10,
-                          transform: [{ translateY: 25 }],
-                        }}
-                      ></View>
-                      <Text style={defaultCSS.bodySubject}>
-                        {item.subject}, {"\n"}
-                        <Text style={defaultCSS.bodyRoom}>{item.room}</Text>
-                      </Text>
-
-                      <Text style={defaultCSS.bodyTime}>
-                        {item.fromHour} : {item.fromMin}
-                      </Text>
-                      <Text style={defaultCSS.bodyTime}>
-                        {item.endH} : {item.endM}
-                      </Text>
-                    </TouchableOpacity>
-                  )}
-                  estimatedItemSize={200}
-                  ItemSeparatorComponent={() => (
-                    <View style={defaultCSS.separatorComponent} />
-                  )}
-                  containerComponentStyle={defaultCSS.bodyList}
-                />
-              </View>
-            </View>
           </View>
-        </>
-      );
+        );
+      }
+      else {
+        return (
+          <>
+            <Modal
+              isVisible={this.state.visibleModal === 4}
+              backdropColor={DEFAULT.secondary}
+              backdropOpacity={0.8}
+              animationIn="zoomIn"
+              animationOut="zoomOut"
+              animationInTiming={500}
+              animationOutTiming={500}
+              backdropTransitionInTiming={1000}
+              backdropTransitionOutTiming={1000}
+              //onShow={() => {playSound()}}
+              onBackdropPress={() => this.setState({ visibleModal: null })}
+              //style={{  height: 100, width: width - 60, borderRadius: 10, alignSelf: "center", justifyContent: "center", alignItems: "center"}}
+            >
+              {this._renderModalContent()}
+            </Modal>
+
+            <View style={defaultCSS.container}>
+              <StatusBar
+                style="light"
+                hidden={false}
+                backgroundColor={DEFAULT.secondary}
+              />
+
+              {/* prochain cour */}
+              <View style={defaultCSS.header}>
+                {/* recatangle orange sur la gauche */}
+                <View
+                  style={{
+                    width: 5,
+                    height: 40,
+                    backgroundColor: __EDT1[xXROYALkillXx].color,
+                    borderTopRightRadius: 15,
+                    borderBottomRightRadius: 15,
+                    borderBottomLeftRadius: 10,
+                    borderTopLeftRadius: 10,
+                    position: "absolute",
+                    left: 0,
+                    top: 15,
+                  }}
+                ></View>
+                {/* icone */}
+                <Ionicons
+                  name="md-calendar"
+                  size={24}
+                  color="white"
+                  style={defaultCSS.headerIcon}
+                />
+                {/* titre, cour, salle, time left */}
+                <Text style={defaultCSS.headerTitle}>Prochain cours</Text>
+                <View style={defaultCSS.headerDynamicText}>
+                  <Text style={defaultCSS.headerSubject}>
+                    {" "}
+                    {__EDT1[xXROYALkillXx].subject}
+                    <Text style={defaultCSS.headerRoom}>
+                      {" "}
+                      {__EDT1[xXROYALkillXx].room}
+                    </Text>
+                  </Text>
+                </View>
+                <Text style={defaultCSS.headerTime}>
+                  {timeDifference(
+                    Date.now() + 3600000,
+                    Date.parse(__EDT1[xXROYALkillXx].from)
+                  )}{" "}
+                </Text>
+              </View>
+              {/* emploi du temps complet de la journée */}
+              <View style={defaultCSS.body}>
+                <TouchableOpacity
+                  onPress={() => {
+                    this.setState({ edt1: !this.state.edt1 });
+                  }}
+                  style={defaultCSS.bodyTitleContainer}
+                >
+                  <Text style={defaultCSS.bodyTitle}>
+                    {this.state.edt1 ? "Dans la même journée" : "Le lendemain"}
+                  </Text>
+                  <Ionicons
+                    name={
+                      this.state.edt1
+                        ? "arrow-forward-circle-outline"
+                        : "arrow-back-circle-outline"
+                    }
+                    size={22}
+                    color="white"
+                    style={defaultCSS.bodyTitleArrow}
+                  />
+                </TouchableOpacity>
+
+                {/* liste des prochains cours */}
+                <View style={defaultCSS.bodyList}>
+                  <FlashList
+                    data={this.state.edt1 ? __EDT1 : __EDT3}
+                    renderItem={({ item }) => (
+                      <TouchableOpacity
+                        onPress={() => this._states(item)}
+                        style={{ opacity: 1 }}
+                      >
+                        <Text> </Text>
+                        <View
+                          style={{
+                            width: 10,
+                            height: 10,
+                            backgroundColor: item.color,
+                            borderRadius: 50,
+                            marginLeft: 10,
+                            transform: [{ translateY: 25 }],
+                          }}
+                        ></View>
+                        <Text style={defaultCSS.bodySubject}>
+                          {item.subject}, {"\n"}
+                          <Text style={defaultCSS.bodyRoom}>{item.room}</Text>
+                        </Text>
+
+                        <Text style={defaultCSS.bodyTime}>
+                          {item.fromHour} : {item.fromMin}
+                        </Text>
+                        <Text style={defaultCSS.bodyTime}>
+                          {item.endH} : {item.endM}
+                        </Text>
+                      </TouchableOpacity>
+                    )}
+                    estimatedItemSize={200}
+                    ItemSeparatorComponent={() => (
+                      <View style={defaultCSS.separatorComponent} />
+                    )}
+                    containerComponentStyle={defaultCSS.bodyList}
+                  />
+                </View>
+              </View>
+            </View>
+          </>
+        );
+      }
     } else if (this.state.franck == "") {
       return (
         <SafeAreaView style={defaultCSS.container}>

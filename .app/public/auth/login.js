@@ -23,6 +23,9 @@ import * as NavigationBar from "expo-navigation-bar";
 import { encrypt, decrypt } from "../util/crypto";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
+//import images
+
+
 //import statusBar
 import { StatusBar } from "expo-status-bar";
 
@@ -144,6 +147,7 @@ class Login extends React.Component {
         const username = encrypt(this.state.name); // On encrypte le nom d'utilisateur
         const password = encrypt(this.state.pwd); // On encrypte le mot de passe
 
+        
         this.setState({ haveConnectionBeenTried: true });
         await AsyncStorage.setItem("haveConnectionBeenTried", "true");
 
@@ -160,6 +164,8 @@ class Login extends React.Component {
           await AsyncStorage.setItem("username", username); //on garde en mémoire le nom d'utilisateur
           await AsyncStorage.setItem("password", password); //on garde en mémoire le mot de passe
 
+          // console.log(franck);
+          
           this.setState({ isLoading: false });
           this.props.navigation.replace("Main"); // On navigue vers la page principale
           this.toastMessage(`Bonjour, ${userN}`);
@@ -218,6 +224,7 @@ class Login extends React.Component {
       console.log("\x1b[32m%s\x1b[0m", "Première connexion : catch" + error);
       this.setState({ disabledButton: false }); //on réactive le boutton
       this.setState({ isLoading: false }); //on désactive la fonction loading
+      return this.toastMessage("Une erreur est survenue :/ vérifiez votre connexion wifi !");
     }
   };
 
@@ -233,6 +240,9 @@ class Login extends React.Component {
         this.setState({ keptPassword: keptPassword });
         this.setState({ isKeptName: true });
         this.setState({ isKeptPassword: true });
+
+        this.setState({ name: keptName });
+        this.setState({ pwd: keptPassword });
         dataReady = true;
         console.log(this.state.isKeptName, this.state.isKeptPassword);
       } catch {
@@ -422,6 +432,7 @@ class Login extends React.Component {
                   connectez-vous pour acceder à nos services
                 </Text>
 
+
                 <TextInput
                   autoComplete="username"
                   style={defaultCSS.textInput}
@@ -430,7 +441,7 @@ class Login extends React.Component {
                   onChangeText={(name) => {
                     this.setState({ name });
                   }}
-                  value={this.state.name}
+                  defaultValue={this.state.isKeptName ? this.state.keptName : console.log('nope')}
                 />
 
                 <TextInput
@@ -442,7 +453,7 @@ class Login extends React.Component {
                   onChangeText={(pwd) => {
                     this.setState({ pwd });
                   }}
-                  value={this.state.pwd}
+                  defaultValue={this.state.isKeptPassword ? this.state.keptPassword : ""}
                 />
                 <Checkbox
                   disabled={this.state.disabledButton}
@@ -520,13 +531,15 @@ class Login extends React.Component {
               disabled={this.state.disabledButton}
               activeOpacity={0.6}
               onPress={() =>
-                Linking.openURL("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+                this.toastMessage('Rien à voir par ici !')
               }
             >
-              <Text style={defaultCSS.basicText}>
-                JDO-Copilot ne conserve pas vos données personnelles et est
-                complêtement open-source.
-              </Text>
+              
+                <Text style={defaultCSS.basicText}>
+                  JDO-Copilot ne conserve pas vos données personnelles et est
+                  complêtement open-source.
+                </Text>
+              
             </TouchableOpacity>
           </View>
         </>

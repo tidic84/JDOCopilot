@@ -47,9 +47,6 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
   textInputContainer:{
     marginTop: 50,
   },
-  basicText: {
-    color: "rgba(255,255,255,0.5)",
-  },
   checkboxBase: {
     top: 10,
     left: 15,
@@ -138,16 +135,10 @@ export const defaultCSS = StyleSheet.create({ //default login stylesheet
     height: 50,
     textAlign: 'center',
   },
-
-  isolateTextInput: {
-    marginTop: 32,
-    height: 50,
-    backgroundColor: "red",
-    borderRadius: 13,
-    paddingHorizontal: 16,
-    color: "#FFFFFF",
-    fontWeight: "600",
-    left: -10
+  basicText: {
+    color: "rgba(255,255,255,0.5)",
+    paddingLeft: 10,
+    textAlign: 'center',
   },
   
 

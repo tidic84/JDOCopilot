@@ -96,7 +96,41 @@ export default class Param extends React.Component {
     </Pressable>
   );
   _renderButton6 = (text) => (
-    <Pressable onPress={() => Linking.openURL('http://jdocopilot.me/pps/22.jpg')}>
+    <Pressable onPress={() => Linking.openURL('mailto:contact-albatrossteam@gmail.com')}>
+      <View
+        style={{
+          backgroundColor: "lightblue",
+          padding: 12,
+          margin: 16,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 4,
+          borderColor: "rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <Text>{text}</Text>
+      </View>
+    </Pressable>
+  );
+  _renderButton61 = (text) => (
+    <Pressable onPress={() => Linking.openURL('https://discord.gg/4ZXzzVpjPq')}>
+      <View
+        style={{
+          backgroundColor: "lightblue",
+          padding: 12,
+          margin: 16,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 4,
+          borderColor: "rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <Text>{text}</Text>
+      </View>
+    </Pressable>
+  );
+  _renderButton62 = (text) => (
+    <Pressable onPress={() => Linking.openURL('https://github.com/tidic84/JDOCopilot/issues')}>
       <View
         style={{
           backgroundColor: "lightblue",
@@ -113,7 +147,7 @@ export default class Param extends React.Component {
     </Pressable>
   );
   _renderButton4 = (text) => (
-    <Pressable onPress={() => Linking.openURL('http://jdocopilot.me/pps/22.jpg')}>
+    <Pressable onPress={() => Linking.openURL('http://jdocopilot.me/src/cgus/cgus')}>
       <View
         style={{
           backgroundColor: "lightblue",
@@ -130,7 +164,7 @@ export default class Param extends React.Component {
     </Pressable>
   );
   _renderButton5 = (text) => (
-    <Pressable onPress={() => Linking.openURL('http://jdocopilot.me/pps/22.jpg')}>
+    <Pressable onPress={() => Linking.openURL('http://jdocopilot.me')}>
       <View
         style={{
           backgroundColor: "lightblue",
@@ -179,6 +213,8 @@ export default class Param extends React.Component {
       <Text>{this.state.content} </Text>
       <View style={{ justifyContent: "space-between", flexDirection: "row" }}>
         <View style={{}}>{this._renderButton6(this.state.button)}</View>
+        <View style={{}}>{this._renderButton6(this.state.button2)}</View>
+        <View style={{}}>{this._renderButton6(this.state.button3)}</View>
       </View>
     </View>
   );
@@ -283,7 +319,9 @@ export default class Param extends React.Component {
         accent: " ",
         content: "Nous faisons cette application pour le fun, restez cordial svp ;)",
         maintenance: false,
-        button: "C'est juste ici !",
+        button: "Mail",
+        button2: "Discord",
+        button3: "GitHub",
       },
       {
         id: 5,
