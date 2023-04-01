@@ -8,8 +8,9 @@ function switchRooms(from, to) {
       to.push("S115");
     } else if (from == "SALLE EPS") {
       to.push("Salle EPS");
-    } 
-    
+    } else if (from == "S001 SALLE DE DEVOIR") {
+      to.push("S001, t'as révisé?");
+    }
     
     
     else {

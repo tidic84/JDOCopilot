@@ -2,12 +2,12 @@
   "expo": {
     "name": "JDO-Copilot",
     "slug": "jdocopilot-beta",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "orientation": "portrait",
     "icon": "./.app/public/assets/images/logoRond.png",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./.app/public/assets/splash.png",
+      "image": "./.app/public/assets/Splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#2F4F4F"
     },

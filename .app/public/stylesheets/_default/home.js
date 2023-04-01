@@ -150,9 +150,9 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   franckImg:{
     position: "absolute",
     alignSelf: "center",
-    top: height /2 - 200,
-    width: 200,
-    height: 200,
+    top: height /2 -300,
+    width: 150,
+    height: 150,
     resizeMode: "cover",
     borderRadius: 100,
     borderColor: DEFAULT.accent,
@@ -189,16 +189,11 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
   no_lessons: {
     position: "absolute",
     alignSelf: "center",
-    
-    backgroundColor: DEFAULT.primary,
-
-    height: height,
-    width: width,
   },
   nlText: {
     color: "white",
-    fontSize: 18,
-    marginTop: height /2 + 50,
+    fontSize: 14,
+    marginTop: 250,
     alignSelf: "center",
   },
 });

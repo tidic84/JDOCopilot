@@ -262,6 +262,8 @@ export default class Edt extends React.Component {
 
       // console.log('checkpoint 1');
 
+      let xXROYALkillXx = 0;
+
       if(__EDT2.length > 0) {
         do {
           let _o = new Date(__EDT2[professeurZebi].from);
@@ -277,7 +279,7 @@ export default class Edt extends React.Component {
           professeurZebi++;
         } while (professeurZebi < __EDT2.length);
   
-        let xXROYALkillXx = 0;
+        
         let now = new Date();
   
         if (now > __EDT1[xXROYALkillXx].from) {
@@ -293,24 +295,7 @@ export default class Edt extends React.Component {
 
       //console.log(DATA);
 
-      if (__EDT1.length == 0 || __EDT2.length == 0) {
-        return (
-          <View
-            style={defaultCSS.no_lessons}
-          >
-            <Text style={defaultCSS.nlText}>
-              Pas de cours tout de suite, profitez-en !
-            </Text>
-            <Image 
-                style={defaultCSS.franckImg}
-                source={{
-                    uri: "http://jdocopilot.me/pps/Franck1.jpg",
-                  }}
-              />
-          </View>
-        );
-      }
-      else {
+      
         return (
           <>
             <Modal
@@ -405,8 +390,60 @@ export default class Edt extends React.Component {
 
                 {/* liste des prochains cours */}
                 <View style={defaultCSS.bodyList}>
-                  <FlashList
-                    data={this.state.edt1 ? __EDT1 : __EDT3}
+
+
+                    {
+                      this.state.edt1 ? __EDT1.length == 0 ? <View style={defaultCSS.no_lessons}>
+                      <Text style={defaultCSS.nlText}>Pas de cours trouvés pour ce jour !</Text>
+                      <Image style={defaultCSS.franckImg} source={{
+                        uri: "http://jdocopilot.me/pps/Franck1.jpg"
+                      }} />
+                    </View> : <FlashList
+                      data={this.state.edt1 ? __EDT1 : __EDT3} //__EDT3
+                      renderItem={({ item }) => (
+                        <TouchableOpacity
+                          onPress={() => this._states(item)}
+                          style={{ opacity: 1 }}
+                        >
+                          <Text> </Text>
+                          <View
+                            style={{
+                              width: 10,
+                              height: 10,
+                              backgroundColor: item.color,
+                              borderRadius: 50,
+                              marginLeft: 10,
+                              transform: [{ translateY: 25 }],
+                            }}
+                          ></View>
+                          <Text style={defaultCSS.bodySubject}>
+                            {item.subject}, {"\n"}
+                            <Text style={defaultCSS.bodyRoom}>{item.room}</Text>
+                          </Text>
+  
+                          <Text style={defaultCSS.bodyTime}>
+                            {item.fromHour} : {item.fromMin}
+                          </Text>
+                          <Text style={defaultCSS.bodyTime}>
+                            {item.endH} : {item.endM}
+                          </Text>
+                        </TouchableOpacity>
+                      )}
+                      estimatedItemSize={200}
+                      ItemSeparatorComponent={() => (
+                        <View style={defaultCSS.separatorComponent} />
+                      )}
+                      containerComponentStyle={defaultCSS.bodyList}
+                    /> : __EDT3.length == 0 ? 
+                          <View style={defaultCSS.no_lessons}>
+                            <Text style={defaultCSS.nlText}>Pas de cours trouvés pour ce jour !</Text>
+                            <Image style={defaultCSS.franckImg} source={{
+                              uri: "http://jdocopilot.me/pps/Franck1.jpg"
+                            }} />
+                          </View>
+                          
+                    : <FlashList
+                    data={this.state.edt1 ? __EDT1 : __EDT3} //__EDT3
                     renderItem={({ item }) => (
                       <TouchableOpacity
                         onPress={() => this._states(item)}
@@ -442,12 +479,15 @@ export default class Edt extends React.Component {
                     )}
                     containerComponentStyle={defaultCSS.bodyList}
                   />
+                    }
+
+
+                  
                 </View>
               </View>
             </View>
           </>
         );
-      }
     } else if (this.state.franck == "") {
       return (
         <SafeAreaView style={defaultCSS.container}>

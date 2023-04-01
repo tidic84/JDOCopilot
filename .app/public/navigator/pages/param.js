@@ -129,23 +129,7 @@ export default class Param extends React.Component {
       </View>
     </Pressable>
   );
-  _renderButton62 = (text) => (
-    <Pressable onPress={() => Linking.openURL('https://github.com/tidic84/JDOCopilot/issues')}>
-      <View
-        style={{
-          backgroundColor: "lightblue",
-          padding: 12,
-          margin: 16,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 4,
-          borderColor: "rgba(0, 0, 0, 0.1)",
-        }}
-      >
-        <Text>{text}</Text>
-      </View>
-    </Pressable>
-  );
+  
   _renderButton4 = (text) => (
     <Pressable onPress={() => Linking.openURL('http://jdocopilot.me/src/cgus/cgus')}>
       <View
@@ -214,7 +198,6 @@ export default class Param extends React.Component {
       <View style={{ justifyContent: "space-between", flexDirection: "row" }}>
         <View style={{}}>{this._renderButton6(this.state.button)}</View>
         <View style={{}}>{this._renderButton6(this.state.button2)}</View>
-        <View style={{}}>{this._renderButton6(this.state.button3)}</View>
       </View>
     </View>
   );
@@ -256,7 +239,10 @@ export default class Param extends React.Component {
   _states = (item) => {
     if (item.maintenance == true) {
       this.toastMessage("Cette fonctionnalité est en cours de développement !");
-    } else {
+    } else if(item.dlink){
+      Linking.openURL(item.link);
+    }
+    else {
       this.setState({ visibleModal: item.id });
 
       this.setState({ content: item.content });
@@ -303,6 +289,7 @@ export default class Param extends React.Component {
         maintenance: false,
         button: "Grisés",
         button2: "Pas dutout",
+        dlink: false,
       },
       {
         id: 4,
@@ -312,16 +299,18 @@ export default class Param extends React.Component {
         maintenance: false,
         content:"C'est aussi relou a faire qu'à lire...",
         button: "Et c'est par là",
+        dlink: true,
+        link: "https://jdocopilot.me/src/cgus/cgus.html",
       },
       {
         id: 6,
         title: "Nous contacter",
         accent: " ",
-        content: "Nous faisons cette application pour le fun, restez cordial svp ;)",
+        content: "Deux moyens de nous contacter :",
         maintenance: false,
-        button: "Mail",
-        button2: "Discord",
-        button3: "GitHub",
+        button: "Par mail",
+        button2: "Sur Discord",
+        dlink: false,
       },
       {
         id: 5,
@@ -331,13 +320,8 @@ export default class Param extends React.Component {
           "Front-End : Claire, Olivier\nBack-End : Cedric, Thomas\n@Albatross, NSI cross-team",
         maintenance: false,
         button: "Albatross ?",
-      },
-      {
-        id: 2,
-        title: "Thème (bientôt)",
-        accent: " ",
-        infos: " ",
-        maintenance: true,
+        dlink: true,
+        link: "https://jdocopilot.me",
       },
     ];
 
