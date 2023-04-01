@@ -41,10 +41,7 @@ const logo = require("../assets/images/logoRond.png");
 const Franck1 = "http://jdocopilot.me/pps/Franck2.jpg";
 let dataReady = false;
 
-const appInfos = {
-  version: "Beta 0.1.0",
-  slug: "b0.1.0",
-};
+const appInfos = require('../../Infos.json')
 
 const delay = (delayInms) => {
   return new Promise((resolve) => setTimeout(resolve, delayInms));
@@ -102,8 +99,8 @@ class Login extends React.Component {
       data.isNeeded == true
     ) {
       Alert.alert(
-        "Recherche de mise a jours...",
-        `Une nouvelle version majeure de l'app est disponnible : la ${data.version} ! C'est une mise a jour necessaire, veuillez la télécharger ici :`,
+        "Recherche de mises à jour...",
+        `Une nouvelle version majeure de l'app est disponnible ! C'est la ${data.version} et c'est une mise à jour necessaire.`,
         [{ text: "télécharger", onPress: () => Linking.openURL(data.ilink) }],
         { cancelable: false }
       );
