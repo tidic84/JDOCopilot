@@ -1,0 +1,78 @@
+<svg id="Etage" xmlns="http://www.w3.org/2000/svg" width="250" height="600" viewBox="0 0 500 1200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: gray;
+      }
+
+      .cls-3 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Sud">
+    <rect id="S101" class="cls-1" x="340" y="1089" width="71" height="103"/>
+    <rect id="S102" class="cls-1" x="431" y="1068" width="53" height="83"/>
+    <rect id="S104" class="cls-1" x="431" y="1006" width="53" height="61"/>
+    <rect id="S106" class="cls-1" x="431" y="902" width="53" height="103"/>
+    <rect id="S108" class="cls-1" x="431" y="798" width="53" height="103"/>
+    <rect id="S110" class="cls-1" x="431" y="736" width="53" height="61"/>
+    <rect id="S112" class="cls-1" x="431" y="652" width="53" height="83"/>
+    <rect id="S114" class="cls-1" x="431" y="486" width="53" height="103"/>
+    <rect id="S116" class="cls-1" x="431" y="424" width="53" height="61"/>
+    <rect id="S118" class="cls-1" x="431" y="320" width="53" height="103"/>
+    <rect id="S120" class="cls-1" x="431" y="216" width="53" height="103"/>
+    <rect id="S122" class="cls-1" x="431" y="153" width="53" height="62"/>
+    <rect id="S124" class="cls-1" x="431" y="49" width="53" height="103"/>
+    <rect id="S103" class="cls-1" x="340" y="819" width="71" height="82"/>
+    <rect id="S105" class="cls-1" x="340" y="652" width="53" height="83"/>
+    <rect id="S107" class="cls-1" x="340" y="590" width="53" height="61"/>
+    <rect id="S109" class="cls-1" x="340" y="486" width="53" height="103"/>
+    <rect id="S111" class="cls-1" x="340" y="424" width="53" height="61"/>
+    <rect id="S113" class="cls-1" x="341" y="320" width="52" height="103"/>
+    <rect id="S115" class="cls-1" x="340" y="132" width="71" height="83"/>
+  </g>
+  <g id="Nord">
+    <rect id="TPSVT_1" data-name="TPSVT 1" class="cls-1" x="15" y="1027" width="71" height="103"/>
+    <rect id="Labo_SVT" data-name="Labo SVT" class="cls-1" x="15" y="923" width="71" height="103"/>
+    <rect id="TPSVT_2" data-name="TPSVT 2" class="cls-1" x="15" y="819" width="71" height="103"/>
+    <rect id="N151" class="cls-1" x="15" y="715" width="71" height="103"/>
+    <rect id="TPPC_1" data-name="TPPC 1" class="cls-1" x="15" y="465" width="71" height="103"/>
+    <rect id="Labo_Physique" data-name="Labo Physique" class="cls-1" x="15" y="382" width="71" height="82"/>
+    <rect id="TPPC_2" data-name="TPPC 2" class="cls-1" x="15" y="278" width="71" height="103"/>
+    <rect id="Labo_Chimie" data-name="Labo Chimie" class="cls-1" x="15" y="215" width="53" height="62"/>
+    <rect id="TP_Chimie" data-name="TP Chimie" class="cls-1" x="15" y="111" width="71" height="103"/>
+    <rect id="N155" class="cls-1" x="15" y="28" width="71" height="82"/>
+    <rect id="N150" class="cls-1" x="105" y="902" width="54" height="82"/>
+    <rect id="N152" class="cls-1" x="105" y="798" width="54" height="103"/>
+    <rect id="N153" class="cls-1" x="105" y="715" width="54" height="82"/>
+    <rect id="N154" class="cls-1" x="15" y="569" width="71" height="82"/>
+    <rect id="N156" class="cls-1" x="105" y="528" width="54" height="103"/>
+    <rect id="N158" class="cls-1" x="105" y="465" width="54" height="62"/>
+    <rect id="N160" class="cls-1" x="105" y="361" width="54" height="103"/>
+    <rect id="N162" class="cls-1" x="105" y="91" width="54" height="82"/>
+    <rect id="N164" class="cls-1" x="105" y="8" width="54" height="82"/>
+  </g>
+  <g id="Autre">
+    <rect id="Forme_3" data-name="Forme 3" class="cls-2" x="105" y="985" width="306" height="62"/>
+    <rect id="Forme_2" data-name="Forme 2" class="cls-2" x="340" y="902" width="71" height="82"/>
+    <rect id="Forme_1" data-name="Forme 1" class="cls-2" x="340" y="1048" width="71" height="40"/>
+    <path id="Forme_4" data-name="Forme 4" class="cls-3" d="M340,818V736h71v82H340Z"/>
+    <path id="Forme_5" data-name="Forme 5" class="cls-3" d="M394,735V673h17v62H394Z"/>
+    <path id="Forme_6" data-name="Forme 6" class="cls-3" d="M430,651V590h54v61H430Z"/>
+    <path id="Forme_7" data-name="Forme 7" class="cls-3" d="M394,402h17V278H340v41h54v83Z"/>
+    <path id="Forme_8" data-name="Forme 8" class="cls-3" d="M411,28H340V131h71V28Z"/>
+    <path id="Forme_9" data-name="Forme 9" class="cls-3" d="M339,215V70H160V215H339Z"/>
+    <path id="Forme_10" data-name="Forme 10" class="cls-3" d="M411,277V216H105v61H411Z"/>
+    <path id="Forme_11" data-name="Forme 11" class="cls-3" d="M105,215V174h54v41H105Z"/>
+    <path id="Forme_12" data-name="Forme 12" class="cls-3" d="M159,360H123V339H105V278h54v82Z"/>
+    <path id="Forme_13" data-name="Forme 13" class="cls-3" d="M69,277V236H86v41H69Z"/>
+    <path id="Forme_14" data-name="Forme 14" class="cls-3" d="M15,714V652H86v62H15Z"/>
+    <path id="Forme_15" data-name="Forme 15" class="cls-3" d="M159,632v82H105V632h54Z"/>
+    <path id="Forme_16" data-name="Forme 16" class="cls-3" d="M105,1088v-40h54v40H105Z"/>
+  </g>
+</svg>

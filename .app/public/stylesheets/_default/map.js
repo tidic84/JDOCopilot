@@ -28,4 +28,11 @@ export const defaultCSS = StyleSheet.create({ //purpleLogin
     fontSize: 16,
     marginTop: 88,
   },
+  map: {
+  
+    alignSelf: "center",
+    marginLeft: 0,
+    marginVertical: 25,
+    fill: DEFAULT.secondary,
+  },
 });

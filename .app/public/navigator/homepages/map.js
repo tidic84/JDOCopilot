@@ -12,13 +12,14 @@ import { defaultCSS } from "../../stylesheets/_default/map";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { DEFAULT } from "../../themes/variables.js";
 
+import Taiwan from "@svg-maps/taiwan";
+import { SVGMap  } from "react-svg-map";
 
 export default class Edt extends React.Component {
   // on vide le sac de franck
   state = {
     franck: "",
   };
-
   // on lui demande de recupérer les données de l'utilisateur
   getFranck = async () => {
     const franck = Object(JSON.parse(await AsyncStorage.getItem("franck"))); // get the timetable from the storage
@@ -30,11 +31,9 @@ export default class Edt extends React.Component {
     this.getFranck();
     
     if (this.state.franck != "") {
-
       return (
         <>
           <View style={defaultCSS.container}>
-            
           </View>
         </>
       );

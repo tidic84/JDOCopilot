@@ -1,0 +1,42 @@
+<svg id="RC" xmlns="http://www.w3.org/2000/svg" width="300" height="650" viewBox="0 0 600 1300">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: gray;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g id="Sud">
+    <rect id="_-e-S001" data-name="-e-S001" class="cls-1" x="409" y="817" width="71" height="124"/>
+    <rect id="_-e-Salle_Polyvalente" data-name="-e-Salle Polyvalente" class="cls-1" x="409" y="1192" width="143" height="103"/>
+  </g>
+  <g id="Nord">
+    <rect id="_-e-CDI" data-name="-e-CDI" class="cls-1" x="84" y="484" width="144" height="187"/>
+    <rect id="_-e-N002" data-name="-e-N002" class="cls-1" x="84" y="318" width="71" height="124"/>
+  </g>
+  <g id="Autre">
+    <path id="_-e-" data-name="-e-" class="cls-2" d="M552,442V48H409v83H229v42H211v19h18v22H211v20h18V338H409V442H552Z"/>
+    <path id="_-e--2" data-name="-e-" class="cls-2" d="M552,1192v-63l-129,1v62H552Z"/>
+    <path id="_-e--3" data-name="-e-" class="cls-2" d="M409,1045V963h71v82H409Z"/>
+    <path id="_-e--4" data-name="-e-" class="cls-2" d="M499,1045V817h53v228H499Z"/>
+    <path id="_-e--5" data-name="-e-" class="cls-2" d="M409,816V651H552V816H409Z"/>
+    <path id="_-e--6" data-name="-e-" class="cls-2" d="M408,1129v-83H229v83H408Z"/>
+    <path id="_-e--7" data-name="-e-" class="cls-2" d="M48,1295V1192H66v-22H48v-82H156l-1,62h19v-62h54v82H192v125H48Z"/>
+    <path id="_-e--8" data-name="-e-" class="cls-2" d="M48,1066V984H84V900H48V859H84V796H48V755H84V672h71v394H48Z"/>
+    <path id="_-e--9" data-name="-e-" class="cls-2" d="M174,775V672h54V775H174Zm0,0"/>
+    <rect id="_-e--10" data-name="-e-" class="cls-3" x="174" y="817" width="54" height="249"/>
+    <path id="_-e--11" data-name="-e-" class="cls-2" d="M48,525V484H83v41H48Z"/>
+    <path id="_-e--12" data-name="-e-" class="cls-2" d="M84,483h71V443H84v40Z"/>
+    <path id="_-e--13" data-name="-e-" class="cls-2" d="M84,317V296H48V256H155v61H84Z"/>
+    <path id="_-e--14" data-name="-e-" class="cls-2" d="M48,234V172H84V88H48V6H155V234H48Z"/>
+    <path id="_-e--15" data-name="-e-" class="cls-2" d="M228,6H174V421h18v21h36V235H210V213h18V193H210V172h18V6Z"/>
+  </g>
+</svg>
