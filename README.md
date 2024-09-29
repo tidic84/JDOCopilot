@@ -1,7 +1,7 @@
 ## JDOCopilot
 **JDOCopilot est une application basée sur pronote.**
 
-Elle a pour but d’optimiser les journées dans le lycée et éviter les retards car il est facile de se tromper ou de ne tout simplement pas trouver sa salle, vu l'organisation désastreuse du lycée. 
+Elle a pour but d’optimiser les journées dans le lycée et éviter les retards car il est facile de se tromper ou de ne tout simplement pas trouver sa salle, vu l'organisation désastreuse de l'établissement. 
 Cette application est destinée aux nouveaux élèves comme aux habitués et aux profs responsables des AS et du journal du lycée.
 Le principal objectif de l'application est d'optimiser les déplacements dans le lycée, à l'aide d'un plan plus ergonomique que ceux déjà proposés. Mais l'application intégrera un chat, avec création automatique de groupes de classe,
 les horraires des AS avec comment s'y inscrire, un affichage hors ligne de l'emploi du temps, permettant de conaître sa salle de n'importe où, une page de nouvelles, permettant
